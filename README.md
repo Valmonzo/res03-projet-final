@@ -18,4 +18,4 @@ Front-end: Vanilla JS, HTML, CSS
 
 **S/O**
 
-Thank's to my mentor @Gaellan & @Lufolas
+Thank's to my mentors @Gaellan & @Lufolas
