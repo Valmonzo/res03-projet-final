@@ -1,0 +1,26 @@
+<section id="register">
+    <h1 class="sr-only">S'inscrire</h1>
+    <form method="post" action="register">
+        <h2>S'inscrire</h2>
+        <fieldset>
+            <label for="newUsername">Username</label>
+            <input type="text" name="newUsername" placeholder="Type a username" />
+        </fieldset>
+        <fieldset>
+            <label for="newEmail">Email</label>
+            <input type="email" name="newEmail" placeholder="Type a email" />
+        </fieldset>
+        <fieldset>
+            <label for="newPassword">Mot de passe</label>
+            <input type="password" name="newPassword" placeholder="Type a password"/>
+        </fieldset>
+        <fieldset>
+            <label for="confirm-pwd">Confirmer le mot de passe</label>
+            <input type="password" name="confirm-pwd" placeholder="Confirm password"/>
+        </fieldset>
+        <fieldset>
+            <input type="submit" name="submit" value="S'enregistrer" id="register-button" />
+        </fieldset>
+        <input type="hidden" name="formRegister"/>
+    </form>
+</section>
