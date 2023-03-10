@@ -21,7 +21,7 @@ class Router {
         $this->userController = new UserController();
         $this->matchController = new MatchController();
         $this->matchRoundController = new MatchRoundController();
-        $this->mediaController = new MediaController(); 
+        $this->mediaController = new MediaController();
     }
 
     function checkRoute() : void
@@ -71,9 +71,9 @@ class Router {
                 }
 
             }
-            
+
             else if($route[0] === "register") {
-                $this->userController->register($post); // J'appelle la page du formulaire de registration 
+                $this->userController->register($post); // J'appelle la page du formulaire de registration
             }
 
 
@@ -86,7 +86,7 @@ class Router {
 
                     if (!isset($route[1])) {
                         // /admin
-                        $this->rendererController->adminHome(); // J'affiche l'index admin
+                        $this->rendererController->adminIndex(); // J'affiche l'index admin
                     }
 
                     else {
@@ -163,6 +163,12 @@ class Router {
 
 
                     }
+                }
+
+                else {
+                    // Je ne suis pas connecté
+                    $this->userController->login($post); // Je render la page de login
+
                 }
             }
 
