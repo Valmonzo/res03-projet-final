@@ -31,7 +31,7 @@ class UserController extends AbstractController
                     $hashedPass = password_hash($post['newPassword'], PASSWORD_DEFAULT);
                     $userToAdd = new User($post["newEmail"], $post["newUsername"], $hashedPass);
                     $this->manager->insertUser($userToAdd);
-                    $this->render('homepage', []);
+                    $this->render('login', ['register' => 'User has been create']);
                 }
 
                 else {
@@ -68,22 +68,22 @@ class UserController extends AbstractController
 
             if ($userToCheck !== null) {
                 if (password_verify($passToCheck, $hashedPass)) {
-                    $_SESSION['authentification'] = 'ok';
-                    $this->index();
+                    $_SESSION['admin'] = 'ok';
+                    $this->render('homepage', [], "private");
                 }
 
                 else {
-                    $this->render('authentification', ['error' => 'Identifiants de connexion incorrects 1']);
+                    $this->render('login', ['error' => 'Identifiants de connexion incorrects 1']);
                 }
             }
 
             else {
-                $this->render('authentification', ['error' => 'Identifiants de connexion incorrects 2']);
+                $this->render('login', ['error' => 'Identifiants de connexion incorrects 2']);
             }
         }
 
         else {
-            $this->render('authentification', ['error' => 'Merci de remplir tous les champs de connexion']);
+            $this->render('login', ['error' => 'Merci de remplir tous les champs de connexion']);
         }
 
     }

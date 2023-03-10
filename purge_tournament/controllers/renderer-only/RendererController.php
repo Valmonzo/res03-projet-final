@@ -35,5 +35,9 @@ class RendererController extends AbstractController {
         $this->render('404' , []);
     }
 
+    public function adminIndex() : void {
+        $this->render('homepage', [], 'private');
+    }
+
 
 }
