@@ -2,6 +2,8 @@
 
 class Team {
 
+    // Attributs
+
     private ?int $id;
     private string $name;
     private string $playerOne;
@@ -11,6 +13,9 @@ class Team {
     private string $subPlayer;
     private string $coach;
     private string $logo;
+
+
+    // Construct
 
     public function __construct (string $name, string $playerOne, string $playerTwo, string $playerThree, string $playerFour, string $subPlayer, string $coach, string $logo)
     {
@@ -95,11 +100,11 @@ class Team {
         $this->subPlayer = $subPlayer;
     }
 
-    public function getCoach() {
-        return $this->coach;
+    public function setCoach(string $coach) : void {
+        $this->coach = $coach;
     }
 
-    public function getLogo() {
-        return $this->logo;
+    public function setLogo(string $logo) {
+        $this->logo = $logo;
     }
 }

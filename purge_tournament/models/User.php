@@ -43,22 +43,22 @@ class User
 
     // Setters //
 
-    public function setId($id) : void
+    public function setId(int $id) : void
     {
         $this->id = $id;
     }
 
-    public function setEmail($email) : void
+    public function setEmail(string $email) : void
     {
         $this->email = $email;
     }
 
-    public function setUsername($username) : void
+    public function setUsername(string $username) : void
     {
         $this->username = $username;
     }
 
-    public function setPassword($password) : void
+    public function setPassword(string $password) : void
     {
         $this->password = $password;
     }

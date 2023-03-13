@@ -46,25 +46,25 @@ class Contact
 
     // Setters
 
-    public function setId($id) : void
+    public function setId(int $id) : void
     {
         $this->id = $id;
     }
 
 
-    public function setName($name) : void
+    public function setName(string $name) : void
     {
         $this->name = $name;
     }
 
-    public function setEmail($email) : void
+    public function setEmail(string $email) : void
     {
         $this->email = $email;
     }
 
 
 
-    public function setMessage($message) : void
+    public function setMessage(string $message) : void
     {
         $this->password = $password;
     }

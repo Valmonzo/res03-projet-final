@@ -37,6 +37,7 @@ require 'models/Contact.php';
 require 'models/Media.php';
 
 
-// Router
+// Services
 require 'services/Router.php';
+require 'services/FilesUploader.php';
 
