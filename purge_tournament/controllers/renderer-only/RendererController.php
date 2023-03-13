@@ -18,7 +18,6 @@ class RendererController extends AbstractController {
 
 
     public function visitorHome() : void {
-
         $this->render('homepage' , ['page' => 'homepage']);
 
     }
@@ -37,6 +36,10 @@ class RendererController extends AbstractController {
 
     public function adminIndex() : void {
         $this->render('homepage', [], 'private');
+    }
+
+    public function visitorContact() : void {
+        $this->render('contact', []);
     }
 
 

@@ -1,0 +1,23 @@
+<section id="contact-form">
+    <h1 class="sr-only">Contact Form</h1>
+    <form action="contact" method="post">
+        <h2>Contact Us</h2>
+        <fieldset>
+            <label for="contactName">Full Name</label>
+            <input type="text" name="contactName"  placeholder="Type your full Name" />
+        </fieldset>
+        <fieldset>
+            <label for="contactEmail">Email</label>
+            <input type="email" name="contactEmail"  placeholder="Type your email" />
+        </fieldset>
+        <fieldset>
+            <label for="contactMessage">Message</label>
+            <textarea name="contactMessage"rows="5" cols="33">Your message ...
+            </textarea>
+        </fieldset>
+        <fieldset>
+            <input type="submit" name="send" value="Send" id="contact-btn" />
+        </fieldset>
+        <input type="hidden" name="formName" value="contact"/>
+    </form>
+</section>

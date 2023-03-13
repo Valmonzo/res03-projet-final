@@ -88,6 +88,12 @@ class UserController extends AbstractController
 
     }
 
+
+    public function logout() {
+        session_destroy();
+        header('Location: /res03-projet-final/purge_tournament/');
+    }
+
 }
 
 ?>

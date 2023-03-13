@@ -10,7 +10,7 @@ require 'controllers/TournamentController.php';
 require 'controllers/MatchController.php';
 require 'controllers/MatchRoundController.php';
 require 'controllers/UserController.php';
-require 'controllers/public-renderer/RendererController.php';
+require 'controllers/renderer-only/RendererController.php';
 require 'controllers/ContactController.php';
 require 'controllers/MediaController.php';
 require 'controllers/TeamController.php';

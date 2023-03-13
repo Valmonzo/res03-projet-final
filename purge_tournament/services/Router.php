@@ -60,9 +60,9 @@ class Router {
 
             else if($route[0] === "contact") {
 
-                if(isset($route[1]) && $route[1] === "new") {
+                if(!empty($post) && $post['formName'] === 'contact') {
 
-                    $this->contactController->newContact($post); // J'appelle le contactController pour recevoir le formulaire et traiter la données puis Render avec un msg
+                    $this->contactController->newMessage($post); // J'appelle le contactController pour recevoir le formulaire et traiter la données puis Render avec un msg
                 }
 
                 else {
@@ -72,12 +72,13 @@ class Router {
 
             }
 
-            else if($route[0] === "register") {
+            /* else if($route[0] === "register") {
                 $this->userController->register($post); // J'appelle la page du formulaire de registration
-            }
+            } */
 
 
             // Pages admin
+
 
             else if($route[0] === "admin") {
 
@@ -170,6 +171,12 @@ class Router {
                     $this->userController->login($post); // Je render la page de login
 
                 }
+            }
+
+            // Deconnexion
+
+            else if ($route[0] === "logout") {
+                $this->userController->logout(); // Je déconnecte l'admin
             }
 
             // Si rien ne rentre dans les conditions
