@@ -7,8 +7,8 @@ UserManager : Appelé par le UserController , il servira uniquement à créer de
 TournamentManager : Appelé par le TournamentController , il servira à 
 créer un événements , les éditer ou les supprimer depuis la table tournament.
 
-MatchManager : Appelé par le MatchController , il servira à éditer , créer et supprimer des rounds du tournoi depuis la table match.
+GameManager : Appelé par le GameController , il servira à éditer , créer et supprimer des rounds du tournoi depuis la table game.
 
-MatchRoundManager : Appelé par le MatchController pour afficher et le MatchRoundController pour l'édition la suppression et la création de round.
+GameRoundManager : Appelé par le GameController pour afficher et le GameRoundController pour l'édition la suppression et la création de round.
 
 MediaManager : Appelé par le MediaController pour ajouter des médias les éditer ou les supprimer.
