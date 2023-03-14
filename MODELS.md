@@ -11,10 +11,10 @@ Son construct prendra tout sauf l'id.
 **Team : ** Il prendra en attribut un id , un name , 4 x un player , un coach , un sub_player et un logo. 
 Son construct prendra tout sauf l'id.
 
-**Match :** Il prendra en attribut un id, l'id des deux teams , un tournoi.
+**Game :** Il prendra en attribut un id, l'id des deux teams , un tournoi.
 Son construct prendra tout sauf l'id.
 
-**MatchRound :** Il prendra en attribut un id , un match, le winner , et un url.
+**GameRound :** Il prendra en attribut un id , un game, le winner , et un url.
 son construct prendra tout sauf l'id.
 
 **Contact :** Il prendra en attribut un id , un nom , un email et un message.
