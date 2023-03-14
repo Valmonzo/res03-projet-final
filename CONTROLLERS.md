@@ -60,7 +60,7 @@
 
  - /admin (toutes les pages)
 
-## MatchController
+## GameController
 
 **Routes publiques**
 
@@ -74,7 +74,7 @@
  - /admin/bracket/create
  - /admin/event/:id
  - /admin/event/:id/delete
-## MatchRoundController
+## GameRoundController
 
 **Routes privées**
 
