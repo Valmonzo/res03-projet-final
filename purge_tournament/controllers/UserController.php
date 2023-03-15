@@ -69,21 +69,21 @@ class UserController extends AbstractController
             if ($userToCheck !== null) {
                 if (password_verify($passToCheck, $hashedPass)) {
                     $_SESSION['admin'] = 'ok';
-                    $this->render('homepage', [], "private");
+                    $this->render('templates/private/homepage/homepage', [], "private");
                 }
 
                 else {
-                    $this->render('login', ['error' => 'Identifiants de connexion incorrects 1']);
+                    $this->render('templates/public/login/login', ['error' => 'Identifiants de connexion incorrects 1']);
                 }
             }
 
             else {
-                $this->render('login', ['error' => 'Identifiants de connexion incorrects 2']);
+                $this->render('templates/public/login/login', ['error' => 'Identifiants de connexion incorrects 2']);
             }
         }
 
         else {
-            $this->render('login', ['error' => 'Merci de remplir tous les champs de connexion']);
+            $this->render('templates/public/login/login', ['error' => 'Merci de remplir tous les champs de connexion']);
         }
 
     }
@@ -91,7 +91,7 @@ class UserController extends AbstractController
 
     public function logout() {
         session_destroy();
-        header('Location: /res03-projet-final/purge_tournament/');
+        header('Location: /res03-projet-final/purge_tournament');
     }
 
 }

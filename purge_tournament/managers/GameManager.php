@@ -1,6 +1,6 @@
 <?php
 
-class MatchRoundManager extends AbstractManager {
+class GameManager extends AbstractManager {
 
     public function __construct() {
 

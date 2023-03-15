@@ -1,7 +1,7 @@
 <?php
 
 
-class MatchRoundController extends AbstractController {
+class GameRoundController extends AbstractController {
 
     public function __construct()
     {

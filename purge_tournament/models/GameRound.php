@@ -1,20 +1,20 @@
 <?php
 
-class MatchRound {
+class GameRound {
 
     // Attributs
 
     private ?int $id;
-    private Match $match;
+    private Game $game;
     private Team $winner;
     private ?string $media;
 
     // Construct
 
-    public function __construct(Match $match, Team $winner, string $media = NULL)
+    public function __construct(Game $game, Team $winner, string $media = NULL)
     {
         $this->id = NULL;
-        $this->match = $match;
+        $this->game = $game;
         $this->winner = $winner;
         $this->media = $media;
     }
@@ -25,8 +25,8 @@ class MatchRound {
         return $this->id;
     }
 
-    public function getMatch() : Match {
-        return $this->match;
+    public function getGame() : Game {
+        return $this->game;
     }
 
     public function getWinner() : Team {
@@ -43,8 +43,8 @@ class MatchRound {
         $this->id = $id;
     }
 
-    public function setMatch(Match $match) : void {
-        $this->match = $match;
+    public function setGame(Game $game) : void {
+        $this->game = $game;
     }
 
     public function setWinner(Team $winner) : void {

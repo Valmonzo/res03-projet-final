@@ -1,13 +1,13 @@
 <?php
 
-class Match {
+class Game {
 
     // Attributs
 
     private ?int $id;
     private Team $teamA;
     private Team $teamB;
-    private Tournament $tournament
+    private Tournament $tournament;
 
 
     // Construct

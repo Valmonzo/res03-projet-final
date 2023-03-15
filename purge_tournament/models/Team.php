@@ -64,7 +64,7 @@ class Team {
         return $this->coach;
     }
 
-    public function getLogo() {
+    public function getLogo() : string {
         return $this->logo;
     }
 

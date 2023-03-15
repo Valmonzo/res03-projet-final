@@ -1,0 +1,47 @@
+<?php
+
+var_dump($_SESSION);
+var_dump($_POST);
+
+?>
+
+<h2>Créer une team</h2>
+<form action="create" method="post">
+    <fieldset>
+    <label for="teamName">Team Name</label>
+    <input type="text" name="teamName"/>
+    </fieldset>
+    <fieldset>
+    <label for="teamP1">Player One</label>
+    <input type="text" name="teamP1"/>
+    </fieldset>
+    <fieldset>
+    <label for="teamP2">Player Two</label>
+    <input type="text" name="teamP2"/>
+    </fieldset>
+    <fieldset>
+    <label for="teamP3">Player Three</label>
+    <input type="text" name="teamP3"/>
+    </fieldset>
+    <fieldset>
+    <label for="teamP4">Player Four</label>
+    <input type="text" name="teamP4"/>
+    </fieldset>
+    <fieldset>
+    <label for="teamPSub">Sub Player</label>
+    <input type="text" name="teamPSub"/>
+    </fieldset>
+    <fieldset>
+    <label for="coach">Coach Name</label>
+    <input type="text" name="coach"/>
+    </fieldset>
+    <fieldset>
+    <label for="logo">URL of your logo</label>
+    <input type="url" name="logo"/>
+    </fieldset>
+    <fieldset>
+            <input type="submit" name="send" value="Create" id="team-create-btn" />
+        </fieldset>
+        <input type="hidden" name="formName" value="team-create"/>
+</form>
+

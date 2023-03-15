@@ -1,0 +1,46 @@
+<h2>Liste des teams</h2>
+
+<?php
+
+var_dump($data);
+
+?>
+<main>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Utilisateur</th>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>Voir</th>
+                            <th>Editer</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            foreach($data as $team) { ?>
+                            <tr>
+                                <td><?= $team->getName(); ?></td>
+                                <td><?= $team->getPlayerOne(); ?></td>
+                                <td><?= $team->getPlayerTwo(); ?></td>
+                                <td><?= $team->getPlayerThree(); ?></td>
+                                <td><?= $team->getPlayerFour(); ?></td>
+                                <td><?= $team->getSubPlayer(); ?></td>
+                                <td><?= $team->getCoach(); ?></td>
+                                <td>
+                                    <figure>
+                                        <img src="<?= $team->getLogo();?>"></img>
+                                    </figure>
+                                </td>
+                                <td><button><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/edit">Modifier</a></button></td>
+                                <td><button><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/delete">Supprimer</a></td>
+                            </tr>
+                            <?php
+                            }
+                            ?>
+                    </tbody>
+                    </table>
+                    <button><a href="/res03-projet-final/purge_tournament/admin/teams/create">Créer une team</a></button>
+        </main>
