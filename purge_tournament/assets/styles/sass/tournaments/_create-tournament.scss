@@ -1,0 +1,19 @@
+#tournament-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    #tournament-info {
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+
+        &>fieldset {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &>section:not(:first-of-type) {
+        grid-row: 2/3;
+    }
+}

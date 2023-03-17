@@ -1,0 +1,10 @@
+<fieldset>
+    <label for="team<?= $teamNb ?>">Team</label>
+    <select name="team<?= $teamNb ?>">
+        <option value="selected">--- Select team ---</option>
+        <?php foreach($data['teams'] as $team) { ?>
+        <option value="<?= $team->getId();?>"><?= $team->getName(); ?></option>
+
+        <?php } ?>
+    </select>
+</fieldset>

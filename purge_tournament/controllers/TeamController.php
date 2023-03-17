@@ -38,7 +38,7 @@ class TeamController extends AbstractController {
 
             $this->teamManager->editTeam($teamToUpdate); // Et je fais la requête pour le mettre à jour
 
-            header('Location: res03-projet-final/purge_tournament/admin/teams');
+            header('Location: /res03-projet-final/purge_tournament/admin/teams');
         }
 
         else {

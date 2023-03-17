@@ -6,22 +6,24 @@ class Tournament {
 
     private ?int $id;
     private string $name;
-    private string $date;
+    private string $tdate;
     private string $description;
     private string $gameName;
     private string $streamURL;
+    private array $teams;
 
 
     // Construct
 
-    public function __construct (string $name, string $date, string $description, string $gameName, string $streamURL) {
+    public function __construct (string $name, string $tdate, string $description, string $gameName, string $streamURL) {
 
         $this->id = NULL;
         $this->name = $name;
-        $this->date = $date;
+        $this->tdate = $tdate;
         $this->description = $description;
         $this->gameName = $gameName;
         $this->streamURL = $streamURL;
+        $this->teams = [];
     }
 
     // Getters
@@ -35,7 +37,7 @@ class Tournament {
     }
 
     public function getDate() : string {
-        return $this->date;
+        return $this->tdate;
     }
 
     public function getDescription() : string {
@@ -50,6 +52,10 @@ class Tournament {
         return $this->streamURL;
     }
 
+    public function getTeams() : array {
+        return $this->teams;
+    }
+
 
     // Setters
 
@@ -61,8 +67,8 @@ class Tournament {
         $this->name = $name;
     }
 
-    public function setDate(string $date) : void {
-        $this->date = $date;
+    public function setDate(string $tdate) : void {
+        $this->tdate = $tdate;
     }
 
     public function setDescription(string $description) : void {
@@ -75,5 +81,17 @@ class Tournament {
 
     public function setStreamURL(string $streamURL) : void {
         $this->streamURL = $streamURL;
+    }
+
+    public function setTeams (array $teams) : void {
+        $this->teams = $teams;
+    }
+
+    // Methodes
+
+    public function addTeam(Team $team) : array {
+
+        $this->teams[] = $team;
+        return $this->teams;
     }
 }

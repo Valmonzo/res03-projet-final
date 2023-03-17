@@ -112,7 +112,7 @@ class Router {
 
                                 if($route[2] === "create" ) {
                                     match ($route[1]) {
-                                        'tournaments' => $this->tournamentController->create(), // J'affiche  /admin/event/create
+                                        'tournaments' => $this->tournamentController->create($post), // J'affiche  /admin/event/create
                                         'brackets' =>$this->gameController->create(), // J'affiche  /admin/bracket/create
                                         'teams' => $this->teamController->create($post), // J'affiche  /admin/team/create
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404
@@ -152,9 +152,21 @@ class Router {
                                     }
 
                                     else {
-                                        $this->rendererController->page404(); // Si le chemin est mauvais je redirige sur 404 /page404
+
+                                        if(isset($route[5]) && $route[4] === "add-team") {
+
+                                            $this->tournamentController->addTeam($route[5]);
+                                        }
+
+                                        else {
+
+                                            $this->rendererController->page404(); // Si le chemin est mauvais je redirige sur 404 /page404
+
+                                        }
                                     }
                                 }
+
+
 
                                 else {
                                     $this->rendererController->page404(); // Si le chemin est mauvais je redirige sur 404 /page404

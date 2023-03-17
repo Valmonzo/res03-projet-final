@@ -1,0 +1,40 @@
+<h2>Créer un tournoi</h2>
+<?php var_dump($data); ?>
+
+<form action="/res03-projet-final/purge_tournament/admin/tournaments/create" method="post" id="tournament-form">
+    <section class="top32" id="tournament-info">
+    <fieldset>
+        <label for="tournamentName">Name</label>
+        <input type="text" name="tournamentName"/>
+    </fieldset>
+    <fieldset>
+        <label for="tournamentDate">Starting Time</label>
+        <input type="datetime-local" name="tournamentDate"/>
+    </fieldset>
+    <fieldset>
+        <label for="gameName">Game</label>
+        <input type="text" name="gameName"/>
+    </fieldset>
+    <fieldset>
+        <label for="tournamentDescription">Description</label>
+        <textarea name="tournamentDescription">
+        </textarea>
+    </fieldset>
+    <fieldset>
+        <label for="streamURL">Stream URL</label>
+        <input type="url" name="streamURL"/>
+    </fieldset>
+    </section>
+    <section class="top32" id="first-bracket">
+        <?php for($teamNb = 1; $teamNb < 16; $teamNb++) {
+            require '_team-fields.phtml';
+        }
+        ?>
+    </section>
+    <section class="top32" id="second-bracket">
+        <?php for($teamNb = 17; $teamNb < 32; $teamNb++) {
+            require '_team-fields.phtml';
+        }
+        ?>
+    </section>
+</form>
