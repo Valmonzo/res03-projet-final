@@ -29,16 +29,20 @@ class TournamentController extends AbstractController {
 
         // Création de tournoi
 
+        // Vérification du formulaire
         if(!empty($post['tournamentName']) && !empty($post['tournamentDate']) && !empty($post['gameName'])
-        && !empty($post['tournamentDescription']) && $_SESSION['tournament']['teams'].length === 32) {
+        && !empty($post['tournamentDescription']) && count($_SESSION['tournament']['teams']) === 32) {
 
             $tournamentToInsert = new Tournament($post['tournamentName'], $post['tournamentDate'], $post['tournamentDescription'], $post['gameName'], '');
 
 
             if (!empty($post['streamURL'])) {
+
+                // J'insère l'url du stream si le match est en live
                 $tournamentToInsert->setStreamURL($post['streamURL']);
             }
 
+            // Je transforme mon tableau associatifs en tableau de team avant de les insérer dans mon tournoi
             $tournamentToInsert->setTeams(array_map(
                 function (array $team) {
                     $teamAsObject = new Team($team['name'], $team['playerOne'], $team['playerTwo'], $team['playerThree'], $team['playerFour'], $team['subPlayer'], $team['coach'], $team['logo']);
@@ -50,8 +54,25 @@ class TournamentController extends AbstractController {
                 },
                 $_SESSION['tournament']['teams']
             ));
-            
-            
+
+            // Je stock le tableau de teams dans une variable
+            $teamsParticipation = $tournamentToInsert->getTeams();
+
+            // Je crée mes seizième de finales
+            $last32 = new GameRound('last 32', $tournamentToInsert);
+
+            // Je l'insère dans la base de données
+            $last32->insertGameRound($last32);
+
+            // Pour chaque équipe , je crée un match 1 vs 1 et je l'insère dans la base de données
+            foreach ($i = 0; $i < count($teamsParticipation); $i + 2) {
+
+               $game =  new Game($teamsParticipation[$i],$teamsParticipation[$i++], $last32);
+
+               $this->gameManager->insertGame($game);
+            }
+
+            header('Location : /res03-projet-final/purge_tournament/admin/tournaments');
 
 
 

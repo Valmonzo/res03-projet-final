@@ -7,52 +7,72 @@ class Game {
     private ?int $id;
     private Team $teamA;
     private Team $teamB;
-    private Tournament $tournament;
-
+    private Team $winner;
+    private GameRound $gameRound;
 
     // Construct
 
-    public function __construct(Team $teamA , Team $teamB, Tournament $tournament) {
+    public function __construct(Team $teamA , Team $teamB, GameRound $gameRound)
+    {
         $this->id = NULL;
         $this->teamA = $teamA;
         $this->teamB = $teamB;
-        $this->tournament = $tournament;
+        $this->winner = NULL;
+        $this->gameRound = $gameRound;
     }
 
 
     // Getters
 
-    public function getId() : ?int {
+    public function getId(): ?int
+    {
         return $this->id;
     }
 
-    public function getTeamA() : Team {
+    public function getTeamA(): Team
+    {
         return $this->teamA;
     }
 
-    public function getTeamB() : Team {
+    public function getTeamB(): Team
+    {
         return $this->teamB;
     }
 
-    public function getTournament() : Tournament {
-        return $this->tournament;
+    public function getGameRound(): GameRound
+    {
+        return $this->gameRound;
+    }
+
+    public function getWinner(): Team
+    {
+        return $this->winner;
     }
 
     // Setters
 
-    public function setId(int $id) : void {
+    public function setId(int $id): void
+    {
         $this->id = $id;
     }
 
-    public function setTeamA(Team $teamA) : void {
+    public function setTeamA(Team $teamA): void
+    {
         $this->teamA = $teamA;
     }
 
-    public function setTeamB(Team $teamB) : void {
+    public function setTeamB(Team $teamB): void
+    {
         $this->teamB = $teamB;
     }
 
-    public function setTournament(Tournament $tournament) : void {
-        $this->tournament = $tournament;
+    public function setWinner(Team $winner): void
+    {
+        $this->winner = $winner;
+    }
+
+    public function setGameRound(GameRound $gameRound): void
+    {
+        $this->gameRound = $gameRound;
     }
 }
