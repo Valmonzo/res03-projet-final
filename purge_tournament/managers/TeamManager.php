@@ -53,7 +53,6 @@ class TeamManager extends AbstractManager {
     }
 
     public function editTeam(Team $team) : Void {
-        var_dump($team);
 
         $query = $this->db->prepare('UPDATE team SET  name = :name , player_one = :player_one, player_two = :player_two, player_three = :player_three, player_four = :player_four, sub_player = :sub_player, logo = :logo, coach = :coach WHERE id = :id');
         $parameters = [

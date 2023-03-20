@@ -6,7 +6,7 @@ class Tournament {
 
     private ?int $id;
     private string $name;
-    private string $tdate;
+    private string $date;
     private string $description;
     private string $gameName;
     private string $streamURL;
@@ -15,11 +15,11 @@ class Tournament {
 
     // Construct
 
-    public function __construct (string $name, string $tdate, string $description, string $gameName, string $streamURL) {
+    public function __construct (string $name, string $date, string $description, string $gameName, string $streamURL) {
 
         $this->id = NULL;
         $this->name = $name;
-        $this->tdate = $tdate;
+        $this->date = $date;
         $this->description = $description;
         $this->gameName = $gameName;
         $this->streamURL = $streamURL;
@@ -37,7 +37,7 @@ class Tournament {
     }
 
     public function getDate() : string {
-        return $this->tdate;
+        return $this->date;
     }
 
     public function getDescription() : string {
@@ -59,39 +59,58 @@ class Tournament {
 
     // Setters
 
-    public function setId(int $id) : void {
+    public function setId(int $id): void {
         $this->id = $id;
     }
 
-    public function setName(string $name) : void {
+    public function setName(string $name): void {
         $this->name = $name;
     }
 
-    public function setDate(string $tdate) : void {
-        $this->tdate = $tdate;
+    public function setDate(string $date): void {
+        $this->date = $date;
     }
 
-    public function setDescription(string $description) : void {
+    public function setDescription(string $description): void {
         $this->description = $description;
     }
 
-    public function setGameName(string $gameName) : void {
+    public function setGameName(string $gameName): void {
         $this->gameName = $gameName;
     }
 
-    public function setStreamURL(string $streamURL) : void {
+    public function setStreamURL(string $streamURL): void {
         $this->streamURL = $streamURL;
     }
 
-    public function setTeams (array $teams) : void {
-        $this->teams = $teams;
+    public function setTeams (array $teams): void
+    {
+        $this->teams = array_unique($teams, SORT_REGULAR);
     }
 
     // Methodes
 
-    public function addTeam(Team $team) : array {
+    public function addTeam(Team $team): void
+    {
+       $this->teams[] = $team;
 
-        $this->teams[] = $team;
-        return $this->teams;
+        // Je traite l'erreur possible en supprimant un potentiel doublon de team dans mon tableau
+        $this->teams = array_unique($this->teams, SORT_REGULAR);
     }
+
+    public function toArray() : array {
+
+        // Je transforme mon tournoi en tableau
+        $tournamentAsArray = get_object_vars($this);
+
+        // Je transforme mes teams en tableau pour les push dans l'index teams de mon tournoi
+        $tournamentAsArray['teams'] = array_map(
+            fn (Team $team) => $team->toArray(),
+            $this->teams
+        );
+
+        // Je retourne mon tournoi sous forme de tableau
+        return $tournamentAsArray;
+    }
+
 }

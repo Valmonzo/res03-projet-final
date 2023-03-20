@@ -25,7 +25,6 @@ class ContactManager extends AbstractManager {
 
 
     public function insertMessage(Contact $contact) : Void  {
-        var_dump($contact);
         $query = $this->db->prepare('INSERT INTO contact (`id`, `name`, `email`, `message`) VALUES(NULL, :name, :email, :message)');
 
         $parameters = [

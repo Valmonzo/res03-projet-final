@@ -11,6 +11,11 @@ abstract class AbstractController
     	require 'templates/'.$file.'/'.$file.'_layout.phtml';
     }
 
+    public function renderJson(array $values) {
+
+        echo json_encode($values);
+    }
+
 }
 
 ?>

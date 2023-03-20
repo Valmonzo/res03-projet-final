@@ -1,10 +1,16 @@
 <fieldset>
     <label for="team<?= $teamNb ?>">Team</label>
-    <select name="team<?= $teamNb ?>">
-        <option value="selected">--- Select team ---</option>
+    <select name="team<?= $teamNb ?>" class="form-select" required aria-label="select example">
+        <option value="">--- Select team ---</option>
         <?php foreach($data['teams'] as $team) { ?>
-        <option value="<?= $team->getId();?>"><?= $team->getName(); ?></option>
+        <option value="<?= $team->getId();?>" ><?= $team->getName(); ?></option>
 
         <?php } ?>
     </select>
+    <div class="invalid-feedback">Example invalid select feedback</div>
+  </div>
 </fieldset>
+
+
+
+

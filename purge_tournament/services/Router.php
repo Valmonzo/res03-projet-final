@@ -144,32 +144,41 @@ class Router {
 
                                     else if ($route[3] === "delete") {
                                         match ($route[1]) {
-                                        'tournament' => $this->tournamentController->deleteTournament($route[2]), // J'affiche  /admin/event/:id/delete
+                                        'tournaments' => $this->tournamentController->deleteTournament($route[2]), // J'affiche  /admin/event/:id/delete
                                         'brackets' =>$this->gameController->deleteBracket($route[2]), // J'affiche  /admin/bracket/:id/delete
                                         'teams' => $this->teamController->deleteTeam($route[2]), // J'affiche  /admin/team/:id/delete
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404
                                         };
                                     }
 
+                                     else if($route[3] === "reset") {
+                                        $this->tournamentController->resetForm();  // J'appelle mon controller pour reset la varibla $_SESSION['tournament']
+                                    }
+
+
                                     else {
-
-                                        if(isset($route[5]) && $route[4] === "add-team") {
-
-                                            $this->tournamentController->addTeam($route[5]);
-                                        }
-
-                                        else {
 
                                             $this->rendererController->page404(); // Si le chemin est mauvais je redirige sur 404 /page404
 
-                                        }
                                     }
                                 }
 
 
 
+
+
                                 else {
-                                    $this->rendererController->page404(); // Si le chemin est mauvais je redirige sur 404 /page404
+
+                                    if($route[3] === "add-team") {
+
+                                            $this->tournamentController->addTeam(intval($route[4]));
+                                    }
+
+                                    else {
+                                        $this->rendererController->page404(); // Si le chemin est mauvais je redirige sur 404 /page404
+                                    }
+
+
                                 }
                             }
                         }

@@ -1,6 +1,5 @@
 <h2>Créer un tournoi</h2>
-<?php var_dump($data); ?>
-
+<?php var_dump($_SESSION['tournament'] ??NULL); ?>
 <form action="/res03-projet-final/purge_tournament/admin/tournaments/create" method="post" id="tournament-form">
     <section class="top32" id="tournament-info">
     <fieldset>
@@ -26,15 +25,18 @@
     </fieldset>
     </section>
     <section class="top32" id="first-bracket">
-        <?php for($teamNb = 1; $teamNb < 16; $teamNb++) {
+        <?php for($teamNb = 1; $teamNb <= 16; $teamNb++) {
             require '_team-fields.phtml';
         }
         ?>
     </section>
     <section class="top32" id="second-bracket">
-        <?php for($teamNb = 17; $teamNb < 32; $teamNb++) {
+        <?php for($teamNb = 17; $teamNb <= 32; $teamNb++) {
             require '_team-fields.phtml';
         }
         ?>
     </section>
+    <input type="submit" value="Create" name="create" id="tournament-create-btn"/>
+    <input type="hidden" name="formName" value="tournament-create"/>
+    <button id="reset-tournament">Reset</button>
 </form>

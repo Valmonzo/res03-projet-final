@@ -96,15 +96,37 @@ class Team {
         $this->playerFour = $playerFour;
     }
 
-    public function setSubPlayer(string $subPlayer) : void {
+    public function setSubPlayer(string $subPlayer): void {
         $this->subPlayer = $subPlayer;
     }
 
-    public function setCoach(string $coach) : void {
+    public function setCoach(string $coach): void {
         $this->coach = $coach;
     }
 
-    public function setLogo(string $logo) {
+    public function setLogo(string $logo): void {
         $this->logo = $logo;
+    }
+
+    // Methodes
+
+    public function toArray() : array
+    {
+        // Je retourne mon objet en tableau pour pouvoir l'utiliser en JSON
+        /* return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'playerOne' => $this->playerOne,
+            'playerTwo' => $this->playerTwo,
+            'playerThree' => $this->playerThree,
+            'playerFour' => $this->playerFour,
+            'subPlayer' => $this->subPlayer,
+            'coach' => $this->coach,
+            'logo' => $this->logo,
+            ];
+        */
+
+        return get_object_vars($this);
+
     }
 }
