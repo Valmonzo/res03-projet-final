@@ -25,7 +25,7 @@ class GameRoundManager extends AbstractManager {
             $gameRoundToReturn->setId($gameRound['id']);
 
             // Si un lien de stream est dans la base de données , je le set sur mon gameRound
-            if(isset($gameRound['stream_url'] && !empty($gameRound['stream_url'])) {
+            if(isset($gameRound['stream_url']) && !empty($gameRound['stream_url'])) {
 
                 $gameRoundToReturn->setStreamURL($gameRound['stream_url']);
             }
@@ -42,7 +42,7 @@ class GameRoundManager extends AbstractManager {
     public function insertGameRound(GameRound $gameRound): GameRound
     {
 
-        $query = $this->db->prepare('INSERT INTO game_round ( `ìd`, `name`, `tournament_id`, `stream_url`) VALUES (NULL, :name, :tournament_id, :stream_url)');
+        $query = $this->db->prepare('INSERT INTO game_round ( `id`, `name`, `tournament_id`, `stream_url`) VALUES (NULL, :name, :tournament_id, :stream_url)');
 
         $parameters = [
         'name' => $gameRound->getName(),

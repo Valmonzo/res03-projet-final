@@ -55,6 +55,9 @@ class TournamentController extends AbstractController {
                 $_SESSION['tournament']['teams']
             ));
 
+            //J'insère mon tournoi dans la base de données pour l'avoir avec son id en output
+            $this->tournamentManager->insertTournament($tournamentToInsert);
+
             // Je stock le tableau de teams dans une variable
             $teamsParticipation = $tournamentToInsert->getTeams();
 
@@ -62,10 +65,11 @@ class TournamentController extends AbstractController {
             $last32 = new GameRound('last 32', $tournamentToInsert);
 
             // Je l'insère dans la base de données
-            $last32->insertGameRound($last32);
+            $this->gameRoundManager->insertGameRound($last32);
 
             // Pour chaque équipe , je crée un match 1 vs 1 et je l'insère dans la base de données
-            foreach ($i = 0; $i < count($teamsParticipation); $i + 2) {
+
+            for ($i = 0; $i < count($teamsParticipation); $i + 2) {
 
                $game =  new Game($teamsParticipation[$i],$teamsParticipation[$i++], $last32);
 

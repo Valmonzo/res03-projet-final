@@ -6,8 +6,8 @@ class GameRound {
 
     private ?int $id;
     private string $name;
-    private Tournament $tournament
-    private string $streamURL
+    private Tournament $tournament;
+    private string $streamURL;
 
     // Construct
 
@@ -16,7 +16,7 @@ class GameRound {
         $this->id = NULL;
         $this->name = $name;
         $this->tournament = $tournament;
-        $this->streamURL = $streamURL;
+        $this->streamURL = '';
     }
 
     // Getters
