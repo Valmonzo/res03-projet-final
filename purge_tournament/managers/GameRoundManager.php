@@ -4,10 +4,9 @@ class GameRoundManager extends AbstractManager {
 
     // Methodes
 
-    public function getGameRoundByTournament(Tournament $tournament) : array
+    public function getGameRoundsByTournament(Tournament $tournament) : array
     {
         $query = $this->db->prepare('SELECT * FROM game_round WHERE tournament_id = :id');
-        $query->execute();
         $parameters = [
         'id' => $tournament->getId(),
         ];

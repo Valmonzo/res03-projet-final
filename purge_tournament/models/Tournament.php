@@ -11,6 +11,7 @@ class Tournament {
     private string $gameName;
     private string $streamURL;
     private array $teams;
+    private array $gameRounds;
 
 
     // Construct
@@ -24,36 +25,49 @@ class Tournament {
         $this->gameName = $gameName;
         $this->streamURL = $streamURL;
         $this->teams = [];
+        $this->gameRounds = [];
     }
 
     // Getters
 
-    public function getId() : ?int {
+    public function getId(): ?int
+    {
         return $this->id;
     }
 
-    public function getName() : string {
+    public function getName(): string
+    {
         return $this->name;
     }
 
-    public function getDate() : string {
+    public function getDate(): string
+    {
         return $this->date;
     }
 
-    public function getDescription() : string {
+    public function getDescription(): string
+    {
         return $this->description;
     }
 
-    public function getGameName() : string {
+    public function getGameName(): string
+    {
         return $this->gameName;
     }
 
-    public function getStreamURL() : string {
+    public function getStreamURL(): string
+    {
         return $this->streamURL;
     }
 
-    public function getTeams() : array {
+    public function getTeams(): array
+    {
         return $this->teams;
+    }
+
+    public function getGameRounds(): array
+    {
+        return $this->gameRounds;
     }
 
 
@@ -83,9 +97,14 @@ class Tournament {
         $this->streamURL = $streamURL;
     }
 
-    public function setTeams (array $teams): void
+    public function setTeams(array $teams): void
     {
         $this->teams = array_unique($teams, SORT_REGULAR);
+    }
+
+    public function setGameRounds(array $gameRounds): void
+    {
+        $this->gameRounds = array_unique($gameRounds, SORT_REGULAR);
     }
 
     // Methodes
@@ -96,6 +115,14 @@ class Tournament {
 
         // Je traite l'erreur possible en supprimant un potentiel doublon de team dans mon tableau
         $this->teams = array_unique($this->teams, SORT_REGULAR);
+    }
+
+    public function addGameRound(GameRound $gameRound) : void
+    {
+        $this->gameRounds[] = $gameRound;
+
+        // Je traite l'erreur possible en supprimant un potentiel doublon de team dans mon tableau
+        $this->gameRounds = array_unique($this->gameRounds, SORT_REGULAR);
     }
 
     public function toArray() : array {

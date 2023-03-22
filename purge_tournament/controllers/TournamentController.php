@@ -61,22 +61,76 @@ class TournamentController extends AbstractController {
             // Je stock le tableau de teams dans une variable
             $teamsParticipation = $tournamentToInsert->getTeams();
 
-            // Je crée mes seizième de finales
+            // Je crée mes Pool
             $last32 = new GameRound('last 32', $tournamentToInsert);
+
+            $last16 = new GameRound('last 16', $tournamentToInsert);
+
+            $last8 = new GameRound('last 8', $tournamentToInsert);
+
+            $last4 = new GameRound('last 4', $tournamentToInsert);
+
+            $last2 = new GameRound('last 2', $tournamentToInsert);
 
             // Je l'insère dans la base de données
             $this->gameRoundManager->insertGameRound($last32);
 
+            $this->gameRoundManager->insertGameRound($last16);
+
+            $this->gameRoundManager->insertGameRound($last8);
+
+            $this->gameRoundManager->insertGameRound($last4);
+
+            $this->gameRoundManager->insertGameRound($last2);
+
             // Pour chaque équipe , je crée un match 1 vs 1 et je l'insère dans la base de données
 
-            for ($i = 0; $i < count($teamsParticipation); $i + 2) {
+            for ($i = 0; $i < 32; $i += 2) {
 
-               $game =  new Game($teamsParticipation[$i],$teamsParticipation[$i++], $last32);
+               $game =  new Game($teamsParticipation[$i],$teamsParticipation[$i+1], $last32);
 
                $this->gameManager->insertGame($game);
+
             }
 
-            header('Location : /res03-projet-final/purge_tournament/admin/tournaments');
+            for ($i = 0; $i < 16; $i += 2) {
+
+               $game =  new Game(null,null, $last16);
+
+               $this->gameManager->insertGame($game);
+
+            }
+
+            for ($i = 0; $i < 8; $i += 2) {
+
+               $game =  new Game(null,null, $last8);
+
+               $this->gameManager->insertGame($game);
+
+            }
+
+            for ($i = 0; $i < 4; $i += 2) {
+
+               $game =  new Game(null,null, $last4);
+
+               $this->gameManager->insertGame($game);
+
+            }
+
+            for ($i = 0; $i < 2; $i += 2) {
+
+               $game =  new Game(null,null, $last2);
+
+               $this->gameManager->insertGame($game);
+
+            }
+
+
+
+            // TODO : Vider la session une fois le tournoi crée
+
+            unset($_SESSION['tournament']);
+            header('Location: /res03-projet-final/purge_tournament/admin/tournaments');
 
 
 
@@ -148,15 +202,66 @@ class TournamentController extends AbstractController {
         $this->renderJson([]);
     }
 
-    public function edit(int $id, array $post) : void {
-        // Edition de tournoi
-    }
+    public function edit(int $id, array $post) : void
+    {
+        // TODO , LA METHODE EST UNE COPIE DE EDIT DE TEAM , A CHANGER
+        /* if (!empty($post['teamName']) && !empty($post['teamP1']) && !empty($post['teamP2']) && !empty($post['teamP3'])
+        && !empty($post['teamP4']) && !empty($post['teamPSub']) && !empty($post['coach']) && !empty($post['logo']) // Je vérifie si le formulaire est bien rempli
+        && $post['formName'] === 'team-edit') { // Si c'est bien le bon formulaire
 
-    public function renderTournaments() : void {
-        // Affiche tous les tournois
+            $teamToUpdate = new Team($post['teamName'], $post['teamP1'], $post['teamP2'], $post['teamP3'],
+            $post['teamP4'], $post['teamPSub'], $post['coach'], $post['logo']); // Je créer une instance de Team pour utiliser l'update du manager
+
+            $teamToUpdate->setId($id); // Je set son id
+
+            $this->teamManager->editTeam($teamToUpdate); // Et je fais la requête pour le mettre à jour
+
+            header('Location: /res03-projet-final/purge_tournament/admin/teams');
+        }
+
+        else { */
+
+
+        /*
+
+        Je veux charger un tournoi
+        Je veux charger tous les rounds correspondant au tournoi
+        Je veux charger toutes les games correspondant aux rounds
+        Je veux charger les teams de chaque game
+        Je veux remplir un tableau qui contient le tournoi qui lui même contient les rounds qui lui même contient les games qui lui même contient les teams
+
+        */
+            // Je fais une requête pour avoir mon tournoi
+            $tournament = $this->tournamentManager->getTournamentById($id);
+
+            // Je fais une requête pour les round correspondant au tournoi
+            $gamesRound = $this->gameRoundManager->getGameRoundsByTournament($tournament);
+
+            // Pour chaque fois je fais une requête pour avoir les games et je les set dans chaque gameround correspondant
+            foreach($gamesRound as $gameRound) {
+
+                $games = $this->gameManager->getGamesByGameRound($gameRound);
+                $gameround->setGames($games);
+
+            }
+
+            // Je set mes gamerounds déjà remplis par les games au préalable dans mon tournoi
+            $tournament->setGameRound($gamesRound);
+
+            $this->render('tournaments/edit', ["tournament" => $tournament], 'private'); // Je render la page pour éditer la team en question
+       // }
+
     }
 
     public function deleteTournament(int $id) : void {
         // Supprimer un tournoi
+    }
+
+
+    public function renderTournaments() : void {
+
+        $tournaments = $this->tournamentManager->getAllTournaments(); // Je fais une requête pour demander la liste des tournois et les stocker dans un tableau
+
+        $this->render('tournaments/tournaments', $tournaments, 'private'); // Je render la page tournaments avec la liste stockée dans $data.
     }
 }

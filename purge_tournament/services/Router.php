@@ -135,7 +135,7 @@ class Router {
 
                                     if($route[3] === "edit") {
                                         match ($route[1]) {
-                                        'tournaments' => $this->tournamentController->edit($route[2]), // J'affiche  /admin/event/:id/edit
+                                        'tournaments' => $this->tournamentController->edit($route[2], $post), // J'affiche  /admin/event/:id/edit
                                         'brackets' =>$this->gameController->edit($route[2]), // J'affiche  /admin/bracket/:id/edit
                                         'teams' => $this->teamController->edit($route[2], $post), // J'affiche  /admin/team/:id/edit
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404
