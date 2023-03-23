@@ -241,14 +241,14 @@ class TournamentController extends AbstractController {
             foreach($gamesRound as $gameRound) {
 
                 $games = $this->gameManager->getGamesByGameRound($gameRound);
-                $gameround->setGames($games);
+                $gameRound->setGames($games);
 
             }
 
             // Je set mes gamerounds déjà remplis par les games au préalable dans mon tournoi
-            $tournament->setGameRound($gamesRound);
+            $tournament->setGameRounds($gamesRound);
 
-            $this->render('tournaments/edit', ["tournament" => $tournament], 'private'); // Je render la page pour éditer la team en question
+            $this->render('tournaments/edit', ["tournament" => $tournament->toArrayTournament()], 'private'); // Je render la page pour éditer la team en question
        // }
 
     }

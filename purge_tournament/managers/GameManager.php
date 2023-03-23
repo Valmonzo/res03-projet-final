@@ -6,13 +6,7 @@ class GameManager extends AbstractManager {
     {
         // Je récupère les games et les teams liées aux games avec un LEFT JOIN
 
-        $query = $this->db->prepare('
-        SELECT * FROM game  JOIN team ON game.team_a = team.id  WHERE game.game_round_id =  :id
-        UNION
-        SELECT * FROM game  JOIN team ON game.team_b = team.id  WHERE game.game_round_id =  :id
-        UNION
-        SELECT * FROM game  JOIN team ON game.winner_team = team.id WHERE game.game_round_id =  :id'
-        );
+        $query = $this->db->prepare('SELECT * FROM game WHERE game_round_id = :id');
 
         $parameters = [
         'id' => $gameRound->getId(),
@@ -20,16 +14,24 @@ class GameManager extends AbstractManager {
         $query->execute($parameters);
         $gamesAsArray = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        var_dump($gamesAsArray);
+
 
         $gamesTab = [];
 
         // Pour chaque donnée de mon fetch, j'hydrate des instances de Game
         foreach ($gamesAsArray as $game) {
        // J'instancie des Team pour chaque game
-            $teamA = new Team($game['team_a']['name'], $game['team_a']['player_one'], $game['team_a']['player_two'], $game['team_a']['player_three'], $game['team_a']['player_four'], $game['team_a']['sub_player'], $game['team_a']['coach'], $game['team_a']['logo']);
-            $teamB = new Team($game['team_b']['name'], $game['team_b']['player_one'], $game['team_b']['player_two'], $game['team_b']['player_three'], $game['team_b']['player_four'], $game['team_b']['sub_player'], $game['team_b']['coach'], $game['team_b']['logo']);
+        if ($game['team_a'] !== NULL && $game['team_b'] !== NULL) {
 
+            $teamA = $this->getTeamById($game['team_a']);
+            $teamB = $this->getTeamById($game['team_b']);
+        }
+
+        else {
+
+            $teamA = NULL;
+            $teamB = NULL;
+        }
 
             $gameToReturn = new Game($teamA, $teamB, $gameRound);
 
@@ -39,7 +41,7 @@ class GameManager extends AbstractManager {
             // Si un gagnant est déjà dans la base de données je le set
             if($game['winner_team'] !== NULL) {
 
-            $winner = new Team($game['winner_team']['name'], $game['winner_team']['player_one'], $game['winner_team']['player_two'], $game['winner_team']['player_three'], $game['winner_team']['player_four'], $game['winner_team']['sub_player'], $game['winner_team']['coach'], $game['winner_team']['logo']);
+            $winner = $this->getTeamById($game['winner_team']);
 
                 $gameToReturn->setWinner($winner);
             }
@@ -50,6 +52,7 @@ class GameManager extends AbstractManager {
 
         // Je retourne mon tableau de GameRound
         return $gamesTab;
+
 
 
     }
@@ -93,6 +96,23 @@ class GameManager extends AbstractManager {
 
         }
 
+    }
+
+
+    private function getTeamById(int $id) : Team {
+        // Récupérer un message par l'id pour le lire
+        $query = $this->db->prepare('SELECT * FROM team WHERE id = :id');
+        $parameters = [
+        'id' => $id
+        ];
+        $query->execute($parameters);
+        $team = $query->fetch(PDO::FETCH_ASSOC);
+
+        $teamToLoad = new Team($team['name'], $team['player_one'], $team['player_two'],
+        $team['player_three'], $team['player_four'], $team['sub_player'], $team['coach'], $team['logo']);
+        $teamToLoad->setId($team['id']);
+
+        return $teamToLoad;
     }
 
 }

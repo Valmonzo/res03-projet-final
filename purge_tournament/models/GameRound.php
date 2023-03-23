@@ -99,6 +99,6 @@ class GameRound {
         );
 
         // Je retourne mon tournoi sous forme de tableau
-        return $matchRoundAsArray;
+        return $gameRoundAsArray;
     }
 }

@@ -125,7 +125,8 @@ class Tournament {
         $this->gameRounds = array_unique($this->gameRounds, SORT_REGULAR);
     }
 
-    public function toArray() : array {
+    public function toArrayTeams() : array
+    {
 
         // Je transforme mon tournoi en tableau
         $tournamentAsArray = get_object_vars($this);
@@ -137,6 +138,22 @@ class Tournament {
         );
 
         // Je retourne mon tournoi sous forme de tableau
+        return $tournamentAsArray;
+    }
+
+    public function toArrayTournament(): array
+    {
+        // Je veux transformer mon tournoi en tableau et tout ce qu'il y a dedans aussi
+
+        // Je commence par transformer mon tournoi en tableau
+        $tournamentAsArray = get_object_vars($this);
+
+        // Je transforme les Rounds dedans qui eux mêmes vont transformer ce qu'il y a à l'intérieur pour retourner un seul et unique tableau
+        $tournamentAsArray['gameRounds'] = array_map(
+            fn (GameRound $gameRound) => $gameRound->toArray(),
+            $this->gameRounds
+        );
+
         return $tournamentAsArray;
     }
 
