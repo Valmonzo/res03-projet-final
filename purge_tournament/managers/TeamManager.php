@@ -2,7 +2,8 @@
 
 class TeamManager extends AbstractManager {
 
-    public function getAllTeams() : array {
+    public function getAllTeams(): array
+    {
         $query = $this->db->prepare('SELECT * FROM team');
         $query->execute();
         $teams = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -19,7 +20,8 @@ class TeamManager extends AbstractManager {
         return $teamsTab;
     }
 
-    public function getTeamById(int $id) : Team {
+    public function getTeamById(int $id): Team 
+    {
         // Récupérer un message par l'id pour le lire
         $query = $this->db->prepare('SELECT * FROM team WHERE id = :id');
         $parameters = [
@@ -36,7 +38,8 @@ class TeamManager extends AbstractManager {
     }
 
 
-    public function insertTeam(Team $team) : Void  {
+    public function insertTeam(Team $team): void  
+    {
         $query = $this->db->prepare('INSERT INTO team (`id`, `name`, `player_one`, `player_two`, `player_three`, `player_four`, `sub_player`, `logo`, `coach` ) VALUES(NULL, :name, :player_one, :player_two, :player_three, :player_four, :sub_player, :logo, :coach)');
 
         $parameters = [
@@ -52,7 +55,8 @@ class TeamManager extends AbstractManager {
         $query->execute($parameters);
     }
 
-    public function editTeam(Team $team) : Void {
+    public function editTeam(Team $team): void 
+    {
 
         $query = $this->db->prepare('UPDATE team SET  name = :name , player_one = :player_one, player_two = :player_two, player_three = :player_three, player_four = :player_four, sub_player = :sub_player, logo = :logo, coach = :coach WHERE id = :id');
         $parameters = [
@@ -71,7 +75,8 @@ class TeamManager extends AbstractManager {
 
     }
 
-    public function deleteTeamById(int $id) : void {
+    public function deleteTeamById(int $id): void
+    {
         // Supprimer une Team
 
         $query = $this->db->prepare('DELETE FROM team WHERE id = :id');

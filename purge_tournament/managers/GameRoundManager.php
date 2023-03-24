@@ -37,6 +37,19 @@ class GameRoundManager extends AbstractManager {
         return $gamesRoundTab;
     }
 
+    public function getGameRoundByTournamentAndGameRoundName(Tournament $tournament, string $gameRoundName): GameRound
+    {
+        $query = $this->db->prepare('SELECT * FROM game_round WHERE tournament_id = :id , name = :name');
+        $parameters = [
+        'id' => $tournament->getId(),
+        'name' => $gameRoundName,
+        ];
+        $query->execute($parameters);
+        $gamesRound = $query->fetch(PDO::FETCH_ASSOC);
+        
+        return $gameRoundToReturn = new GameRound($gameRound['name'], $tournament);
+    }
+
 
     public function insertGameRound(GameRound $gameRound): GameRound
     {

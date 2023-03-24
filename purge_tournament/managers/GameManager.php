@@ -82,8 +82,8 @@ class GameManager extends AbstractManager {
             $query = $this->db->prepare('INSERT INTO game ( `id`, `team_a`, `team_b`, `game_round_id`, `winner_team`) VALUES (NULL, :team_a, :team_b, :game_round_id, :winner_team)');
 
         $parameters = [
-        'team_a' => $game->getTeamA()->getId(),
-        'team_b' => $game->getTeamB()->getId(),
+        'team_a'=>$game->getTeamA()->getId(),
+        'team_b'=>$game->getTeamB()->getId(),
         'game_round_id'=>$game->getGameRound()->getId(),
         'winner_team'=>$game->getWinner(),
         ];
@@ -96,6 +96,18 @@ class GameManager extends AbstractManager {
 
         }
 
+    }
+
+    public function editGame(Game $game): void
+    {
+        $query = $this->db->prepare('UPDATE team SET  team_a = :team_a , team_b = :team_b, winner_team = :winner_team WHERE id = :id');
+        $parameters = [
+        'id'=>$game->getId(),
+        'team_a'=>$game->getTeamA(),
+        'team_b'=>$game->getTeamB(),
+        'winner_team'=>$game->getWinner(),
+        ];
+        $query->execute($parameters);
     }
 
 

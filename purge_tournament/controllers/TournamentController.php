@@ -25,7 +25,8 @@ class TournamentController extends AbstractController {
     // Methodes
 
 
-    public function create(array $post) : void {
+    public function create(array $post): void
+    {
 
         // Création de tournoi
 
@@ -150,7 +151,8 @@ class TournamentController extends AbstractController {
     }
 
 
-    public function addTeam(int $id) : void {
+    public function addTeam(int $id): void
+    {
 
         if(isset($_SESSION['tournament'])) {
             $teamToAdd =  $this->teamManager->getTeamById($id);
@@ -197,12 +199,13 @@ class TournamentController extends AbstractController {
 
     }
 
-    public function resetForm() : void {
+    public function resetForm(): void
+    {
         unset($_SESSION['tournament']);
         $this->renderJson([]);
     }
 
-    public function edit(int $id, array $post) : void
+    public function edit(int $id, array $post): void
     {
         // TODO , LA METHODE EST UNE COPIE DE EDIT DE TEAM , A CHANGER
         /* if (!empty($post['teamName']) && !empty($post['teamP1']) && !empty($post['teamP2']) && !empty($post['teamP3'])
@@ -235,10 +238,10 @@ class TournamentController extends AbstractController {
             $tournament = $this->tournamentManager->getTournamentById($id);
 
             // Je fais une requête pour les round correspondant au tournoi
-            $gamesRound = $this->gameRoundManager->getGameRoundsByTournament($tournament);
+            $gameRounds = $this->gameRoundManager->getGameRoundsByTournament($tournament);
 
             // Pour chaque fois je fais une requête pour avoir les games et je les set dans chaque gameround correspondant
-            foreach($gamesRound as $gameRound) {
+            foreach($gameRounds as $gameRound) {
 
                 $games = $this->gameManager->getGamesByGameRound($gameRound);
                 $gameRound->setGames($games);
@@ -246,20 +249,93 @@ class TournamentController extends AbstractController {
             }
 
             // Je set mes gamerounds déjà remplis par les games au préalable dans mon tournoi
-            $tournament->setGameRounds($gamesRound);
+            $tournament->setGameRounds($gameRounds);
 
-            $this->render('tournaments/edit', ["tournament" => $tournament->toArrayTournament()], 'private'); // Je render la page pour éditer la team en question
+            $this->render('tournaments/edit/edit', ["tournament" => $tournament->toArrayTournament()], 'private'); // Je render la page pour éditer la team en question
        // }
 
     }
 
-    public function deleteTournament(int $id) : void {
+
+    public function addWinner(int $id, array $post): void
+    {
+        $tournament = $this->tournamentManager->getTournamentById($id);
+
+        $winners = [];
+        $formName = $post['formName'];
+        $gameRounds = $this->gameRoundManager->getGameRoundsByTournament($tournament);
+
+        foreach($post as $key=>$team) {
+
+            while($key !== 'formName') {
+
+            $winner = $this->teamManager->getTeamById(intval($team));
+            $winners[] = $winner;
+
+            }
+        }
+
+        if($formName === 'tournament-edit-32') {
+
+            $gameRound = $this->getGameRoundByTournamentAndGameRoundName($tournament, "last 32");
+
+            $games32 = $this->gameManager->getGamesByGameRound($gameRound);
+
+            foreach($games32 as $game) {
+
+                $teamA = $game->getTeamA();
+
+                $teamB = $game->getTeamB();
+
+                foreach ($winners as $winner) {
+
+                    if ($teamA->getId() === $winner->getId() || $teamB->getId() === $winner->getId()) {
+
+                        $game->setWinner($winner);
+
+                        $this->gameManager->editGame($game);
+
+                    }
+                }
+
+            }
+
+            for ($i = 0; $i<= count($winners); $i+= 2) {
+
+                $gameRound16 = $this->gameRoundManager->getGameRoundByTournamentAndGameRoundName($tournament, "last 16");
+
+                $games16 = $this->gameManager->getGamesByGameRound($gameRound16);
+
+                foreach($game16 as $game) {
+
+                    $game->setTeamA($winner[$i]);
+
+                    $game->setTeamB($winner[$i+1]);
+
+                    $this->gameManager->editGame($game);
+
+                }
+
+
+            }
+
+            $this->renderJson([]);
+        }
+
+        else if($formName === 'tournament-edit-16') {
+            // Même chose pour le round d'après
+        }
+
+    }
+
+    public function deleteTournament(int $id): void
+    {
         // Supprimer un tournoi
     }
 
 
-    public function renderTournaments() : void {
-
+    public function renderTournaments(): void
+    {
         $tournaments = $this->tournamentManager->getAllTournaments(); // Je fais une requête pour demander la liste des tournois et les stocker dans un tableau
 
         $this->render('tournaments/tournaments', $tournaments, 'private'); // Je render la page tournaments avec la liste stockée dans $data.
