@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded', function() {
             body: formData
         };
 
-        fetch(`https://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/admin/tournaments/${tournamentId}/add-winner`)
+        fetch(`https://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/admin/tournaments/${tournamentId}/add-winner`, options)
             .then(response => response.json())
             .then(data => {
                 console.log(data);

@@ -41,9 +41,7 @@ class GameManager extends AbstractManager {
             // Si un gagnant est déjà dans la base de données je le set
             if($game['winner_team'] !== NULL) {
 
-            $winner = $this->getTeamById($game['winner_team']);
-
-                $gameToReturn->setWinner($winner);
+                $gameToReturn->setWinner($game['winner_team']);
             }
 
             // Je push chaque gameRound dans un tableau
@@ -100,11 +98,11 @@ class GameManager extends AbstractManager {
 
     public function editGame(Game $game): void
     {
-        $query = $this->db->prepare('UPDATE team SET  team_a = :team_a , team_b = :team_b, winner_team = :winner_team WHERE id = :id');
+        $query = $this->db->prepare('UPDATE game SET  team_a = :team_a , team_b = :team_b, winner_team = :winner_team WHERE id = :id');
         $parameters = [
         'id'=>$game->getId(),
-        'team_a'=>$game->getTeamA(),
-        'team_b'=>$game->getTeamB(),
+        'team_a'=>$game->getTeamA()->getId(),
+        'team_b'=>$game->getTeamB()->getId(),
         'winner_team'=>$game->getWinner(),
         ];
         $query->execute($parameters);

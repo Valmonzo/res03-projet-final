@@ -259,27 +259,26 @@ class TournamentController extends AbstractController {
 
     public function addWinner(int $id, array $post): void
     {
+
+
+
         $tournament = $this->tournamentManager->getTournamentById($id);
 
-        $winners = [];
         $formName = $post['formName'];
+
         $gameRounds = $this->gameRoundManager->getGameRoundsByTournament($tournament);
 
-        foreach($post as $key=>$team) {
+        $gameRound16 = $this->gameRoundManager->getGameRoundByTournamentAndGameRoundName($tournament, "last 16");
 
-            while($key !== 'formName') {
+        $games16 = $this->gameManager->getGamesByGameRound($gameRound16);
 
-            $winner = $this->teamManager->getTeamById(intval($team));
-            $winners[] = $winner;
 
-            }
-        }
 
         if($formName === 'tournament-edit-32') {
 
-            $gameRound = $this->getGameRoundByTournamentAndGameRoundName($tournament, "last 32");
+            $gameRound32 = $this->gameRoundManager->getGameRoundByTournamentAndGameRoundName($tournament, "last 32");
 
-            $games32 = $this->gameManager->getGamesByGameRound($gameRound);
+            $games32 = $this->gameManager->getGamesByGameRound($gameRound32);
 
             foreach($games32 as $game) {
 
@@ -287,37 +286,34 @@ class TournamentController extends AbstractController {
 
                 $teamB = $game->getTeamB();
 
-                foreach ($winners as $winner) {
+                foreach ($post as $key=>$winner) {
 
-                    if ($teamA->getId() === $winner->getId() || $teamB->getId() === $winner->getId()) {
+                    if ($key !== 'formName') {
 
-                        $game->setWinner($winner);
+                        if ($teamA->getId() === intval($winner) || $teamB->getId() === intval($winner)) {
 
-                        $this->gameManager->editGame($game);
+                            $game->setWinner(intval($winner));
 
+                            $this->gameManager->editGame($game);
+
+                        }
                     }
                 }
 
             }
+                for($i = 1; $i <= 16; $i+=2) {
+                    
+                    // TODO : Les deux mêmes teams se glissent dans les nouvelles games. 
 
-            for ($i = 0; $i<= count($winners); $i+= 2) {
+                    foreach($games16 as $game) {
 
-                $gameRound16 = $this->gameRoundManager->getGameRoundByTournamentAndGameRoundName($tournament, "last 16");
+                        $game->setTeamA($this->teamManager->getTeamById($post[$i]));
 
-                $games16 = $this->gameManager->getGamesByGameRound($gameRound16);
+                        $game->setTeamB($this->teamManager->getTeamById($post[$i+1]));
 
-                foreach($game16 as $game) {
-
-                    $game->setTeamA($winner[$i]);
-
-                    $game->setTeamB($winner[$i+1]);
-
-                    $this->gameManager->editGame($game);
-
+                        $this->gameManager->editGame($game);
+                    }
                 }
-
-
-            }
 
             $this->renderJson([]);
         }

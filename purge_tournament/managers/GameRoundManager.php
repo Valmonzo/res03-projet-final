@@ -39,15 +39,18 @@ class GameRoundManager extends AbstractManager {
 
     public function getGameRoundByTournamentAndGameRoundName(Tournament $tournament, string $gameRoundName): GameRound
     {
-        $query = $this->db->prepare('SELECT * FROM game_round WHERE tournament_id = :id , name = :name');
+        $query = $this->db->prepare('SELECT * FROM game_round WHERE tournament_id = :id AND name = :name');
         $parameters = [
         'id' => $tournament->getId(),
         'name' => $gameRoundName,
         ];
         $query->execute($parameters);
-        $gamesRound = $query->fetch(PDO::FETCH_ASSOC);
-        
-        return $gameRoundToReturn = new GameRound($gameRound['name'], $tournament);
+        $gameRound = $query->fetch(PDO::FETCH_ASSOC);
+
+        $gameRoundToReturn = new GameRound($gameRound['name'], $tournament);
+        $gameRoundToReturn->setId($gameRound['id']);
+
+        return $gameRoundToReturn;
     }
 
 
