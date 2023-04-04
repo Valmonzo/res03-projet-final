@@ -104,10 +104,9 @@
                     </fieldset>
               <?php  } ?>
     </section>
-    <input type="submit" value="Générer la finale" name="edit" class="btn-edit"/>
+    <input type="submit" value="Vainqueur du tournoi" name="edit" class="btn-edit"/>
     <input type="hidden" name="formName" value="tournament-edit-2" idTournoi="<?= $data['tournament']['id']?>" id="tournamentId"/>
 </form>
 <button id="reset-tournament">Reset</button>
 
 
-<?php var_dump($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[0]->getName()); ?>

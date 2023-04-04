@@ -24,21 +24,21 @@ class Contact
 
     // Getters
 
-     public function getId() : ?int
+     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getEmail() : string
+    public function getEmail(): string
     {
         return $this->email;
     }
-    public function getMessage() : string
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -46,25 +46,23 @@ class Contact
 
     // Setters
 
-    public function setId(int $id) : void
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
 
 
-    public function setName(string $name) : void
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    public function setEmail(string $email) : void
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
 
-
-
-    public function setMessage(string $message) : void
+    public function setMessage(string $message): void
     {
         $this->password = $password;
     }

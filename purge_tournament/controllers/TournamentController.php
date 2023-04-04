@@ -261,6 +261,7 @@ class TournamentController extends AbstractController {
     {
 
 
+        // Je récupère toutes les infos dont j'ai besoin dans ma base de données
 
         $tournament = $this->tournamentManager->getTournamentById($id);
 
@@ -285,6 +286,7 @@ class TournamentController extends AbstractController {
         $game2 = $this->gameManager->getGamesByGameRound($gameRound2);
 
 
+        // Si mes winners concernent le formulaire du top 32
 
         if($formName === 'tournament-edit-32') {
 
@@ -293,6 +295,8 @@ class TournamentController extends AbstractController {
             $games32 = $this->gameManager->getGamesByGameRound($gameRound32);
 
             foreach($games32 as $game) {
+
+            // Je récupère chaque team dans chaque game du gameRound et je compare avec la valeur de la radio pour déterminer le vainqueur
 
                 $teamA = $game->getTeamA();
 
@@ -303,6 +307,8 @@ class TournamentController extends AbstractController {
                     if ($key !== 'formName') {
 
                         if ($teamA->getId() === intval($winner) || $teamB->getId() === intval($winner)) {
+
+                            // Si résultat positif, j'ajoute le winner à la game
 
                             $game->setWinner(intval($winner));
 
@@ -315,7 +321,7 @@ class TournamentController extends AbstractController {
             }
 
 
-                    // TODO : Les deux mêmes teams se glissent dans les nouvelles games.
+                // Je récupère mes games du top d'après et je set les team dans chaque match
 
                     $i = 1;
 
@@ -361,9 +367,8 @@ class TournamentController extends AbstractController {
             }
 
 
-                    // TODO : Les deux mêmes teams se glissent dans les nouvelles games.
 
-                    $i = 1;
+                    $i = 17;
 
                     foreach($games8 as $game) {
 
@@ -405,10 +410,7 @@ class TournamentController extends AbstractController {
 
             }
 
-
-                    // TODO : Les deux mêmes teams se glissent dans les nouvelles games.
-
-                    $i = 1;
+                    $i = 25;
 
                     foreach($games4 as $game) {
 
@@ -453,9 +455,9 @@ class TournamentController extends AbstractController {
 
                     // TODO : Les deux mêmes teams se glissent dans les nouvelles games.
 
-                    $i = 1;
+                    $i = 29;
 
-                    foreach($games2 as $game) {
+                    foreach($game2 as $game) {
 
 
                         $game->setTeamA($this->teamManager->getTeamById($post[$i]));
@@ -473,17 +475,29 @@ class TournamentController extends AbstractController {
 
         else if ($formName === 'tournament-edit-2') {
 
-            $game2->setWinner($post[1]);
-            $winner = $this->teamManager->getTeamById($post[1]);
+            $game2[0]->setWinner($post[31]);
+            $winner = $this->teamManager->getTeamById($post[31]);
             $winnerToJson = $winner->toArray();
             $this->renderJson([$winnerToJson]);
         }
 
     }
 
-    public function deleteTournament(int $id): void
+    public function deleteTournament(int $id): void // TODO A TESTER
     {
-        // Supprimer un tournoi
+        // Supprimer un tournoi, le but est aussi de supprimer tout ce qui est en rapport avec le tournoi donc les games et les gameRounds
+        $tournamentToDelete = $this->tournamentManager->getTournamentById($id);
+        $gameRoundsToDelete = $this->gameRoundManager->getGameRoundsByTournament($tournamentToDelete);
+
+
+        // Pour chaque gameRound présent dans le tournoi , je vais supprimer les games
+        foreach ($gameRoundsToDelete as $gameRound) {
+            $this->gameManager->deleteGamesByGameRoundId($gameRound->getId());
+            $this->gameRoundManager->deleteGameRoundByTournamentId($id);
+        }
+
+        $this->tournamentManager->deleteTournamentById($id);
+
     }
 
 
