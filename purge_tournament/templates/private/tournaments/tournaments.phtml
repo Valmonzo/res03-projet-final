@@ -1,32 +1,32 @@
-<h2>Liste des tournois</h2>
-
-<main>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Jeu</th>
-                            <th>Description</th>
-                            <th>Date</th>
-                            <th>Editer</th>
-                            <th>Supprimer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            foreach($data as $tournament) { ?>
-                            <tr>
-                                <td><?= $tournament->getName(); ?></td>
-                                <td><?= $tournament->getGameName(); ?></td>
-                                <td><?= $tournament->getDescription(); ?></td>
-                                <td><?= $tournament->getDate(); ?></td>
-                                </td>
-                                <td><button><a href="/res03-projet-final/purge_tournament/admin/tournaments/<?= $tournament->getId(); ?>/edit">Modifier</a></button></td>
-                                <td><button><a href="/res03-projet-final/purge_tournament/admin/tournaments/<?= $tournament->getId(); ?>/delete">Supprimer</a></td>
-                            </tr>
-                            <?php
-                            }
-                            ?>
-                    </tbody>
-                    </table>
-                    <button><a href="/res03-projet-final/purge_tournament/admin/tournaments/create">Créer un tournoi</a></button>
+<section id="admin-teams-list">
+    <h2>Liste des tournois</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Jeu</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                foreach($data as $tournament) { ?>
+                <tr>
+                    <td><?= $tournament->getName(); ?></td>
+                    <td><?= $tournament->getGameName(); ?></td>
+                    <td><?= $tournament->getDescription(); ?></td>
+                    <td><?= $tournament->getDate(); ?></td>
+                    </td>
+                    <td><button><a href="/res03-projet-final/purge_tournament/admin/tournaments/<?= $tournament->getId(); ?>/edit">Modifier</a></button></td>
+                    <td><button><a href="/res03-projet-final/purge_tournament/admin/tournaments/<?= $tournament->getId(); ?>/delete">Supprimer</a></td>
+                </tr>
+                <?php
+                }
+                ?>
+        </tbody>
+    </table>
+    <button><a href="/res03-projet-final/purge_tournament/admin/tournaments/create">Créer un tournoi</a></button>
+</section>

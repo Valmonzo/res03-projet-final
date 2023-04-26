@@ -1,4 +1,26 @@
 @import "reset";
 @import "vars";
-@import "partials/_header";
+@import "partials/header";
 @import "tournaments/create-tournament";
+@import "tournaments/tournaments";
+@import "teams/teams";
+@import "teams/edit-team";
+@import "forms/login";
+@import "forms/contact";
+@import "partials/footer";
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+main {
+    min-height: 80vh;
+}

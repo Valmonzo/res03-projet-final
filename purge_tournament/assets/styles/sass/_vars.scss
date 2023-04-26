@@ -1,19 +1,9 @@
 //Colors
-$primary_black: #250d14;
-$primary_yellow: #fbb304;
-$primary_white: #eeebe8;
-$primary_red: #d01f18;
-$primary_grey: #91848c;
+$primary-black: #250d14;
+$primary-yellow: #fbb304;
+$primary-white: #eeebe8;
+$primary-red: #d01f18;
+$primary-grey: #91848c;
 
-// Accessibilité 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
+// Breakpoints:
+$breakpoint-medium: 768px;

@@ -1,0 +1,112 @@
+// Main styles
+#teams-list-title {
+    color: $primary-black;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 30px 0;
+    text-align: center;
+}
+
+#teams-list {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+
+        th {
+            background-color: $primary-black;
+            color: $primary-white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            border-bottom: 1px solid $primary-grey;
+            padding: 10px;
+            vertical-align: top;
+
+            &:first-child {
+                font-weight: bold;
+                color: $primary-black;
+            }
+
+            img {
+                max-width: 100px;
+                height: auto;
+            }
+
+            button {
+                background-color: $primary-yellow;
+                color: $primary-black;
+                border: none;
+                padding: 10px;
+                margin-right: 10px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    background-color: $primary-white;
+                    color: $primary-black;
+                }
+            }
+        }
+    }
+
+    button {
+        background-color: $primary-yellow;
+        color: $primary-black;
+        border: none;
+        padding: 10px;
+        margin-top: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-bottom: 3vh;
+
+        &:hover {
+            background-color: $primary-white;
+            color: $primary-black;
+        }
+    } // Media Query pour rendre le tableau responsive
+    @media screen and (max-width: 600px) {
+        table {
+            th,
+            td {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            td:first-child {
+                margin-top: 10px;
+            }
+
+            td:last-child {
+                margin-bottom: 10px;
+            }
+
+            tr {
+                border-bottom: none;
+
+                td {
+                    border-bottom: 1px solid $primary-grey;
+                }
+
+                td:before {
+                    content: attr(data-th);
+                    font-weight: bold;
+                    display: inline-block;
+                    width: 80px;
+                    margin-right: 10px;
+                    color: $primary-black;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

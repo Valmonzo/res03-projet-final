@@ -1,35 +1,35 @@
-<h2>Editer une team</h2>
-<form action="/res03-projet-final/purge_tournament/admin/teams/<?= $data['team']->getId(); ?>/edit" method="post">
+<form action="/res03-projet-final/purge_tournament/admin/teams/<?= $data['team']->getId(); ?>/edit" method="post" id="form-team-edit">
+    <h2>Editer la team <?= $data["team"]->getName(); ?></h2>
     <fieldset>
-    <label for="teamName">Team Name</label>
+    <label for="teamName">Nom de la team</label>
     <input type="text" name="teamName" value="<?= $data["team"]->getName(); ?>"/>
     </fieldset>
     <fieldset>
-    <label for="teamP1">Player One</label>
+    <label for="teamP1">Joueur 1</label>
     <input type="text" name="teamP1" value="<?= $data["team"]->getPlayerOne(); ?>"/>
     </fieldset>
     <fieldset>
-    <label for="teamP2">Player Two</label>
+    <label for="teamP2">Joueur 2</label>
     <input type="text" name="teamP2" value="<?= $data["team"]->getPlayerTwo(); ?>"/>
     </fieldset>
     <fieldset>
-    <label for="teamP3">Player Three</label>
+    <label for="teamP3">Joueur 3</label>
     <input type="text" name="teamP3" value="<?= $data["team"]->getPlayerThree(); ?>"/>
     </fieldset>
     <fieldset>
-    <label for="teamP4">Player Four</label>
+    <label for="teamP4">Joueur 4</label>
     <input type="text" name="teamP4" value="<?= $data["team"]->getPlayerFour(); ?>"/>
     </fieldset>
     <fieldset>
-    <label for="teamPSub">Sub Player</label>
+    <label for="teamPSub">Remplaçant</label>
     <input type="text" name="teamPSub" value="<?= $data["team"]->getSubPlayer(); ?>"/>
     </fieldset>
     <fieldset>
-    <label for="coach">Coach Name</label>
+    <label for="coach">Nom du coach</label>
     <input type="text" name="coach" value="<?= $data["team"]->getCoach(); ?>"/>
     </fieldset>
     <fieldset>
-    <label for="logo">URL of your logo</label>
+    <label for="logo">Logo de la team</label>
     <input type="url" name="logo" value="<?= $data["team"]->getLogo(); ?>"/>
     </fieldset>
     <fieldset>

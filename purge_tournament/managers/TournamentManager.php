@@ -6,7 +6,7 @@ class TournamentManager extends AbstractManager {
 
     public function insertTournament(Tournament $tournament): Tournament
     {
-
+        var_dump($tournament);
         $dateToConvert = strtotime($tournament->getDate());
         $date = date("Y-m-d H:i:s", $dateToConvert);
 

@@ -27,7 +27,6 @@ class TournamentController extends AbstractController {
 
     public function create(array $post): void
     {
-
         // Création de tournoi
 
         // Vérification du formulaire
@@ -143,11 +142,6 @@ class TournamentController extends AbstractController {
 
             $this->render('tournaments/create',['teams'=> $teams], 'private' );
         }
-
-      //  $tournamentToInsert = new Tournament();
-     //  $this->tournamentManager->insertTournament($tournamentToInsert);
-
-     //$this->render('tournaments/create', [], 'private');
     }
 
 
@@ -176,7 +170,7 @@ class TournamentController extends AbstractController {
 
             $teamToJson = $teamToAdd->toArray();
 
-            $_SESSION['tournament'] = $tournament->toArray();
+            $_SESSION['tournament'] = $tournament->toArrayTournament();
 
             $this->renderJson($teamToJson);
         }
@@ -191,7 +185,7 @@ class TournamentController extends AbstractController {
 
             $teamToJson = $teamToAdd->toArray();
 
-            $_SESSION['tournament'] = $newTournament->toArray();
+            $_SESSION['tournament'] = $newTournament->toArrayTournament();
 
             $this->renderJson($teamToJson);
         }
@@ -207,24 +201,6 @@ class TournamentController extends AbstractController {
 
     public function edit(int $id, array $post): void
     {
-        // TODO , LA METHODE EST UNE COPIE DE EDIT DE TEAM , A CHANGER
-        /* if (!empty($post['teamName']) && !empty($post['teamP1']) && !empty($post['teamP2']) && !empty($post['teamP3'])
-        && !empty($post['teamP4']) && !empty($post['teamPSub']) && !empty($post['coach']) && !empty($post['logo']) // Je vérifie si le formulaire est bien rempli
-        && $post['formName'] === 'team-edit') { // Si c'est bien le bon formulaire
-
-            $teamToUpdate = new Team($post['teamName'], $post['teamP1'], $post['teamP2'], $post['teamP3'],
-            $post['teamP4'], $post['teamPSub'], $post['coach'], $post['logo']); // Je créer une instance de Team pour utiliser l'update du manager
-
-            $teamToUpdate->setId($id); // Je set son id
-
-            $this->teamManager->editTeam($teamToUpdate); // Et je fais la requête pour le mettre à jour
-
-            header('Location: /res03-projet-final/purge_tournament/admin/teams');
-        }
-
-        else { */
-
-
         /*
 
         Je veux charger un tournoi
@@ -237,7 +213,7 @@ class TournamentController extends AbstractController {
             // Je fais une requête pour avoir mon tournoi
             $tournament = $this->tournamentManager->getTournamentById($id);
 
-            // Je fais une requête pour les round correspondant au tournoi
+            // Je fais une requête pour les rounds correspondant au tournoi
             $gameRounds = $this->gameRoundManager->getGameRoundsByTournament($tournament);
 
             // Pour chaque fois je fais une requête pour avoir les games et je les set dans chaque gameround correspondant

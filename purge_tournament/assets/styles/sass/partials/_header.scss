@@ -1,0 +1,126 @@
+// Header
+#main-header {
+    font-family: 'Monserrat', sans-serif;
+    font-size: 1.3rem;
+    background-color: $primary-black;
+    color: $primary-white;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    width: 100%; // Navigation
+    nav {
+        width: 100%;
+        ul {
+            width: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            align-items: center;
+
+            li {
+                margin: 0 2%;
+                width: 100%;
+
+                a {
+                    color: $primary-white;
+                    text-decoration: none;
+                    display: block;
+                    padding: 2%;
+                    width: 30%;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background-color: lighten($primary-black, 10%);
+                    }
+
+                    figure {
+                        margin: 0;
+                        img {
+                            height: 3vw;
+                            width: auto;
+                        }
+                    }
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    } // Media queries
+    @media screen and (max-width: 768px) {
+        nav {
+            ul {
+                flex-direction: column;
+
+                li {
+                    margin: 2% 0;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#admin-header {
+    background-color: $primary-black;
+    color: $primary-white;
+    padding: 10px;
+
+    nav {
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+                display: inline-block;
+                margin: 0 10px;
+
+                a {
+                    color: $primary-white;
+                    text-decoration: none;
+                    padding: 5px;
+                    display: block;
+
+                    &:hover {
+                        background-color: $primary-white;
+                        color: $primary-black;
+                    }
+                }
+            }
+        }
+    } // Media Query pour rendre le header responsive
+    @media screen and (max-width: 600px) {
+        nav {
+            ul {
+                li {
+                    display: block;
+                    margin: 0;
+
+                    a {
+                        padding: 10px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

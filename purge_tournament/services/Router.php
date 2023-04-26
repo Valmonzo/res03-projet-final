@@ -159,11 +159,8 @@ class Router {
                                         $this->tournamentController->addWinner(intval($route[2]), $post); // J'appelle la méthode de mon controller qui va récupere le tournoi par l'id, récuperer son round et ajouter les winners pour les setup au prochain round
                                     }
 
-
                                     else {
-
                                             $this->rendererController->page404(); // Si le chemin est mauvais je redirige sur 404 /page404
-
                                     }
                                 }
 
