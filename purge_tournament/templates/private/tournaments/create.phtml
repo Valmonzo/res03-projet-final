@@ -1,5 +1,5 @@
-<h2>Créer un tournoi</h2>
 <form action="/res03-projet-final/purge_tournament/admin/tournaments/create" method="post" id="tournament-form">
+    <h2>Créer un tournoi</h2>
     <section class="top32-info" id="tournament-info">
     <fieldset>
         <label for="tournamentName">Name</label>
@@ -15,8 +15,7 @@
     </fieldset>
     <fieldset>
         <label for="tournamentDescription">Description</label>
-        <textarea name="tournamentDescription">
-        </textarea>
+        <textarea name="tournamentDescription"></textarea>
     </fieldset>
     <fieldset>
         <label for="streamURL">Stream URL</label>
@@ -35,7 +34,7 @@
         }
         ?>
     </section>
-    <input type="submit" value="Create" name="create" id="tournament-create-btn"/>
+    <input type="submit" value="Créer" name="créer" id="tournament-create-btn"/>
     <input type="hidden" name="formName" value="tournament-create"/>
     <button id="reset-tournament">reset</button>
 </form>

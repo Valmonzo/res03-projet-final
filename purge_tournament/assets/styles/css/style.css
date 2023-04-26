@@ -238,39 +238,262 @@ table {
 }
 
 #tournament-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-#tournament-form #tournament-info {
-  grid-row: 1/2;
-  grid-column: 1/3;
+  font-family: "Monserrat", sans-serif;
   display: flex;
   flex-direction: column;
-  padding: 3vh 8vw;
-}
-#tournament-form #tournament-info > fieldset {
-  display: flex;
-  flex-direction: column;
-}
-#tournament-form > #tournament-create-btn {
-  grid-row: 3/4;
-  width: 50%;
-  align-self: center;
-  justify-self: center;
-}
-#tournament-form > #reset-tournament {
-  grid-row: 3/4;
-  width: 50%;
-  align-self: center;
-  justify-self: center;
-}
-#tournament-form > section:not(:first-of-type) {
-  grid-row: 2/3;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  margin: 2vh auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #eeebe8;
+}
+#tournament-form h2 {
+  color: #d01f18;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#tournament-form .top32-info {
+  margin-bottom: 30px;
+}
+#tournament-form .top32-info fieldset {
+  display: flex;
   flex-direction: column;
-  padding-bottom: 4vh;
+  margin-bottom: 20px;
+}
+#tournament-form .top32-info label {
+  color: #250d14;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+#tournament-form .top32-info input[type=text],
+#tournament-form .top32-info input[type=datetime-local],
+#tournament-form .top32-info input[type=url],
+#tournament-form .top32-info textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #91848c;
+  color: #eeebe8;
+  font-size: 1.2rem;
+}
+#tournament-form .top32-info input[type=submit],
+#tournament-form .top32-info button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+#tournament-form .top32-info input[type=submit] {
+  background-color: #fbb304;
+  color: #250d14;
+}
+#tournament-form .top32-info input[type=submit]:hover {
+  background-color: #c98f03;
+}
+#tournament-form #tournament-create-btn {
+  background-color: #fbb304;
+  color: #eeebe8;
+  border: none;
+  border-radius: 4px;
+  width: 20%;
+  text-transform: uppercase;
+  margin-top: 2vh;
+}
+#tournament-form #reset-tournament {
+  background-color: #d01f18;
+  color: #eeebe8;
+  border: none;
+  border-radius: 4px;
+  width: 15%;
+  text-transform: uppercase;
+  margin-top: 2vh;
+}
+#tournament-form #reset-tournament:hover {
+  background-color: #a21813;
+}
+#tournament-form .top32 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#tournament-form .top32 fieldset {
+  flex-basis: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+#tournament-form .top32 label {
+  color: #250d14;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+#tournament-form .top32 input[type=text] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eeebe8;
+  color: #250d14;
+  font-size: 1rem;
+}
+#tournament-form .top32 input[type=text]:focus {
+  outline: none;
+  box-shadow: 0 0 5px #fbb304;
+}
+#tournament-form .top32 textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eeebe8;
+  color: #250d14;
+  font-size: 1rem;
+}
+#tournament-form .top32 textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #fbb304;
+}
+#tournament-form .top32 input[type=submit] {
+  flex-basis: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  #tournament-form {
+    padding: 10px;
+  }
+  .top32-info,
+  .top32 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .top32 fieldset {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .top32 input[type=text],
+  .top32 input[type=datetime-local],
+  .top32 input[type=url],
+  .top32 textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: #eeebe8;
+    color: #250d14;
+  }
+  #tournament-create-btn,
+  #reset-tournament {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+#edit-tournament {
+  font-family: "Monserrat", sans-serif;
+}
+#edit-tournament h2 {
+  margin: 1rem 0;
+  color: #d01f18;
+}
+#edit-tournament label {
+  display: block;
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+#edit-tournament input,
+#edit-tournament textarea {
+  padding: 0.5rem;
+  border: 1px solid #91848c;
+  margin: 0.5rem 0;
+}
+#edit-tournament input[type=submit] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #d01f18;
+  color: #eeebe8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#edit-tournament input[type=submit]:hover {
+  background-color: #e83a33;
+}
+#edit-tournament .top32-edit,
+#edit-tournament .top16-edit,
+#edit-tournament .top8-edit,
+#edit-tournament .top4-edit,
+#edit-tournament .top2-edit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #91848c;
+  color: #eeebe8;
+}
+#edit-tournament h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+  color: #d01f18;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#edit-tournament input[type=text],
+#edit-tournament input[type=url],
+#edit-tournament input[type=datetime-local],
+#edit-tournament textarea {
+  width: 100%;
+  max-width: 100%;
+  background-color: #eeebe8;
+  color: #250d14;
+}
+#edit-tournament input[type=text],
+#edit-tournament input[type=url],
+#edit-tournament input[type=datetime-local] {
+  border-radius: 0.25rem;
+}
+#edit-tournament textarea {
+  border-radius: 0.25rem;
+  height: 6rem;
+}
+#edit-tournament .btn-edit {
+  margin: 0.5rem;
+  background-color: #d01f18;
+  color: #eeebe8;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#edit-tournament .btn-edit:hover {
+  background-color: #e83a33;
+}
+#edit-tournament #reset-tournament {
+  margin: 0.5rem;
+  background-color: #fbb304;
+  color: #eeebe8;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#edit-tournament #reset-tournament:hover {
+  background-color: #e83a33;
 }
 
 #admin-teams-list {

@@ -1,0 +1,107 @@
+#edit-tournament {
+    font-family: 'Monserrat', sans-serif;
+    h2 {
+        margin: 1rem 0;
+        color: $primary-red;
+    }
+
+    label {
+        display: block;
+        margin: 1rem 0;
+        text-transform: uppercase;
+    }
+
+    input,
+    textarea {
+        padding: 0.5rem;
+        border: 1px solid $primary-grey;
+        margin: 0.5rem 0;
+    }
+
+    input[type="submit"] {
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.25rem;
+        background-color: $primary-red;
+        color: $primary-white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: lighten($primary-red, 10%);
+        }
+    }
+
+    .top32-edit,
+    .top16-edit,
+    .top8-edit,
+    .top4-edit,
+    .top2-edit {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0;
+        padding: 1rem;
+        background-color: $primary-grey;
+        color: $primary-white;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+        color: $primary-red;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    input[type="datetime-local"],
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        background-color: $primary-white;
+        color: $primary-black;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    input[type="datetime-local"] {
+        border-radius: 0.25rem;
+    }
+
+    textarea {
+        border-radius: 0.25rem;
+        height: 6rem;
+    }
+
+    .btn-edit {
+        margin: 0.5rem;
+        background-color: $primary-red;
+        color: $primary-white;
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: lighten($primary-red, 10%);
+        }
+    }
+
+    #reset-tournament {
+        margin: 0.5rem;
+        background-color: $primary-yellow;
+        color: $primary-white;
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+            background-color: lighten($primary-red, 10%);
+        }
+    }
+}
