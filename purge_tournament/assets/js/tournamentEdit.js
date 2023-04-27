@@ -124,6 +124,8 @@ function editTournament() {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
+                let winnerContainer = document.querySelector('#winner-section');
+                winnerContainer.innerHTML = `Le vainqueur du tournoi est ${data[0].name}.`;
             });
 
 

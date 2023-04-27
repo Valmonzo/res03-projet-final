@@ -51,7 +51,7 @@
         font-size: 1.5rem;
         text-align: center;
         width: 100%;
-        color: $primary-red;
+        color: $primary-black;
         text-transform: uppercase;
         font-weight: 600;
     }
@@ -76,6 +76,15 @@
         border-radius: 0.25rem;
         height: 6rem;
     }
+
+    input[type="radio"]+label {
+        position: relative;
+        display: inline-block;
+        padding-left: 25px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
 
     .btn-edit {
         margin: 0.5rem;
@@ -103,5 +112,15 @@
         &:hover {
             background-color: lighten($primary-red, 10%);
         }
+    }
+
+    #winner-section {
+        background-color: $primary-red;
+        padding: 20px;
+        margin-top: 1vh;
+        border-radius: 5px;
+        color: $primary-white;
+        font-size: 24px;
+        text-align: center;
     }
 }

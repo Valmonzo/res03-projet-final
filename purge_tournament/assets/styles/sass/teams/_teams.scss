@@ -49,6 +49,11 @@
                 cursor: pointer;
                 transition: all 0.2s;
 
+                &>a {
+                    text-decoration: none;
+
+                }
+
                 &:hover {
                     background-color: $primary-white;
                     color: $primary-black;
@@ -68,43 +73,48 @@
         transition: all 0.2s;
         margin-bottom: 3vh;
 
+        &>a {
+            text-decoration: none;
+
+        }
+
         &:hover {
             background-color: $primary-white;
             color: $primary-black;
         }
-    } // Media Query pour rendre le tableau responsive
-    @media screen and (max-width: 600px) {
-        table {
-            th,
-            td {
-                display: block;
-                width: 100%;
-                text-align: center;
-            }
-
-            td:first-child {
-                margin-top: 10px;
-            }
-
-            td:last-child {
-                margin-bottom: 10px;
-            }
-
-            tr {
-                border-bottom: none;
-
+        @media screen and (max-width: 600px) {
+            table {
+                th,
                 td {
-                    border-bottom: 1px solid $primary-grey;
+                    display: block;
+                    width: 100%;
+                    text-align: center;
                 }
 
-                td:before {
-                    content: attr(data-th);
-                    font-weight: bold;
-                    display: inline-block;
-                    width: 80px;
-                    margin-right: 10px;
-                    color: $primary-black;
-                    text-align: left;
+                td:first-child {
+                    margin-top: 10px;
+                }
+
+                td:last-child {
+                    margin-bottom: 10px;
+                }
+
+                tr {
+                    border-bottom: none;
+
+                    td {
+                        border-bottom: 1px solid $primary-grey;
+                    }
+
+                    td:before {
+                        content: attr(data-th);
+                        font-weight: bold;
+                        display: inline-block;
+                        width: 80px;
+                        margin-right: 10px;
+                        color: $primary-black;
+                        text-align: left;
+                    }
                 }
             }
         }

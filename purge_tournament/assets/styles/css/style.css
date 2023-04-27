@@ -147,6 +147,7 @@ table {
   right: 0;
   z-index: 999;
   width: 100%;
+  border-bottom: 1px solid #91848c;
 }
 #main-header nav {
   width: 100%;
@@ -447,7 +448,7 @@ table {
   font-size: 1.5rem;
   text-align: center;
   width: 100%;
-  color: #d01f18;
+  color: #250d14;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -468,6 +469,13 @@ table {
 #edit-tournament textarea {
   border-radius: 0.25rem;
   height: 6rem;
+}
+#edit-tournament input[type=radio] + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 #edit-tournament .btn-edit {
   margin: 0.5rem;
@@ -495,45 +503,55 @@ table {
 #edit-tournament #reset-tournament:hover {
   background-color: #e83a33;
 }
+#edit-tournament #winner-section {
+  background-color: #d01f18;
+  padding: 20px;
+  margin-top: 1vh;
+  border-radius: 5px;
+  color: #eeebe8;
+  font-size: 24px;
+  text-align: center;
+}
 
-#admin-teams-list {
+#admin-tournament-list {
   max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   background-color: #eeebe8;
+  min-height: 100vh;
 }
-#admin-teams-list h2 {
+#admin-tournament-list h2 {
   font-size: 2rem;
   color: #250d14;
   margin-bottom: 2rem;
   font-weight: bold;
 }
-#admin-teams-list table {
+#admin-tournament-list table {
   width: 100%;
   border-collapse: collapse;
 }
-#admin-teams-list table thead tr th {
+#admin-tournament-list table thead tr th {
   color: #250d14;
   text-align: left;
   padding: 1rem;
   border-bottom: 1px solid #91848c;
 }
-#admin-teams-list table tbody tr td {
+#admin-tournament-list table tbody tr td {
   padding: 1rem;
   border-bottom: 1px solid #91848c;
   color: #250d14;
 }
-#admin-teams-list table tbody tr td:first-child {
+#admin-tournament-list table tbody tr td:first-child {
   font-weight: bold;
 }
-#admin-teams-list table tbody tr td a {
+#admin-tournament-list table tbody tr td a {
   color: #250d14;
   text-decoration: none;
 }
-#admin-teams-list table tbody tr td a:hover {
+#admin-tournament-list table tbody tr td a:hover {
   color: #d01f18;
 }
-#admin-teams-list table tbody tr td button {
+#admin-tournament-list table tbody tr td button {
   background-color: #fbb304;
   border: none;
   color: #250d14;
@@ -541,11 +559,11 @@ table {
   border-radius: 5px;
   cursor: pointer;
 }
-#admin-teams-list table tbody tr td button:hover {
+#admin-tournament-list table tbody tr td button:hover {
   background-color: #d01f18;
   color: #eeebe8;
 }
-#admin-teams-list button {
+#admin-tournament-list button {
   margin-top: 2rem;
   display: block;
   width: 100%;
@@ -557,37 +575,37 @@ table {
   border-radius: 5px;
   cursor: pointer;
 }
-#admin-teams-list button:hover {
+#admin-tournament-list button:hover {
   background-color: #d01f18;
   color: #eeebe8;
 }
-#admin-teams-list button a {
+#admin-tournament-list button a {
   text-decoration: none;
   color: #250d14;
 }
 @media (max-width: 768px) {
-  #admin-teams-list {
+  #admin-tournament-list {
     padding: 1rem;
   }
-  #admin-teams-list h2 {
+  #admin-tournament-list h2 {
     font-size: 1.5rem;
   }
-  #admin-teams-list table thead tr th {
+  #admin-tournament-list table thead tr th {
     font-size: 0.8rem;
     padding: 0.5rem;
   }
-  #admin-teams-list table tbody tr td {
+  #admin-tournament-list table tbody tr td {
     font-size: 0.8rem;
     padding: 0.5rem;
   }
-  #admin-teams-list table tbody tr td a {
+  #admin-tournament-list table tbody tr td a {
     font-size: 0.8rem;
   }
-  #admin-teams-list table tbody tr td button {
+  #admin-tournament-list table tbody tr td button {
     font-size: 0.8rem;
     padding: 0.3rem 0.6rem;
   }
-  #admin-teams-list button {
+  #admin-tournament-list button {
     font-size: 1rem;
     padding: 0.8rem;
   }
@@ -640,6 +658,9 @@ table {
   cursor: pointer;
   transition: all 0.2s;
 }
+#teams-list table td button > a {
+  text-decoration: none;
+}
 #teams-list table td button:hover {
   background-color: #eeebe8;
   color: #250d14;
@@ -655,30 +676,33 @@ table {
   transition: all 0.2s;
   margin-bottom: 3vh;
 }
+#teams-list button > a {
+  text-decoration: none;
+}
 #teams-list button:hover {
   background-color: #eeebe8;
   color: #250d14;
 }
 @media screen and (max-width: 600px) {
-  #teams-list table th,
-  #teams-list table td {
+  #teams-list button table th,
+  #teams-list button table td {
     display: block;
     width: 100%;
     text-align: center;
   }
-  #teams-list table td:first-child {
+  #teams-list button table td:first-child {
     margin-top: 10px;
   }
-  #teams-list table td:last-child {
+  #teams-list button table td:last-child {
     margin-bottom: 10px;
   }
-  #teams-list table tr {
+  #teams-list button table tr {
     border-bottom: none;
   }
-  #teams-list table tr td {
+  #teams-list button table tr td {
     border-bottom: 1px solid #91848c;
   }
-  #teams-list table tr td:before {
+  #teams-list button table tr td:before {
     content: attr(data-th);
     font-weight: bold;
     display: inline-block;
@@ -689,12 +713,12 @@ table {
   }
 }
 
-#form-team-edit {
+.form-team {
   max-width: 500px;
   margin: 0 auto;
   padding-top: 2vh;
 }
-#form-team-edit h2 {
+.form-team h2 {
   font-size: 2rem;
   color: #fbb304;
   margin-bottom: 2rem;
@@ -702,21 +726,21 @@ table {
   text-transform: uppercase;
   font-weight: 600;
 }
-#form-team-edit fieldset {
+.form-team fieldset {
   margin: 1rem 0;
   border: none;
   display: flex;
   flex-direction: column;
 }
-#form-team-edit fieldset label {
+.form-team fieldset label {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: #91848c;
 }
-#form-team-edit fieldset input,
-#form-team-edit fieldset textarea,
-#form-team-edit fieldset select {
+.form-team fieldset input,
+.form-team fieldset textarea,
+.form-team fieldset select {
   font-size: 1rem;
   padding: 0.5rem;
   border: none;
@@ -726,27 +750,27 @@ table {
   color: #250d14;
   transition: all 0.2s ease-in-out;
 }
-#form-team-edit fieldset input:hover,
-#form-team-edit fieldset textarea:hover,
-#form-team-edit fieldset select:hover {
+.form-team fieldset input:hover,
+.form-team fieldset textarea:hover,
+.form-team fieldset select:hover {
   background-color: #f9f8f7;
 }
-#form-team-edit fieldset input:focus,
-#form-team-edit fieldset textarea:focus,
-#form-team-edit fieldset select:focus {
+.form-team fieldset input:focus,
+.form-team fieldset textarea:focus,
+.form-team fieldset select:focus {
   outline: none;
   background-color: white;
 }
-#form-team-edit fieldset input[type=submit] {
+.form-team fieldset input[type=submit] {
   background-color: #fbb304;
   color: #250d14;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-#form-team-edit fieldset input[type=submit]:hover {
+.form-team fieldset input[type=submit]:hover {
   background-color: #c98f03;
 }
-#form-team-edit fieldset input[type=submit]:focus {
+.form-team fieldset input[type=submit]:focus {
   outline: none;
   background-color: #976b02;
 }
@@ -896,11 +920,54 @@ table {
   }
 }
 
+.error-page {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding: 33vh 0;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background-color: #250d14;
+  color: #eeebe8;
+}
+.error-page h3 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.error-page p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+.error-page .btn {
+  display: inline-block;
+  background-color: #fbb304;
+  color: #250d14;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.error-page .btn:hover {
+  background-color: #fcc236;
+}
+@media (max-width: 768px) {
+  .error-page h3 {
+    font-size: 2rem;
+  }
+  .error-page p {
+    font-size: 1.2rem;
+  }
+  .error-page .btn {
+    font-size: 1rem;
+  }
+}
+
 .main-footer {
   background-color: #250d14;
   color: #eeebe8;
   text-align: center;
   padding: 20px;
+  border-top: 1px solid #91848c;
 }
 .main-footer .footer-content {
   display: flex;

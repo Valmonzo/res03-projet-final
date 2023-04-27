@@ -52,17 +52,17 @@ class TournamentManager extends AbstractManager {
 
 
     public function getTournamentById(int $id) : Tournament {
-        
+
         // Récupérer un tournoi par l'id pour l'afficher
-        
-        
+
+
         $query = $this->db->prepare('SELECT * FROM tournament WHERE id = :id');
-        
+
         $parameters = [
         'id' => $id
         ];
         $query->execute($parameters);
-        
+
         $tournament = $query->fetch(PDO::FETCH_ASSOC);
 
         $tournamentToLoad= new Tournament($tournament['name'], $tournament['date'], $tournament['description'],
@@ -71,4 +71,17 @@ class TournamentManager extends AbstractManager {
 
         return $tournamentToLoad;
     }
+
+    public function getTournamentToday(): Tournament
+    {
+    // Récupérer la date d'aujourd'hui
+    $date = new DateTime();
+    $today = $date->format('Y-m-d H:i:s');
+
+    $query = $this->db->prepare('SELECT * FROM tournament WHERE date = :today');
+    $parameters = ['date' => $today];
+    $query->execute($parameters);
+
+    }
+
 }

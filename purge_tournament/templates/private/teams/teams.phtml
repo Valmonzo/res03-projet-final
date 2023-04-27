@@ -1,6 +1,7 @@
 
-<main id="teams-list">
+<section id="teams-list">
     <h2 id="teams-list-title">Liste des teams</h2>
+    <button class="team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/create">Créer une team</a></button>
     <table>
         <thead>
             <tr>
@@ -32,13 +33,13 @@
                             <img src="<?= $team->getLogo();?>"></img>
                         </figure>
                     </td>
-                    <td><button><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/edit">Modifier</a></button></td>
-                    <td><button><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/delete">Supprimer</a></td>
+                    <td><button class="team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/edit">Modifier</a></button></td>
+                    <td><button class="delete-team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/delete">Supprimer</a></td>
                 </tr>
                 <?php
                 }
                 ?>
         </tbody>
         </table>
-        <button><a href="/res03-projet-final/purge_tournament/admin/teams/create">Créer une team</a></button>
-</main>
+        <button class="team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/create">Créer une team</a></button>
+</section>

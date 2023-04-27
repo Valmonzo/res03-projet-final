@@ -429,8 +429,6 @@ class TournamentController extends AbstractController {
             }
 
 
-                    // TODO : Les deux mêmes teams se glissent dans les nouvelles games.
-
                     $i = 29;
 
                     foreach($game2 as $game) {
@@ -452,6 +450,7 @@ class TournamentController extends AbstractController {
         else if ($formName === 'tournament-edit-2') {
 
             $game2[0]->setWinner($post[31]);
+            $this->gameManager->editGame($game2[0]);
             $winner = $this->teamManager->getTeamById($post[31]);
             $winnerToJson = $winner->toArray();
             $this->renderJson([$winnerToJson]);

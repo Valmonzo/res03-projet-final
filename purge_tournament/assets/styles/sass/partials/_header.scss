@@ -12,7 +12,8 @@
     left: 0;
     right: 0;
     z-index: 999;
-    width: 100%; // Navigation
+    width: 100%;
+    border-bottom: 1px solid $primary-grey;
     nav {
         width: 100%;
         ul {

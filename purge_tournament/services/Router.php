@@ -121,7 +121,7 @@ class Router {
 
                                 else {
                                     match ($route[1]) {
-                                        'tournaments' => $this->tournamentController->show($route[2]), // J'affiche  /admin/event/:id
+                                        'tournaments' => $this->tournamentController->edit($route[2]), // J'affiche  /admin/event/:id
                                         'brackets' =>$this->gameController->show($route[2]), // J'affiche  /admin/bracket/:id
                                         'teams' => $this->teamController->show($route[2]), // J'affiche  /admin/team/:id
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404

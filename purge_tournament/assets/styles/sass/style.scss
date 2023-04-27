@@ -5,9 +5,10 @@
 @import "tournaments/edit-tournament";
 @import "tournaments/tournaments";
 @import "teams/teams";
-@import "teams/edit-team";
+@import "teams/team-form";
 @import "forms/login";
 @import "forms/contact";
+@import "error-page";
 @import "partials/footer";
 
 .sr-only {
