@@ -1,6 +1,7 @@
 @import "reset";
 @import "vars";
 @import "partials/header";
+@import "homepage";
 @import "tournaments/create-tournament";
 @import "tournaments/edit-tournament";
 @import "tournaments/tournaments";
@@ -8,6 +9,7 @@
 @import "teams/team-form";
 @import "forms/login";
 @import "forms/contact";
+@import "schedule";
 @import "error-page";
 @import "partials/footer";
 
@@ -25,4 +27,8 @@
 
 main {
     min-height: 80vh;
+}
+
+a {
+    text-decoration: none;
 }

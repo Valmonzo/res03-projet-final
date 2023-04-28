@@ -4,6 +4,20 @@ session_start();
 
 require 'autoload.php';
 
-$router = new Router();
+/**
+ * @author : Gaellan
+ */
 
-$router->checkRoute();
+try {
+
+    $router = new Router();
+    $router->checkRoute();
+}
+
+catch(Exception $e)
+{
+    if($e->getCode() === 404)
+    {
+        require "./templates/404.phtml";
+    }
+}

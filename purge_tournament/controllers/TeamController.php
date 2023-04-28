@@ -49,7 +49,7 @@ class TeamController extends AbstractController {
 
     }
 
-    public function create(array $post) : void 
+    public function create(array $post) : void
     {
         if (!empty($post['teamName']) && !empty($post['teamP1']) && !empty($post['teamP2']) && !empty($post['teamP3'])
         && !empty($post['teamP4']) && !empty($post['teamPSub']) && !empty($post['coach']) && !empty($post['logo'])
@@ -66,7 +66,6 @@ class TeamController extends AbstractController {
         }
 
         else {
-
             // Si le formulaire n'est pas bien rempli
             $this->render('teams/create', ['error' => 'Merci de bien remplir tous les champs'], 'private'); // Je render la même page avec une erreur
 

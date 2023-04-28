@@ -27,7 +27,7 @@ class RendererController extends AbstractController {
     }
 
     public function visitorSchedule() : void  {
-        $this->render('schedule/schedule', ['page' => 'schedule']);
+        $this->render('schedule/schedule', []);
     }
 
     public function page404() : void {

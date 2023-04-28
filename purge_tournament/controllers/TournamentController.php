@@ -153,18 +153,7 @@ class TournamentController extends AbstractController {
 
             $tournament = new Tournament("","","","","");
 
-            // Je transforme mon tableau associatif en tableau de l'instance Team
-            $tournament->setTeams(array_map(
-                function (array $team) {
-                    $teamAsObject = new Team($team['name'], $team['playerOne'], $team['playerTwo'], $team['playerThree'], $team['playerFour'], $team['subPlayer'], $team['coach'], $team['logo']);
-                    $teamAsObject->setId($team['id']
-                );
 
-                    return $teamAsObject;
-
-                },
-                $_SESSION['tournament']['teams']
-            ));
 
             $tournament->addTeam($teamToAdd);
 
@@ -172,7 +161,18 @@ class TournamentController extends AbstractController {
 
             $_SESSION['tournament'] = $tournament->toArrayTournament();
 
+            // Je transforme mon tableau associatif en tableau de l'instance Team
+            $tournament->setTeams(array_map(
+                function (array $teamArray) {
+                    $teamAsObject = new Team($teamArray['name'], $teamArray['playerOne'], $teamArray['playerTwo'], $teamArray['playerThree'], $teamArray['playerFour'], $teamArray['subPlayer'], $teamArray['coach'], $teamArray['logo']);
+                    $teamAsObject->setId($teamArray['id']);
+
+                    return $teamAsObject;
+                },
+                $_SESSION['tournament']['teams']
+            ));
             $this->renderJson($teamToJson);
+
         }
 
         else {
@@ -210,25 +210,29 @@ class TournamentController extends AbstractController {
         Je veux remplir un tableau qui contient le tournoi qui lui même contient les rounds qui lui même contient les games qui lui même contient les teams
 
         */
-            // Je fais une requête pour avoir mon tournoi
-            $tournament = $this->tournamentManager->getTournamentById($id);
+        // Je fais une requête pour avoir mon tournoi
+        $tournament = $this->tournamentManager->getTournamentById($id);
 
-            // Je fais une requête pour les rounds correspondant au tournoi
-            $gameRounds = $this->gameRoundManager->getGameRoundsByTournament($tournament);
+        if (isset($post['tournamentName'])) {
+            $updatedTournament = new Tournament($post['tournamentName'], $post['tournamentDate'], $post['tournamentDescription'], $post['gameName'], '');
+            $this->tournamentManager->updateTournament($updatedTournament);
+        }
+        // Je fais une requête pour les rounds correspondant au tournoi
+        $gameRounds = $this->gameRoundManager->getGameRoundsByTournament($tournament);
 
-            // Pour chaque fois je fais une requête pour avoir les games et je les set dans chaque gameround correspondant
-            foreach($gameRounds as $gameRound) {
+        // Pour chaque fois je fais une requête pour avoir les games et je les set dans chaque gameround correspondant
+        foreach($gameRounds as $gameRound) {
 
-                $games = $this->gameManager->getGamesByGameRound($gameRound);
-                $gameRound->setGames($games);
+            $games = $this->gameManager->getGamesByGameRound($gameRound);
+            $gameRound->setGames($games);
 
-            }
+        }
 
-            // Je set mes gamerounds déjà remplis par les games au préalable dans mon tournoi
-            $tournament->setGameRounds($gameRounds);
+        // Je set mes gamerounds déjà remplis par les games au préalable dans mon tournoi
+        $tournament->setGameRounds($gameRounds);
 
-            $this->render('tournaments/edit/edit', ["tournament" => $tournament->toArrayTournament()], 'private'); // Je render la page pour éditer la team en question
-       // }
+        // Je render la page pour éditer la team en question
+        $this->render('tournaments/edit/edit', ["tournament" => $tournament->toArrayTournament()], 'private');
 
     }
 
@@ -481,5 +485,16 @@ class TournamentController extends AbstractController {
         $tournaments = $this->tournamentManager->getAllTournaments(); // Je fais une requête pour demander la liste des tournois et les stocker dans un tableau
 
         $this->render('tournaments/tournaments', $tournaments, 'private'); // Je render la page tournaments avec la liste stockée dans $data.
+    }
+
+    public function renderTournamentsOfTheDay(): void
+    {
+        $tournamentsToJson = [];
+        $tournaments = $this->tournamentManager->getTournamentsToday();
+        foreach ($tournaments as $tournament) {
+            $tournamentToArray = $tournament->toArray();
+            $tournamentsToJson[] = $tournamentToArray;
+        }
+        $this->renderJson($tournamentsToJson);
     }
 }

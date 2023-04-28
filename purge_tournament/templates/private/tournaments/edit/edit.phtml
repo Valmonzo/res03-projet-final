@@ -1,6 +1,6 @@
 <section id="edit-tournament">
     <h2>Edition du tournoi <span id="nbTournamentSpan" idTournoi="<?= $data['tournament']['id']?>">"<?= $data['tournament']['name']?>"</span></h2>
-    <form action="/res03-projet-final/purge_tournament/admin/tournaments/edit" method="post" id="tournament-edit-info">
+    <form action="/res03-projet-final/purge_tournament/admin/tournaments/<?= $data['tournament']['id']?>/edit" method="post" id="tournament-edit-info">
             <fieldset>
                 <label for="tournamentName">Nom</label>
                 <input type="text" name="tournamentName" value="<?= $data['tournament']['name']?>"/>

@@ -26,6 +26,27 @@ class TournamentManager extends AbstractManager {
         $tournament->setId($id);
         return $tournament;
     }
+    
+    public function updateTournament(Tournament $tournament): Tournament
+    {
+        $dateToConvert = strtotime($tournament->getDate());
+        $date = date("Y-m-d H:i:s", $dateToConvert);
+
+        $query = $this->db->prepare('UPDATE tournament SET name = :name, date = :date, description = :description, game_name = :game_name, stream_url = :stream_url WHERE id = :id');
+
+        $parameters = [
+        'name' => $tournament->getName(),
+        'date' => $date,
+        'description'=>$tournament->getDescription(),
+        'game_name' => $tournament->getGameName(),
+        'stream_url'=> $tournament->getStreamURL(),
+        'id' => $tournament->getId(),
+        ];
+
+        $query->execute($parameters);
+
+        return $tournament;
+    }
 
     public function getAllTournaments(): array
     {
@@ -72,15 +93,28 @@ class TournamentManager extends AbstractManager {
         return $tournamentToLoad;
     }
 
-    public function getTournamentToday(): Tournament
+    public function getTournamentsToday(): array
     {
     // Récupérer la date d'aujourd'hui
-    $date = new DateTime();
-    $today = $date->format('Y-m-d H:i:s');
 
-    $query = $this->db->prepare('SELECT * FROM tournament WHERE date = :today');
-    $parameters = ['date' => $today];
-    $query->execute($parameters);
+    $query = $this->db->prepare('SELECT * FROM tournament WHERE DATE(date) = CURDATE()');
+    $query->execute();
+    $tournaments = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    $tournamentsTab = [];
+
+        foreach($tournaments as $tournament) {
+
+            if ($tournament['stream_url'] === NULL) {
+                $tournament['stream_url'] = "";
+            }
+
+            $tournamentToLoad = new Tournament($tournament['name'], $tournament['date'], $tournament['description'], $tournament['game_name'], $tournament['stream_url']);
+            $tournamentToLoad->setId($tournament['id']);
+            $tournamentsTab[] = $tournamentToLoad;
+        }
+
+            return $tournamentsTab;
 
     }
 

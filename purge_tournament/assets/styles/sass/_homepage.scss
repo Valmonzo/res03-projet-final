@@ -1,0 +1,105 @@
+//Header de la page
+#homepage-header {
+    font-family: 'Montserrat', sans-serif;
+    background-color: $primary-yellow;
+    padding: 1rem;
+    text-align: center;
+    color: $primary-black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    h3 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        animation: moveInTop 1s ease-out;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        animation: moveInBottom 1s ease-out;
+    }
+}
+
+//Contenu principal de la page
+#homepage-main {
+    font-family: 'Montserrat', sans-serif;
+    padding: 2rem;
+    text-align: center;
+    margin: 4rem auto;
+
+    h3 {
+        margin-top: 0;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $primary-red;
+        letter-spacing: 0.1em;
+        animation: moveInTop 1s ease-out;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin: 0 0 1rem;
+        animation: moveInBottom 1s ease-out;
+    }
+
+    button {
+        background-color: #7289da;
+        color: $primary-white;
+        border: none;
+        border-radius: 0.25rem;
+        padding: 0.75rem 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.2s ease-in-out;
+        letter-spacing: 0.05em;
+        animation: moveInBottom 1s ease-out;
+
+        & a {
+            color: $primary-white;
+        }
+
+        &:hover {
+            background-color: darken($primary-grey, 10%);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+//Media queries pour la mise en page responsive
+@media (min-width: 768px) {
+    #homepage-header {
+        h3 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.8rem;
+        }
+    }
+
+    #homepage-main {
+        h3 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        button {
+            font-size: 1.8rem;
+            padding: 0.75rem 2.5rem;
+        }
+    }
+}
