@@ -1016,6 +1016,9 @@ table {
   text-align: center;
   min-height: 80vh;
 }
+.tournament-display > section {
+  padding-bottom: 5vh;
+}
 .tournament-display h2 {
   font-size: 40px;
   margin-bottom: 30px;
@@ -1035,6 +1038,7 @@ table {
   font-size: 24px;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  margin-bottom: 3vh;
 }
 .tournament-display a:hover {
   background-color: #d01f18;

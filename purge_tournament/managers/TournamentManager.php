@@ -26,7 +26,7 @@ class TournamentManager extends AbstractManager {
         $tournament->setId($id);
         return $tournament;
     }
-    
+
     public function updateTournament(Tournament $tournament): Tournament
     {
         $dateToConvert = strtotime($tournament->getDate());
@@ -116,6 +116,17 @@ class TournamentManager extends AbstractManager {
 
             return $tournamentsTab;
 
+    }
+    
+    public function deleteTournamentById(int $id): void
+    {
+        $query = $this->db->prepare('DELETE FROM tournament WHERE id = :id');
+
+        $parameters = [
+        'id' => $id
+        ];
+
+        $query->execute($parameters);
     }
 
 }

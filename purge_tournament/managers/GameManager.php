@@ -125,4 +125,13 @@ class GameManager extends AbstractManager {
         return $teamToLoad;
     }
 
+    public function deleteGamesByGameRoundId(int $id): void
+    {
+        $query = $this->db->prepare('DELETE FROM game WHERE game_round_id = :id');
+        $parameters = [
+        'id' => $id
+        ];
+        $query->execute($parameters);
+    }
+
 }

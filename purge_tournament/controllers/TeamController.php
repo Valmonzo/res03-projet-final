@@ -72,7 +72,8 @@ class TeamController extends AbstractController {
         }
     }
 
-    public function deleteTeam(int $id) {
+    public function deleteTeam(int $id): void 
+    {
         // Supprimer une team
 
         $this->teamManager->deleteTeamById($id);

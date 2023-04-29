@@ -8,6 +8,10 @@
     text-align: center;
     min-height: 80vh;
 
+    &>section {
+        padding-bottom: 5vh;
+    }
+
     h2 {
         font-size: 40px;
         margin-bottom: 30px;
@@ -29,6 +33,7 @@
         font-size: 24px;
         text-decoration: none;
         transition: background-color 0.3s ease;
+        margin-bottom: 3vh;
 
         &:hover {
             background-color: $primary-red;

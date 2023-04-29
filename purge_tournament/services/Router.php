@@ -148,7 +148,7 @@ class Router {
 
                                     else if ($route[3] === "delete") {
                                         match ($route[1]) {
-                                        'tournaments' => $this->tournamentController->deleteTournament($route[2]), // J'affiche  /admin/event/:id/delete
+                                        'tournaments' => $this->tournamentController->deleteTournament(intval($route[2])),// J'affiche  /admin/event/:id/delete
                                         'brackets' =>$this->gameController->deleteBracket($route[2]), // J'affiche  /admin/bracket/:id/delete
                                         'teams' => $this->teamController->deleteTeam($route[2]), // J'affiche  /admin/team/:id/delete
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404

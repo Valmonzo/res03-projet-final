@@ -1,3 +1,5 @@
+import { resetForm } from './reset.js';
+
 function createTournament() {
     let selects = document.getElementsByClassName("top32");
 
@@ -25,9 +27,11 @@ function createTournament() {
     }
 }
 
+
 window.addEventListener('DOMContentLoaded', function() {
 
 
     createTournament();
+    resetForm();
 
 });

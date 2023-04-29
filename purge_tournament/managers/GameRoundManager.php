@@ -71,5 +71,14 @@ class GameRoundManager extends AbstractManager {
         $gameRound->setId($id);
         return $gameRound;
     }
+    
+    public function deleteGameRoundByTournamentId(int $id)
+    {
+        $query = $this->db->prepare('DELETE FROM game_round WHERE tournament_id = :id');
+        $parameters = [
+        'id' => $id,
+        ];
+        $query->execute($parameters);
+    }
 
 }

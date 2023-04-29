@@ -151,26 +151,28 @@ class TournamentController extends AbstractController {
         if(isset($_SESSION['tournament'])) {
             $teamToAdd =  $this->teamManager->getTeamById($id);
 
-            $tournament = new Tournament("","","","","");
+            $tournament = new Tournament("", "", "", "", "");
 
+            // Je transforme mon tableau associatif en tableau de l'instance Team
+            $tournament->setTeams(array_map(
+                function (array $team) {
+                    $teamAsObject = new Team($team['name'], $team['playerOne'], $team['playerTwo'], $team['playerThree'], $team['playerFour'], $team['subPlayer'], $team['coach'], $team['logo']);
+                    $teamAsObject->setId($team['id']
+                    );
 
+                    return $teamAsObject;
+
+                },
+                $_SESSION['tournament']['teams']
+            ));
 
             $tournament->addTeam($teamToAdd);
 
             $teamToJson = $teamToAdd->toArray();
 
-            $_SESSION['tournament'] = $tournament->toArrayTournament();
+            $_SESSION['tournament'] = $tournament->toArrayTeams();
 
-            // Je transforme mon tableau associatif en tableau de l'instance Team
-            $tournament->setTeams(array_map(
-                function (array $teamArray) {
-                    $teamAsObject = new Team($teamArray['name'], $teamArray['playerOne'], $teamArray['playerTwo'], $teamArray['playerThree'], $teamArray['playerFour'], $teamArray['subPlayer'], $teamArray['coach'], $teamArray['logo']);
-                    $teamAsObject->setId($teamArray['id']);
 
-                    return $teamAsObject;
-                },
-                $_SESSION['tournament']['teams']
-            ));
             $this->renderJson($teamToJson);
 
         }
@@ -185,7 +187,7 @@ class TournamentController extends AbstractController {
 
             $teamToJson = $teamToAdd->toArray();
 
-            $_SESSION['tournament'] = $newTournament->toArrayTournament();
+            $_SESSION['tournament'] = $newTournament->toArrayTeams();
 
             $this->renderJson($teamToJson);
         }
@@ -213,9 +215,13 @@ class TournamentController extends AbstractController {
         // Je fais une requête pour avoir mon tournoi
         $tournament = $this->tournamentManager->getTournamentById($id);
 
-        if (isset($post['tournamentName'])) {
-            $updatedTournament = new Tournament($post['tournamentName'], $post['tournamentDate'], $post['tournamentDescription'], $post['gameName'], '');
-            $this->tournamentManager->updateTournament($updatedTournament);
+        if (isset($post['tournamentName']) && isset($post['tournamentDate']) && isset($post['gameName']) && isset($post['tournamentDescription']) && isset($post['streamURL']) && $post['formName'] === 'tournament-edit-info') {
+            $tournament->setName($post['tournamentName']);
+            $tournament->setDate($post['tournamentDate']);
+            $tournament->setGameName($post['gameName']);
+            $tournament->setDescription($post['tournamentDescription']);
+            $tournament->setStreamURL($post['streamURL']);
+            $this->tournamentManager->updateTournament($tournament);
         }
         // Je fais une requête pour les rounds correspondant au tournoi
         $gameRounds = $this->gameRoundManager->getGameRoundsByTournament($tournament);
@@ -462,7 +468,7 @@ class TournamentController extends AbstractController {
 
     }
 
-    public function deleteTournament(int $id): void // TODO A TESTER
+    public function deleteTournament(int $id): void
     {
         // Supprimer un tournoi, le but est aussi de supprimer tout ce qui est en rapport avec le tournoi donc les games et les gameRounds
         $tournamentToDelete = $this->tournamentManager->getTournamentById($id);
@@ -476,6 +482,8 @@ class TournamentController extends AbstractController {
         }
 
         $this->tournamentManager->deleteTournamentById($id);
+        header('Location: /res03-projet-final/purge_tournament/admin/tournaments');
+
 
     }
 
