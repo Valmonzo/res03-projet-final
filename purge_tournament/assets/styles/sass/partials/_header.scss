@@ -14,6 +14,9 @@
     z-index: 999;
     width: 100%;
     border-bottom: 1px solid $primary-grey;
+    text-transform: uppercase;
+    font-weight: 500;
+
     nav {
         width: 100%;
         ul {
@@ -23,8 +26,33 @@
             padding: 0;
             list-style: none;
             align-items: center;
+            text-align: center;
 
-            li {
+            li:first-of-type {
+                width: 100%;
+                & figure {
+                    height: 100px;
+
+                    & img {
+                        width: 100%;
+                    }
+                }
+                a {
+                    color: $primary-white;
+                    text-decoration: none;
+                    display: block;
+                    padding: 2%;
+                    width: 30%;
+                    transition: all 0.4s ease;
+
+                    &:hover {
+                        background-color: lighten($primary-black, 10%);
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            li:not(:first-of-type) {
                 margin: 0 2%;
                 width: 100%;
 
@@ -34,10 +62,11 @@
                     display: block;
                     padding: 2%;
                     width: 30%;
-                    transition: all 0.3s ease;
+                    transition: all 0.2s ease;
 
                     &:hover {
                         background-color: lighten($primary-black, 10%);
+
                     }
 
                     figure {
@@ -46,6 +75,26 @@
                             height: 3vw;
                             width: auto;
                         }
+                    } // Ajout d'une animation au survol des liens
+                    @keyframes underline {
+                        0% {
+                            width: 0;
+                        }
+                        100% {
+                            width: 100%;
+                        }
+                    }
+                    &:after {
+                        content: '';
+                        display: block;
+                        height: 2px;
+                        background-color: $primary-white;
+                        width: 0;
+                        transition: all 0.3s ease;
+                    }
+                    &:hover:after {
+                        width: 100%;
+                        animation: underline 0.3s forwards;
                     }
                 }
 
@@ -58,6 +107,20 @@
                 }
             }
         }
+    } // Ajout d'une animation au changement de la couleur de fond
+    @keyframes bg-change {
+        0% {
+            background-color: $primary-black;
+        }
+        50% {
+            background-color: lighten($primary-black, 10%);
+        }
+        100% {
+            background-color: $primary-black;
+        }
+    }
+    &:hover {
+        animation: bg-change 2s infinite;
     } // Media queries
     @media screen and (max-width: 768px) {
         nav {
@@ -75,10 +138,35 @@
                         margin-bottom: 0;
                     }
                 }
+
+                li:first-of-type {
+                    width: 100%;
+                    & figure {
+                        height: 30px;
+
+                        & img {
+                            width: 35%;
+                        }
+                    }
+                    a {
+                        color: $primary-white;
+                        text-decoration: none;
+                        display: block;
+                        padding: 2%;
+                        width: 30%;
+                        transition: all 0.4s ease;
+
+                        &:hover {
+                            background-color: lighten($primary-black, 10%);
+                            transform: scale(1.1);
+                        }
+                    }
+                }
             }
         }
     }
 }
+
 
 #admin-header {
     background-color: $primary-black;

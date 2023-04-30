@@ -1,7 +1,8 @@
 //Header de la page
 #homepage-header {
     font-family: 'Montserrat', sans-serif;
-    background-color: $primary-yellow;
+    background: rgb(195, 34, 34);
+    background: linear-gradient(35deg, rgba(195, 34, 34, 0.8393558106836485) 0%, rgba(196, 128, 36, 1) 54%);
     padding: 1rem;
     text-align: center;
     color: $primary-black;
@@ -9,7 +10,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
+
+    figure {
+        padding-top: 3rem;
+
+        &>img {
+            width: 30%;
+        }
+    }
 
     h3 {
         margin: 0;
@@ -18,23 +27,55 @@
         text-transform: uppercase;
         letter-spacing: 0.1em;
         animation: moveInTop 1s ease-out;
+        padding-bottom: 1rem;
     }
 
-    p {
+    h4 {
+        margin: 0;
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        animation: moveInTop 1s ease-out;
+        padding-bottom: 1rem;
+    }
+
+    q {
         margin: 0;
         font-size: 1.5rem;
         font-weight: bold;
         letter-spacing: 0.05em;
         animation: moveInBottom 1s ease-out;
+        padding-bottom: 8rem;
+        color: $primary-white;
     }
+
+    p {
+        margin: 0;
+        font-size: 1.9rem;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        animation: moveInBottom 1s ease-out;
+        padding-bottom: 6rem;
+    }
+
+
 }
 
 //Contenu principal de la page
 #homepage-main {
     font-family: 'Montserrat', sans-serif;
-    padding: 2rem;
+    padding: 10rem;
     text-align: center;
-    margin: 4rem auto;
+    padding: 4rem auto;
+    transition: all 0.5s ease-in-out;
+    height: 100%;
+    background: rgb(71, 58, 180);
+    background: radial-gradient(circle, rgba(71, 58, 180, 0.43039222524947474) 2%, rgba(29, 167, 253, 0.21470595073967091) 77%, rgba(252, 176, 69, 0.12226897594975494) 100%);
+
+    &:hover {
+        transform: scale(1.02);
+    }
 
     h3 {
         margin-top: 0;
@@ -44,12 +85,14 @@
         color: $primary-red;
         letter-spacing: 0.1em;
         animation: moveInTop 1s ease-out;
+        padding-bottom: 3vh;
     }
 
     p {
-        font-size: 1.2rem;
-        margin: 0 0 1rem;
+        font-size: 1.4rem;
+        margin: 0 0 2rem;
         animation: moveInBottom 1s ease-out;
+        font-weight: 400;
     }
 
     button {
@@ -65,26 +108,41 @@
         letter-spacing: 0.05em;
         animation: moveInBottom 1s ease-out;
 
-        & a {
-            color: $primary-white;
-        }
-
         &:hover {
-            background-color: darken($primary-grey, 10%);
             transform: translateY(-2px);
         }
-    }
-}
 
-//Media queries pour la mise en page responsive
-@media (min-width: 768px) {
-    #homepage-header {
-        h3 {
-            font-size: 3rem;
+        & span {
+            padding-right: 1rem;
         }
+    }
 
-        p {
-            font-size: 1.8rem;
+    & a {
+        color: $primary-white;
+    }
+
+    &:hover {
+        background-color: darken($primary-yellow, 3%);
+        transform: translateY(-2px);
+    } //Media queries pour la mise en page responsive
+    @media (min-width: 768px) {
+        #homepage-header {
+            h3 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.8rem;
+            }
+
+            figure {
+                max-width: 300px;
+                max-height: 300px;
+
+                &>img {
+                    width: 100%;
+                }
+            }
         }
     }
 
@@ -102,4 +160,5 @@
             padding: 0.75rem 2.5rem;
         }
     }
+
 }
