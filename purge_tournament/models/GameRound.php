@@ -1,7 +1,7 @@
 <?php
 
-class GameRound {
-
+class GameRound
+{
     // Attributs
 
     private ?int $id;
@@ -14,10 +14,10 @@ class GameRound {
 
     public function __construct(string $name, Tournament $tournament)
     {
-        $this->id = NULL;
+        $this->id = null;
         $this->name = $name;
         $this->tournament = $tournament;
-        $this->streamURL = '';
+        $this->streamURL = "";
         $this->games = [];
     }
 
@@ -48,8 +48,6 @@ class GameRound {
         return $this->games;
     }
 
-
-
     // Setters
 
     public function setId(int $id): void
@@ -74,27 +72,27 @@ class GameRound {
 
     public function setGames(array $games): void
     {
-         $this->games = array_unique($games, SORT_REGULAR);
+        $this->games = array_unique($games, SORT_REGULAR);
     }
 
     // Methodes
 
     public function addGame(Game $game): void
     {
-       $this->games[] = $game;
+        $this->games[] = $game;
 
         // Je traite l'erreur possible en supprimant un potentiel doublon de team dans mon tableau
         $this->games = array_unique($this->games, SORT_REGULAR);
     }
 
-    public function toArray() : array {
-
+    public function toArray(): array
+    {
         // Je transforme mon gameRound en tableau
         $gameRoundAsArray = get_object_vars($this);
 
         // Je transforme mes teams en tableau pour les push dans l'index teams de mon tournoi
-        $gameRoundAsArray['games'] = array_map(
-            fn (Game $game) => $game->toArray(),
+        $gameRoundAsArray["games"] = array_map(
+            fn(Game $game) => $game->toArray(),
             $this->games
         );
 

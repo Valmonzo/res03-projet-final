@@ -1,7 +1,7 @@
 // Header
 #main-header {
     font-family: 'Monserrat', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     background-color: $primary-black;
     color: $primary-white;
     padding: 2%;
@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     z-index: 999;
-    width: 100%;
+    max-width: 100vw;
     border-bottom: 1px solid $primary-grey;
     text-transform: uppercase;
     font-weight: 500;
@@ -129,6 +129,8 @@
 
                 li {
                     margin: 2% 0;
+                    display: flex;
+                    justify-content: center;
 
                     &:first-child {
                         margin-top: 0;

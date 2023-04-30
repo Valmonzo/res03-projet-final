@@ -1,7 +1,6 @@
 <?php
 
 class Contact
-
 {
     // Attributs
 
@@ -12,19 +11,17 @@ class Contact
 
     // Construct
 
-    public function __construct(string $name , string $email , string $message)
+    public function __construct(string $name, string $email, string $message)
     {
         $this->name = $name;
         $this->email = $email;
         $this->message = $message;
-        $this->id = NULL;
-
+        $this->id = null;
     }
-
 
     // Getters
 
-     public function getId(): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -43,14 +40,12 @@ class Contact
         return $this->message;
     }
 
-
     // Setters
 
     public function setId(int $id): void
     {
         $this->id = $id;
     }
-
 
     public function setName(string $name): void
     {
@@ -70,7 +65,5 @@ class Contact
     public function toArray(): array
     {
         return get_object_vars($this);
-
     }
-
 }

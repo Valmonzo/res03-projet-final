@@ -27,6 +27,11 @@
     border-width: 0;
 }
 
+.error {
+    color: $primary-red;
+    border: 3px solid $primary-red;
+}
+
 main {
     min-height: 80vh;
 }

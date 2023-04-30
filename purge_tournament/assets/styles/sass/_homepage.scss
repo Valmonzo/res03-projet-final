@@ -10,13 +10,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    min-height: 80vh;
 
     figure {
         padding-top: 3rem;
+        max-width: 100px;
+        max-height: 100px;
 
         &>img {
-            width: 30%;
+            width: 100%;
         }
     }
 
@@ -110,6 +112,7 @@
 
         &:hover {
             transform: translateY(-2px);
+            transform: scale(1.1);
         }
 
         & span {
@@ -124,41 +127,40 @@
     &:hover {
         background-color: darken($primary-yellow, 3%);
         transform: translateY(-2px);
-    } //Media queries pour la mise en page responsive
-    @media (min-width: 768px) {
-        #homepage-header {
-            h3 {
-                font-size: 3rem;
-            }
-
-            p {
-                font-size: 1.8rem;
-            }
-
-            figure {
-                max-width: 300px;
-                max-height: 300px;
-
-                &>img {
-                    width: 100%;
-                }
-            }
-        }
     }
-
-    #homepage-main {
+} //Media queries pour la mise en page responsive
+@media (min-width: 768px) {
+    #homepage-header {
         h3 {
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
 
         p {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
-        button {
-            font-size: 1.8rem;
-            padding: 0.75rem 2.5rem;
+        figure {
+            max-width: 500px;
+            max-height: 500px;
+
+            &>img {
+                width: 100%;
+            }
         }
     }
+}
 
+#homepage-main {
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1.8rem;
+        padding: 0.75rem 2.5rem;
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 
-class Game {
-
+class Game
+{
     // Attributs
 
     private ?int $id;
@@ -13,16 +13,18 @@ class Game {
 
     // Construct
 
-    public function __construct( ?Team $teamA, ?Team $teamB, GameRound $gameRound)
-    {
-        $this->id = NULL;
+    public function __construct(
+        ?Team $teamA,
+        ?Team $teamB,
+        GameRound $gameRound
+    ) {
+        $this->id = null;
         $this->teamA = $teamA;
         $this->teamB = $teamB;
-        $this->winner = NULL;
+        $this->winner = null;
         $this->gameRound = $gameRound;
         $this->teams = [];
     }
-
 
     // Getters
 
@@ -30,12 +32,9 @@ class Game {
     {
         if ($this->id !== null) {
             return $this->id;
+        } else {
+            return null;
         }
-
-        else {
-            return NULL;
-        }
-
     }
 
     public function getTeamA(): ?Team
@@ -58,7 +57,7 @@ class Game {
         return $this->winner;
     }
 
-    public function getTeams() : array
+    public function getTeams(): array
     {
         return $this->teams;
     }
@@ -90,7 +89,7 @@ class Game {
         $this->gameRound = $gameRound;
     }
 
-    public function setTeams (array $teams): void
+    public function setTeams(array $teams): void
     {
         $this->teams = array_unique($teams, SORT_REGULAR);
     }
@@ -99,20 +98,20 @@ class Game {
 
     public function addTeam(Team $team): void
     {
-       $this->teams[] = $team;
+        $this->teams[] = $team;
 
         // Je traite l'erreur possible en supprimant un potentiel doublon de team dans mon tableau
         $this->teams = array_unique($this->teams, SORT_REGULAR);
     }
 
-    public function toArray() : array {
-
+    public function toArray(): array
+    {
         // Je transforme mon tournoi en tableau
         $GameAsArray = get_object_vars($this);
 
         // Je transforme mes teams en tableau pour les push dans l'index teams de mon tournoi
-        $gameAsArray['teams'] = array_map(
-            fn (Team $team) => $team->toArray(),
+        $gameAsArray["teams"] = array_map(
+            fn(Team $team) => $team->toArray(),
             $this->teams
         );
 

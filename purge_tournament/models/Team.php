@@ -1,7 +1,7 @@
 <?php
 
-class Team {
-
+class Team
+{
     // Attributs
 
     private ?int $id;
@@ -14,12 +14,19 @@ class Team {
     private string $coach;
     private string $logo;
 
-
     // Construct
 
-    public function __construct (string $name, string $playerOne, string $playerTwo, string $playerThree, string $playerFour, string $subPlayer, string $coach, string $logo)
-    {
-        $this->id = NULL;
+    public function __construct(
+        string $name,
+        string $playerOne,
+        string $playerTwo,
+        string $playerThree,
+        string $playerFour,
+        string $subPlayer,
+        string $coach,
+        string $logo
+    ) {
+        $this->id = null;
         $this->name = $name;
         $this->playerOne = $playerOne;
         $this->playerTwo = $playerTwo;
@@ -32,85 +39,101 @@ class Team {
 
     // Getters
 
-    public function getId() : ?int {
+    public function getId(): ?int
+    {
         return $this->id;
     }
 
-    public function getName() : string {
+    public function getName(): string
+    {
         return $this->name;
     }
 
-    public function getPlayerOne() : string {
+    public function getPlayerOne(): string
+    {
         return $this->playerOne;
     }
 
-    public function getPlayerTwo() : string {
+    public function getPlayerTwo(): string
+    {
         return $this->playerTwo;
     }
 
-    public function getPlayerThree() : string {
+    public function getPlayerThree(): string
+    {
         return $this->playerThree;
     }
 
-    public function getPlayerFour() : string {
+    public function getPlayerFour(): string
+    {
         return $this->playerFour;
     }
 
-    public function getSubPlayer() : string {
+    public function getSubPlayer(): string
+    {
         return $this->subPlayer;
     }
 
-    public function getCoach() : string {
+    public function getCoach(): string
+    {
         return $this->coach;
     }
 
-    public function getLogo() : string {
+    public function getLogo(): string
+    {
         return $this->logo;
     }
 
-
     // Setters
 
-
-    public function setId(int $id) : void {
+    public function setId(int $id): void
+    {
         $this->id = $id;
     }
 
-    public function setName(string $name) : void {
+    public function setName(string $name): void
+    {
         $this->name = $name;
     }
 
-    public function setPlayerOne(string $playerOne) : void {
+    public function setPlayerOne(string $playerOne): void
+    {
         $this->playerOne = $playerOne;
     }
 
-    public function setPlayerTwo(string $playerTwo) : void {
+    public function setPlayerTwo(string $playerTwo): void
+    {
         $this->playerTwo = $playerTwo;
     }
 
-    public function setPlayerThree(string $playerThree) : void {
+    public function setPlayerThree(string $playerThree): void
+    {
         $this->playerThree = $playerThree;
     }
 
-    public function setPlayerFour(string $playerFour) : void {
+    public function setPlayerFour(string $playerFour): void
+    {
         $this->playerFour = $playerFour;
     }
 
-    public function setSubPlayer(string $subPlayer): void {
+    public function setSubPlayer(string $subPlayer): void
+    {
         $this->subPlayer = $subPlayer;
     }
 
-    public function setCoach(string $coach): void {
+    public function setCoach(string $coach): void
+    {
         $this->coach = $coach;
     }
 
-    public function setLogo(string $logo): void {
+    public function setLogo(string $logo): void
+    {
         $this->logo = $logo;
     }
 
     // Methodes
 
-    public function toArray() : array
+    public function toArray(): array
     {
         // Je retourne mon objet en tableau pour pouvoir l'utiliser en JSON
         /* return [
@@ -127,6 +150,5 @@ class Team {
         */
 
         return get_object_vars($this);
-
     }
 }

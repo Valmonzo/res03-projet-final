@@ -1,17 +1,22 @@
 <section id="login">
-    <form action="/res03-projet-final/purge_tournament/admin" method="post">
+    <form action="/res03-projet-final/purge_tournament/admin" method="post" id="login-form">
         <h3>Connexion</h3>
-        <fieldset>
+        <fieldset id="email-field">
             <label for="email">Email</label>
             <input type="email" name="email" id="email"  placeholder="Email administrateur">
         </fieldset>
-        <fieldset>
+        <fieldset id="password-field">
             <label for="password">Mot de passe</label>
             <input type="password" name="password" id="password" placeholder="Mot de passe">
         </fieldset>
         <fieldset>
-            <input type="submit" name="submit" value="Se connecter" id="login-button">
+            <input type="submit"  value="Se connecter" id="login-button">
         </fieldset>
         <input type="hidden" name="formName" value="login">
+        <?php
+        if (isset($_SESSION['errorLogin'])) { ?>
+        <small><?= $_SESSION['errorLogin']?></small>
+        <?php } ?>
     </form>
 </section>
+<script type="module" src="/res03-projet-final/purge_tournament/assets/js/loginForm.js"></script>

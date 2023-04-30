@@ -19,9 +19,6 @@ class Router {
         $this->teamController = new TeamController();
         $this->tournamentController = new TournamentController();
         $this->userController = new UserController();
-        $this->gameController = new GameController();
-        $this->gameRoundController = new GameRoundController();
-        $this->mediaController = new MediaController();
     }
 
     function checkRoute() : void
@@ -102,7 +99,6 @@ class Router {
 
                             match ($route[1]) {
                             'tournaments' => $this->tournamentController->renderTournaments(), // J'affiche tous les events /admin/events
-                            'brackets' => $this->gameController->renderBrackets(), // J'affiche tous les brackets par tournoi /admin/brackets
                             'teams' => $this->teamController->renderTeams(), // J'affiche toutes les teams /admin/teams
                             'contacts' => $this->contactController->renderMessages(), // J'affiche toutes les demandes de contact /admin/contacts
                             default => $this->rendererController->page404() // Si le chemin est mauvais je redirige sur 404 /page404
@@ -117,7 +113,6 @@ class Router {
                                 if($route[2] === "create" ) {
                                     match ($route[1]) {
                                         'tournaments' => $this->tournamentController->create($post), // J'affiche  /admin/event/create
-                                        'brackets' =>$this->gameController->create(), // J'affiche  /admin/bracket/create
                                         'teams' => $this->teamController->create($post), // J'affiche  /admin/team/create
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404
                                     };
@@ -126,7 +121,6 @@ class Router {
                                 else {
                                     match ($route[1]) {
                                         'tournaments' => $this->tournamentController->edit(intval($route[2]), $post), // J'affiche  /admin/event/:id
-                                        'brackets' =>$this->gameController->show($route[2]), // J'affiche  /admin/bracket/:id
                                         'teams' => $this->teamController->show($route[2]), // J'affiche  /admin/team/:id
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404
                                     };
@@ -140,7 +134,6 @@ class Router {
                                     if($route[3] === "edit") {
                                         match ($route[1]) {
                                         'tournaments' => $this->tournamentController->edit(intval($route[2]), $post), // J'affiche  /admin/event/:id/edit
-                                        'brackets' =>$this->gameController->edit($route[2]), // J'affiche  /admin/bracket/:id/edit
                                         'teams' => $this->teamController->edit($route[2], $post), // J'affiche  /admin/team/:id/edit
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404
                                         };
@@ -149,7 +142,6 @@ class Router {
                                     else if ($route[3] === "delete") {
                                         match ($route[1]) {
                                         'tournaments' => $this->tournamentController->deleteTournament(intval($route[2])),// J'affiche  /admin/event/:id/delete
-                                        'brackets' =>$this->gameController->deleteBracket($route[2]), // J'affiche  /admin/bracket/:id/delete
                                         'teams' => $this->teamController->deleteTeam($route[2]), // J'affiche  /admin/team/:id/delete
                                         'messages' => $this->contactController->deleteMessage($route[2]), // Je supprime un message
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404

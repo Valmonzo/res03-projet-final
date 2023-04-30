@@ -1,7 +1,7 @@
 <?php
 
-class Media {
-
+class Media
+{
     // Attributs
 
     private ?int $id;
@@ -10,12 +10,15 @@ class Media {
     private string $format;
     private string $url;
 
-
     // Construct
 
-    public function __construct(string $description, string $type, string $format, string $url) {
-
-        $this->int = NULL;
+    public function __construct(
+        string $description,
+        string $type,
+        string $format,
+        string $url
+    ) {
+        $this->int = null;
         $this->description = $description;
         $this->type = $type;
         $this->format = $format;
@@ -24,46 +27,55 @@ class Media {
 
     // Getters
 
-    public function getId() : ?int {
+    public function getId(): ?int
+    {
         return $this->id;
     }
 
-    public function getDescription() : string {
+    public function getDescription(): string
+    {
         return $this->description;
     }
 
-    public function getType() : string {
+    public function getType(): string
+    {
         return $this->type;
     }
 
-    public function getFormat() : string {
+    public function getFormat(): string
+    {
         return $this->format;
     }
 
-    public function getUrl() : string {
+    public function getUrl(): string
+    {
         return $this->url;
     }
 
     // Setters
 
-    public function setId(int $id) : voic {
+    public function setId(int $id): voic
+    {
         $this->id = $id;
     }
 
-    public function setDescription(string $description) : void {
+    public function setDescription(string $description): void
+    {
         $this->description = $description;
     }
 
-    public function setType(string $type) : void {
+    public function setType(string $type): void
+    {
         $this->type = $type;
     }
 
-    public function setFormat(string $format) : void {
+    public function setFormat(string $format): void
+    {
         $this->format = $format;
     }
 
-    public function setUrl(string $url) : void {
+    public function setUrl(string $url): void
+    {
         $this->url = $url;
     }
-
 }
