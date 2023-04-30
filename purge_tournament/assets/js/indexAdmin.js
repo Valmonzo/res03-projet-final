@@ -5,17 +5,17 @@ function loadAllMessagesInAdminIndex() {
         .then(response => response.json())
         .then(messages => {
             messages.forEach(message => {
-                const tr = document.createElement("tr");
-                const tdName = document.createElement("td");
-                const tdEmail = document.createElement("td");
-                const tdMessage = document.createElement("td");
-                const tdDelete = document.createElement("td");
-                const deleteBtn = document.createElement("button");
-                const deleteLink = document.createElement("a");
+                let tr = document.createElement("tr");
+                let tdName = document.createElement("td");
+                let tdEmail = document.createElement("td");
+                let tdMessage = document.createElement("td");
+                let tdDelete = document.createElement("td");
+                let deleteBtn = document.createElement("button");
+                let deleteLink = document.createElement("a");
 
-                tdName.textContent = message.name;
-                tdEmail.textContent = message.email;
-                tdMessage.textContent = message.message;
+                tdName.textContent = decodeHTMLEntities(message.name);
+                tdEmail.textContent = decodeHTMLEntities(message.email);
+                tdMessage.textContent = decodeHTMLEntities(message.message);
 
                 deleteLink.textContent = "Supprimer";
                 deleteLink.href = `https://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/admin/contacts/${message.id}/delete`;
@@ -33,8 +33,10 @@ function loadAllMessagesInAdminIndex() {
         })
 }
 
-window.addEventListener('DOMContentLoaded', function() {
+function decodeHTMLEntities(text) {
+    let textArea = document.createElement('textarea');
+    textArea.innerHTML = text;
+    return textArea.value;
+}
 
-    loadAllMessagesInAdminIndex();
-
-});
+window.addEventListener('DOMContentLoaded', loadAllMessagesInAdminIndex);

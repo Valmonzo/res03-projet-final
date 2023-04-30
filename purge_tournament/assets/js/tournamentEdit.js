@@ -132,8 +132,4 @@ function editTournament() {
     })
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-
-    editTournament();
-
-});
+window.addEventListener('DOMContentLoaded', editTournament);

@@ -32,8 +32,4 @@ function checkContactForm() {
 
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-
-    checkContactForm();
-
-});
+window.addEventListener('DOMContentLoaded', checkContactForm);
