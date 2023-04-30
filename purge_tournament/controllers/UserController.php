@@ -69,6 +69,7 @@ class UserController extends AbstractController
             if ($userToCheck !== null) {
                 if (password_verify($passToCheck, $hashedPass)) {
                     $_SESSION['admin'] = 'ok';
+                    $_SESSION['username'] = $userToCheck->getUsername();
                     $this->render('templates/private/homepage/homepage', [], "private");
                 }
 

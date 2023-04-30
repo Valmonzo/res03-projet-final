@@ -213,6 +213,11 @@ table {
   padding: 0;
   list-style: none;
 }
+#admin-header nav ul #username-header span {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fbb304;
+}
 #admin-header nav ul li {
   display: inline-block;
   margin: 0 10px;
@@ -325,6 +330,74 @@ table {
     padding: 0.75rem 2.5rem;
   }
 }
+.messagerie-section {
+  font-family: "Montserrat", sans-serif;
+}
+.messagerie-section h2 {
+  color: #250d14;
+  text-align: center;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+.messagerie-section table {
+  width: 100%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background-color: #eeebe8;
+}
+.messagerie-section table th,
+.messagerie-section table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #91848c;
+}
+.messagerie-section table th {
+  background-color: #250d14;
+  color: #eeebe8;
+}
+.messagerie-section table td {
+  background-color: #fbb304;
+}
+.messagerie-section table tr:nth-child(even) td {
+  background-color: #fdd168;
+}
+.messagerie-section table .delete-message-btn {
+  background-color: #d01f18;
+  color: #eeebe8;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+.messagerie-section table .delete-message-btn > a {
+  text-decoration: none;
+  color: #eeebe8;
+}
+.messagerie-section table .delete-message-btn:hover {
+  background-color: #a21813;
+}
+@media (max-width: 768px) {
+  .messagerie-section table th,
+  .messagerie-section table td {
+    font-size: 0.8rem;
+    padding: 0.2rem;
+  }
+  .messagerie-section table th:first-child,
+  .messagerie-section table td:first-child {
+    display: none;
+  }
+  .messagerie-section table td {
+    display: block;
+    text-align: center;
+    border: none;
+  }
+  .messagerie-section table td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    text-align: left;
+  }
+}
+
 #tournament-form {
   font-family: "Monserrat", sans-serif;
   display: flex;

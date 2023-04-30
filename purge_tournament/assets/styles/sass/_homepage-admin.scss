@@ -1,0 +1,81 @@
+.messagerie-section {
+    font-family: 'Montserrat', sans-serif;
+    h2 {
+        color: $primary-black;
+        text-align: center;
+        margin-top: 2rem;
+        text-transform: uppercase;
+    }
+
+    table {
+        width: 100%;
+        margin: 2rem auto;
+        border-collapse: collapse;
+        background-color: $primary-white;
+
+        th,
+        td {
+            padding: 0.5rem;
+            text-align: center;
+            border: 1px solid $primary-grey;
+        }
+
+        th {
+            background-color: $primary-black;
+            color: $primary-white;
+        }
+
+        td {
+            background-color: $primary-yellow;
+        }
+
+        tr:nth-child(even) td {
+            background-color: lighten($primary-yellow, 20%);
+        }
+
+        .delete-message-btn {
+            background-color: $primary-red;
+            color: $primary-white;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem;
+
+            &>a {
+                text-decoration: none;
+                color: $primary-white;
+            }
+
+            &:hover {
+                background-color: darken($primary-red, 10%);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        table {
+            th,
+            td {
+                font-size: 0.8rem;
+                padding: 0.2rem;
+            }
+
+            th:first-child,
+            td:first-child {
+                display: none;
+            }
+
+            td {
+                display: block;
+                text-align: center;
+                border: none;
+
+                &:before {
+                    content: attr(data-label);
+                    font-weight: bold;
+                    display: block;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

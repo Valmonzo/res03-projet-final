@@ -3,7 +3,8 @@
 class ContactManager extends AbstractManager {
 
 
-    public function getAllMessages() {
+    public function getAllMessages(): array
+    {
         $query = $this->db->prepare('SELECT * FROM contact');
         $query->execute();
         $messages = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -13,7 +14,7 @@ class ContactManager extends AbstractManager {
         foreach($messages as $message) {
             $messageToLoad = new Contact($message['name'], $message['email'], $message['message']);
             $messageToLoad->setId($message['id']);
-            $messageTab[] = $messageToLoad;
+            $messagesTab[] = $messageToLoad;
         }
 
         return $messagesTab;
@@ -36,6 +37,11 @@ class ContactManager extends AbstractManager {
     }
 
     public function deleteMessage(int $id) : void {
-        // Supprimer un message que l'on a lu
+        $query = $this->db->prepare('DELETE FROM contact WHERE id = :id');
+
+        $parameters = [
+        'id' => $id,
+        ];
+        $query->execute($parameters);
     }
 }

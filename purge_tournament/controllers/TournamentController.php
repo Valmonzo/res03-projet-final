@@ -474,13 +474,12 @@ class TournamentController extends AbstractController {
         $tournamentToDelete = $this->tournamentManager->getTournamentById($id);
         $gameRoundsToDelete = $this->gameRoundManager->getGameRoundsByTournament($tournamentToDelete);
 
-
         // Pour chaque gameRound présent dans le tournoi , je vais supprimer les games
         foreach ($gameRoundsToDelete as $gameRound) {
             $this->gameManager->deleteGamesByGameRoundId($gameRound->getId());
-            $this->gameRoundManager->deleteGameRoundByTournamentId($id);
         }
 
+        $this->gameRoundManager->deleteGameRoundByTournamentId($id);
         $this->tournamentManager->deleteTournamentById($id);
         header('Location: /res03-projet-final/purge_tournament/admin/tournaments');
 

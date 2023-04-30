@@ -151,6 +151,7 @@ class Router {
                                         'tournaments' => $this->tournamentController->deleteTournament(intval($route[2])),// J'affiche  /admin/event/:id/delete
                                         'brackets' =>$this->gameController->deleteBracket($route[2]), // J'affiche  /admin/bracket/:id/delete
                                         'teams' => $this->teamController->deleteTeam($route[2]), // J'affiche  /admin/team/:id/delete
+                                        'messages' => $this->contactController->deleteMessage($route[2]), // Je supprime un message
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404
                                         };
                                     }

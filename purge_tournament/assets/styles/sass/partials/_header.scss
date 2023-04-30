@@ -91,6 +91,14 @@
             padding: 0;
             list-style: none;
 
+            #username-header {
+                & span {
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    color: $primary-yellow;
+                }
+            }
+
             li {
                 display: inline-block;
                 margin: 0 10px;
