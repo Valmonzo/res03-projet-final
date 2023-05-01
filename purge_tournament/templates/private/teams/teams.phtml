@@ -1,0 +1,45 @@
+
+<section id="teams-list">
+    <h2 id="teams-list-title">Liste des teams</h2>
+    <button class="team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/create">Créer une team</a></button>
+    <table>
+        <thead>
+            <tr>
+                <th>Equipe</th>
+                <th>Joueur 1</th>
+                <th>Joueur 2</th>
+                <th>Joueur 3</th>
+                <th>Joueur 4</th>
+                <th>Remplaçant</th>
+                <th>Coach</th>
+                <th>Logo</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                foreach($data as $team) { ?>
+                <tr>
+                    <td><?= $team->getName(); ?></td>
+                    <td><?= $team->getPlayerOne(); ?></td>
+                    <td><?= $team->getPlayerTwo(); ?></td>
+                    <td><?= $team->getPlayerThree(); ?></td>
+                    <td><?= $team->getPlayerFour(); ?></td>
+                    <td><?= $team->getSubPlayer(); ?></td>
+                    <td><?= $team->getCoach(); ?></td>
+                    <td>
+                        <figure>
+                            <img src="<?= $team->getLogo();?>"></img>
+                        </figure>
+                    </td>
+                    <td><button class="team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/edit">Modifier</a></button></td>
+                    <td><button class="delete-team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/delete">Supprimer</a></td>
+                </tr>
+                <?php
+                }
+                ?>
+        </tbody>
+        </table>
+        <button class="team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/create">Créer une team</a></button>
+</section>

@@ -1,0 +1,1112 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#main-header {
+  font-family: "Monserrat", sans-serif;
+  font-size: 1.3rem;
+  background-color: #250d14;
+  color: #eeebe8;
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  border-bottom: 1px solid #91848c;
+}
+#main-header nav {
+  width: 100%;
+}
+#main-header nav ul {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+#main-header nav ul li {
+  margin: 0 2%;
+  width: 100%;
+}
+#main-header nav ul li a {
+  color: #eeebe8;
+  text-decoration: none;
+  display: block;
+  padding: 2%;
+  width: 30%;
+  transition: all 0.3s ease;
+}
+#main-header nav ul li a:hover {
+  background-color: #4b1a28;
+}
+#main-header nav ul li a figure {
+  margin: 0;
+}
+#main-header nav ul li a figure img {
+  height: 3vw;
+  width: auto;
+}
+#main-header nav ul li:first-child {
+  margin-left: 0;
+}
+#main-header nav ul li:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 768px) {
+  #main-header nav ul {
+    flex-direction: column;
+  }
+  #main-header nav ul li {
+    margin: 2% 0;
+  }
+  #main-header nav ul li:first-child {
+    margin-top: 0;
+  }
+  #main-header nav ul li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+#admin-header {
+  background-color: #250d14;
+  color: #eeebe8;
+  padding: 10px;
+}
+#admin-header nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#admin-header nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+#admin-header nav ul li a {
+  color: #eeebe8;
+  text-decoration: none;
+  padding: 5px;
+  display: block;
+}
+#admin-header nav ul li a:hover {
+  background-color: #eeebe8;
+  color: #250d14;
+}
+@media screen and (max-width: 600px) {
+  #admin-header nav ul li {
+    display: block;
+    margin: 0;
+  }
+  #admin-header nav ul li a {
+    padding: 10px;
+    display: block;
+  }
+}
+
+#homepage-header {
+  background-color: #fbb304;
+  padding: 1rem;
+  text-align: center;
+  color: #250d14;
+}
+#homepage-header h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#homepage-header p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#homepage-main {
+  padding: 1rem;
+}
+#homepage-main h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #d01f18;
+}
+#homepage-main p {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+}
+#homepage-main button {
+  background-color: #d01f18;
+  color: #eeebe8;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+#homepage-main button:hover {
+  background-color: #a21813;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+  #homepage-header h3 {
+    font-size: 3rem;
+  }
+  #homepage-header p {
+    font-size: 1.5rem;
+  }
+  #homepage-main h3 {
+    font-size: 2.5rem;
+  }
+  #homepage-main p {
+    font-size: 1.5rem;
+  }
+  #homepage-main button {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+  #homepage-header h3 {
+    font-size: 4rem;
+  }
+  #homepage-header p {
+    font-size: 1.8rem;
+  }
+  #homepage-main h3 {
+    font-size: 3rem;
+  }
+  #homepage-main p {
+    font-size: 1.8rem;
+  }
+  #homepage-main button {
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+  }
+}
+#tournament-form {
+  font-family: "Monserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #eeebe8;
+}
+#tournament-form h2 {
+  color: #d01f18;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#tournament-form .top32-info {
+  margin-bottom: 30px;
+}
+#tournament-form .top32-info fieldset {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+#tournament-form .top32-info label {
+  color: #250d14;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+#tournament-form .top32-info input[type=text],
+#tournament-form .top32-info input[type=datetime-local],
+#tournament-form .top32-info input[type=url],
+#tournament-form .top32-info textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #91848c;
+  color: #eeebe8;
+  font-size: 1.2rem;
+}
+#tournament-form .top32-info input[type=submit],
+#tournament-form .top32-info button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+#tournament-form .top32-info input[type=submit] {
+  background-color: #fbb304;
+  color: #250d14;
+}
+#tournament-form .top32-info input[type=submit]:hover {
+  background-color: #c98f03;
+}
+#tournament-form #tournament-create-btn {
+  background-color: #fbb304;
+  color: #eeebe8;
+  border: none;
+  border-radius: 4px;
+  width: 20%;
+  text-transform: uppercase;
+  margin-top: 2vh;
+}
+#tournament-form #reset-tournament {
+  background-color: #d01f18;
+  color: #eeebe8;
+  border: none;
+  border-radius: 4px;
+  width: 15%;
+  text-transform: uppercase;
+  margin-top: 2vh;
+}
+#tournament-form #reset-tournament:hover {
+  background-color: #a21813;
+}
+#tournament-form .top32 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#tournament-form .top32 fieldset {
+  flex-basis: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+#tournament-form .top32 label {
+  color: #250d14;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+#tournament-form .top32 input[type=text] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eeebe8;
+  color: #250d14;
+  font-size: 1rem;
+}
+#tournament-form .top32 input[type=text]:focus {
+  outline: none;
+  box-shadow: 0 0 5px #fbb304;
+}
+#tournament-form .top32 textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eeebe8;
+  color: #250d14;
+  font-size: 1rem;
+}
+#tournament-form .top32 textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #fbb304;
+}
+#tournament-form .top32 input[type=submit] {
+  flex-basis: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  #tournament-form {
+    padding: 10px;
+  }
+  .top32-info,
+  .top32 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .top32 fieldset {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .top32 input[type=text],
+  .top32 input[type=datetime-local],
+  .top32 input[type=url],
+  .top32 textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: #eeebe8;
+    color: #250d14;
+  }
+  #tournament-create-btn,
+  #reset-tournament {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+#edit-tournament {
+  font-family: "Monserrat", sans-serif;
+}
+#edit-tournament h2 {
+  margin: 1rem 0;
+  color: #d01f18;
+}
+#edit-tournament label {
+  display: block;
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+#edit-tournament input,
+#edit-tournament textarea {
+  padding: 0.5rem;
+  border: 1px solid #91848c;
+  margin: 0.5rem 0;
+}
+#edit-tournament input[type=submit] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #d01f18;
+  color: #eeebe8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#edit-tournament input[type=submit]:hover {
+  background-color: #e83a33;
+}
+#edit-tournament .top32-edit,
+#edit-tournament .top16-edit,
+#edit-tournament .top8-edit,
+#edit-tournament .top4-edit,
+#edit-tournament .top2-edit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #91848c;
+  color: #eeebe8;
+}
+#edit-tournament h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+  color: #250d14;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#edit-tournament input[type=text],
+#edit-tournament input[type=url],
+#edit-tournament input[type=datetime-local],
+#edit-tournament textarea {
+  width: 100%;
+  max-width: 100%;
+  background-color: #eeebe8;
+  color: #250d14;
+}
+#edit-tournament input[type=text],
+#edit-tournament input[type=url],
+#edit-tournament input[type=datetime-local] {
+  border-radius: 0.25rem;
+}
+#edit-tournament textarea {
+  border-radius: 0.25rem;
+  height: 6rem;
+}
+#edit-tournament input[type=radio] + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#edit-tournament .btn-edit {
+  margin: 0.5rem;
+  background-color: #d01f18;
+  color: #eeebe8;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#edit-tournament .btn-edit:hover {
+  background-color: #e83a33;
+}
+#edit-tournament #reset-tournament {
+  margin: 0.5rem;
+  background-color: #fbb304;
+  color: #eeebe8;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#edit-tournament #reset-tournament:hover {
+  background-color: #e83a33;
+}
+#edit-tournament #winner-section {
+  background-color: #d01f18;
+  padding: 20px;
+  margin-top: 1vh;
+  border-radius: 5px;
+  color: #eeebe8;
+  font-size: 24px;
+  text-align: center;
+}
+
+#admin-tournament-list {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #eeebe8;
+  min-height: 100vh;
+}
+#admin-tournament-list h2 {
+  font-size: 2rem;
+  color: #250d14;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+#admin-tournament-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#admin-tournament-list table thead tr th {
+  color: #250d14;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid #91848c;
+}
+#admin-tournament-list table tbody tr td {
+  padding: 1rem;
+  border-bottom: 1px solid #91848c;
+  color: #250d14;
+}
+#admin-tournament-list table tbody tr td:first-child {
+  font-weight: bold;
+}
+#admin-tournament-list table tbody tr td a {
+  color: #250d14;
+  text-decoration: none;
+}
+#admin-tournament-list table tbody tr td a:hover {
+  color: #d01f18;
+}
+#admin-tournament-list table tbody tr td button {
+  background-color: #fbb304;
+  border: none;
+  color: #250d14;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#admin-tournament-list table tbody tr td button:hover {
+  background-color: #d01f18;
+  color: #eeebe8;
+}
+#admin-tournament-list button {
+  margin-top: 2rem;
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  padding: 1rem;
+  background-color: #fbb304;
+  color: #250d14;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#admin-tournament-list button:hover {
+  background-color: #d01f18;
+  color: #eeebe8;
+}
+#admin-tournament-list button a {
+  text-decoration: none;
+  color: #250d14;
+}
+@media (max-width: 768px) {
+  #admin-tournament-list {
+    padding: 1rem;
+  }
+  #admin-tournament-list h2 {
+    font-size: 1.5rem;
+  }
+  #admin-tournament-list table thead tr th {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  #admin-tournament-list table tbody tr td {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  #admin-tournament-list table tbody tr td a {
+    font-size: 0.8rem;
+  }
+  #admin-tournament-list table tbody tr td button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  #admin-tournament-list button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
+#teams-list-title {
+  color: #250d14;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 30px 0;
+  text-align: center;
+}
+
+#teams-list {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#teams-list table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#teams-list table th {
+  background-color: #250d14;
+  color: #eeebe8;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+#teams-list table td {
+  border-bottom: 1px solid #91848c;
+  padding: 10px;
+  vertical-align: top;
+}
+#teams-list table td:first-child {
+  font-weight: bold;
+  color: #250d14;
+}
+#teams-list table td img {
+  max-width: 100px;
+  height: auto;
+}
+#teams-list table td button {
+  background-color: #fbb304;
+  color: #250d14;
+  border: none;
+  padding: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#teams-list table td button > a {
+  text-decoration: none;
+}
+#teams-list table td button:hover {
+  background-color: #eeebe8;
+  color: #250d14;
+}
+#teams-list button {
+  background-color: #fbb304;
+  color: #250d14;
+  border: none;
+  padding: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 3vh;
+}
+#teams-list button > a {
+  text-decoration: none;
+}
+#teams-list button:hover {
+  background-color: #eeebe8;
+  color: #250d14;
+}
+@media screen and (max-width: 600px) {
+  #teams-list button table th,
+  #teams-list button table td {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #teams-list button table td:first-child {
+    margin-top: 10px;
+  }
+  #teams-list button table td:last-child {
+    margin-bottom: 10px;
+  }
+  #teams-list button table tr {
+    border-bottom: none;
+  }
+  #teams-list button table tr td {
+    border-bottom: 1px solid #91848c;
+  }
+  #teams-list button table tr td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: inline-block;
+    width: 80px;
+    margin-right: 10px;
+    color: #250d14;
+    text-align: left;
+  }
+}
+
+.form-team {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 2vh;
+}
+.form-team h2 {
+  font-size: 2rem;
+  color: #fbb304;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.form-team fieldset {
+  margin: 1rem 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+.form-team fieldset label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #91848c;
+}
+.form-team fieldset input,
+.form-team fieldset textarea,
+.form-team fieldset select {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background-color: #eeebe8;
+  color: #250d14;
+  transition: all 0.2s ease-in-out;
+}
+.form-team fieldset input:hover,
+.form-team fieldset textarea:hover,
+.form-team fieldset select:hover {
+  background-color: #f9f8f7;
+}
+.form-team fieldset input:focus,
+.form-team fieldset textarea:focus,
+.form-team fieldset select:focus {
+  outline: none;
+  background-color: white;
+}
+.form-team fieldset input[type=submit] {
+  background-color: #fbb304;
+  color: #250d14;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.form-team fieldset input[type=submit]:hover {
+  background-color: #c98f03;
+}
+.form-team fieldset input[type=submit]:focus {
+  outline: none;
+  background-color: #976b02;
+}
+
+#login {
+  font-family: "Montserrat", sans-serif;
+  color: #250d14;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#login h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: #d01f18;
+}
+#login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fbb304;
+  padding: 10vh 10vw;
+}
+#login fieldset {
+  border: none;
+  margin: 10px 0;
+  width: 100%;
+}
+#login fieldset label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+#login fieldset input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #91848c;
+  font-size: 1.2rem;
+}
+#login fieldset input::placeholder {
+  color: #91848c;
+}
+#login fieldset input[type=submit] {
+  background-color: #250d14;
+  color: #eeebe8;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+@media screen and (min-width: 768px) {
+  #login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #login form {
+    margin-left: 20px;
+  }
+}
+
+#contact-form {
+  font-family: "Montserrat", sans-serif;
+  background-color: #eeebe8;
+  padding: 50px;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+#contact-form h2 {
+  color: #d01f18;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+#contact-form fieldset {
+  margin-bottom: 20px;
+  border: none;
+  text-align: left;
+}
+#contact-form fieldset label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #d01f18;
+  text-transform: uppercase;
+}
+#contact-form fieldset input,
+#contact-form fieldset textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #91848c;
+  font-size: 16px;
+  font-weight: 500;
+  color: #250d14;
+  background-color: transparent;
+}
+#contact-form fieldset input:focus,
+#contact-form fieldset textarea:focus {
+  outline: none;
+  border-color: #fbb304;
+}
+#contact-form fieldset textarea {
+  height: 150px;
+}
+#contact-form #contact-btn {
+  width: 100%;
+  background-color: #fbb304;
+  color: #250d14;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+}
+#contact-form #contact-btn:hover {
+  background-color: #c98f03;
+}
+@media screen and (max-width: 768px) {
+  #contact-form {
+    padding: 30px;
+  }
+  #contact-form h2 {
+    font-size: 24px;
+  }
+  #contact-form input,
+  #contact-form textarea {
+    font-size: 14px;
+  }
+}
+
+.error-page {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding: 33vh 0;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background-color: #250d14;
+  color: #eeebe8;
+}
+.error-page h3 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.error-page p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+.error-page .btn {
+  display: inline-block;
+  background-color: #fbb304;
+  color: #250d14;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.error-page .btn:hover {
+  background-color: #fcc236;
+}
+@media (max-width: 768px) {
+  .error-page h3 {
+    font-size: 2rem;
+  }
+  .error-page p {
+    font-size: 1.2rem;
+  }
+  .error-page .btn {
+    font-size: 1rem;
+  }
+}
+
+.main-footer {
+  background-color: #250d14;
+  color: #eeebe8;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #91848c;
+}
+.main-footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-footer .footer-content p {
+  margin: 0 0 10px;
+}
+.main-footer .footer-content .social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.main-footer .footer-content .social-links li {
+  list-style: none;
+  margin: 0 10px;
+}
+.main-footer .footer-content .social-links li a {
+  color: #eeebe8;
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .main-footer .footer-content {
+    flex-direction: row;
+  }
+  .main-footer .footer-content p {
+    margin: 0;
+    margin-right: 20px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+main {
+  min-height: 80vh;
+}
+
+/*# sourceMappingURL=style.css.map */

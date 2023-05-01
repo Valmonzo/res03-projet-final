@@ -1,0 +1,13 @@
+<fieldset>
+    <label for="team<?= $teamNb ?>">Team</label>
+    <select name="team<?= $teamNb ?>" class="form-select" required aria-label="select example">
+        <option value="">--- Select team ---</option>
+        <?php foreach($data['teams'] as $team) { ?>
+        <option value="<?= $team->getId();?>" ><?= $team->getName(); ?></option>
+        <?php } ?>
+    </select>
+</fieldset>
+
+
+
+

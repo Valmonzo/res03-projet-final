@@ -1,0 +1,66 @@
+.form-team {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 2vh;
+
+    h2 {
+        font-size: 2rem;
+        color: $primary-yellow;
+        margin-bottom: 2rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    fieldset {
+        margin: 1rem 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: $primary-grey;
+        }
+
+        input,
+        textarea,
+        select {
+            font-size: 1rem;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            background-color: $primary-white;
+            color: $primary-black;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background-color: lighten($primary-white, 5%);
+            }
+
+            &:focus {
+                outline: none;
+                background-color: lighten($primary-white, 10%);
+            }
+        }
+
+        input[type="submit"] {
+            background-color: $primary-yellow;
+            color: $primary-black;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background-color: darken($primary-yellow, 10%);
+            }
+
+            &:focus {
+                outline: none;
+                background-color: darken($primary-yellow, 20%);
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+#contact-form {
+    background-color: $primary-white;
+    padding: 50px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: $primary-red;
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    fieldset {
+        margin-bottom: 20px;
+        border: none;
+        text-align: left;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            color: $primary-red;
+            text-transform: uppercase;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid $primary-grey;
+            font-size: 16px;
+            font-weight: 500;
+            color: $primary-black;
+            background-color: transparent;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-yellow;
+            }
+        }
+
+        textarea {
+            height: 150px;
+        }
+    }
+
+    #contact-btn {
+        width: 100%;
+        background-color: $primary-yellow;
+        color: $primary-black;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: darken($primary-yellow, 10%);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 30px;
+
+        h2 {
+            font-size: 24px;
+        }
+
+        input,
+        textarea {
+            font-size: 14px;
+        }
+    }
+}

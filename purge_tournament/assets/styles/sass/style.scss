@@ -1,0 +1,46 @@
+@import "reset";
+@import "vars";
+@import "partials/header";
+@import "homepage";
+@import "homepage-admin";
+@import "tournaments/create-tournament";
+@import "tournaments/edit-tournament";
+@import "tournaments/tournaments";
+@import "teams/teams";
+@import "teams/team-form";
+@import "forms/login";
+@import "forms/contact";
+@import "schedule";
+@import "bracket";
+@import "about-us";
+@import "error-page";
+@import "partials/footer";
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+main {
+    min-height: 80vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.error {
+    color: $primary-red;
+    border: 3px solid $primary-red;
+}

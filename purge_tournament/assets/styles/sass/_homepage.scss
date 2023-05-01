@@ -1,0 +1,165 @@
+//Header de la page
+#homepage-header {
+    background: rgb(238, 35, 7);
+    background: linear-gradient(0deg, rgba(238, 35, 7, 0.7021009087228641) 1%, rgba(238, 99, 99, 0.8365546902354692) 16%, rgba(235, 224, 224, 0.7665266790309874) 60%);
+    padding: 1rem;
+    text-align: center;
+    color: $primary-black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+
+    figure {
+        padding-top: 3rem;
+        max-width: 100px;
+        max-height: 100px;
+
+        &>img {
+            width: 100%;
+        }
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        animation: moveInTop 1s ease-out;
+        padding-bottom: 1rem;
+    }
+
+    h4 {
+        margin: 0;
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        animation: moveInTop 1s ease-out;
+        padding-bottom: 1rem;
+    }
+
+    q {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        animation: moveInBottom 1s ease-out;
+        padding-bottom: 8rem;
+        color: $primary-white;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.9rem;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        animation: moveInBottom 1s ease-out;
+        padding-bottom: 6rem;
+    }
+
+
+}
+
+//Contenu principal de la page
+#homepage-main {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10rem;
+    text-align: center;
+    padding: 4rem auto;
+    transition: all 0.5s ease-in-out;
+    height: 100%;
+    background: rgb(71, 58, 180);
+    background: radial-gradient(circle, rgba(71, 58, 180, 0.43039222524947474) 2%, rgba(29, 167, 253, 0.21470595073967091) 77%, rgba(252, 176, 69, 0.12226897594975494) 100%);
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    h3 {
+        margin-top: 0;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $primary-red;
+        letter-spacing: 0.1em;
+        animation: moveInTop 1s ease-out;
+        padding-bottom: 3vh;
+    }
+
+    p {
+        font-size: 1.4rem;
+        margin: 0 0 2rem;
+        animation: moveInBottom 1s ease-out;
+        font-weight: 400;
+    }
+
+    button {
+        background-color: #7289da;
+        color: $primary-white;
+        border: 1px solid white;
+        border-radius: 0.25rem;
+        padding: 0.75rem 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.2s ease-in-out;
+        letter-spacing: 0.05em;
+        animation: moveInBottom 1s ease-out;
+
+        &:hover {
+            transform: translateY(-2px);
+            transform: scale(1.1);
+        }
+
+        & span {
+            padding-right: 1rem;
+        }
+    }
+
+    & a {
+        color: $primary-white;
+    }
+
+    &:hover {
+        background-color: darken($primary-yellow, 3%);
+        transform: translateY(-2px);
+    }
+} //Media queries pour la mise en page responsive
+@media (min-width: 768px) {
+    #homepage-header {
+        h3 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.8rem;
+        }
+
+        figure {
+            max-width: 500px;
+            max-height: 500px;
+
+            &>img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+#homepage-main {
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1.8rem;
+        padding: 0.75rem 2.5rem;
+    }
+}

@@ -1,0 +1,225 @@
+// Header
+#main-header {
+    font-size: 1.1rem;
+    background: rgb(149, 46, 0);
+    background: linear-gradient(115deg, rgba(149, 46, 0, 1) 19%, rgba(195, 34, 60, 1) 57%);
+    color: $primary-white;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    max-width: 100vw;
+    border-bottom: 1px solid $primary-grey;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    nav {
+        width: 100%;
+        ul {
+            width: 100%;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            align-items: center;
+            text-align: center;
+
+            li:first-of-type {
+                width: 100%;
+                & figure {
+                    height: 100px;
+
+                    & img {
+                        width: 100%;
+                    }
+                }
+                a {
+                    color: $primary-white;
+                    text-decoration: none;
+                    display: block;
+                    padding: 3%;
+                    width: 35%;
+                    transition: all 0.4s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            li:not(:first-of-type) {
+                margin: 0 2%;
+                width: 100%;
+
+                a {
+                    color: $primary-white;
+                    text-decoration: none;
+                    display: block;
+                    padding: 2%;
+                    width: 35%;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background-color: lighten($primary-black, 10%);
+                        transform: scale(1.1);
+
+                    }
+
+                    figure {
+                        margin: 0;
+                        img {
+                            height: 3vw;
+                            width: auto;
+                        }
+                    } // Ajout d'une animation au survol des liens
+                    @keyframes underline {
+                        0% {
+                            width: 0;
+                        }
+                        100% {
+                            width: 100%;
+                        }
+                    }
+                    &:after {
+                        content: '';
+                        display: block;
+                        height: 2px;
+                        background-color: $primary-white;
+                        width: 0;
+                        transition: all 0.3s ease;
+                    }
+                    &:hover:after {
+                        width: 100%;
+                        animation: underline 0.3s forwards;
+                    }
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    } // Ajout d'une animation au changement de la couleur de fond
+    @keyframes bg-change {
+        0% {
+            background-color: $primary-black;
+        }
+        50% {
+            background-color: lighten($primary-black, 10%);
+        }
+        100% {
+            background-color: $primary-black;
+        }
+    }
+    &:hover {
+        animation: bg-change 2s infinite;
+    } // Media queries
+    @media screen and (max-width: 768px) {
+        nav {
+            ul {
+                flex-direction: column;
+
+                li {
+                    margin: 2% 0;
+                    display: flex;
+                    justify-content: center;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                li:first-of-type {
+                    width: 100%;
+                    & figure {
+                        height: 30px;
+
+                        & img {
+                            width: 35%;
+                        }
+                    }
+                    a {
+                        color: $primary-white;
+                        text-decoration: none;
+                        display: block;
+                        padding: 2%;
+                        width: 30%;
+                        transition: all 0.4s ease;
+
+                        &:hover {
+                            background-color: lighten($primary-black, 10%);
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#admin-header {
+    background-color: $primary-black;
+    color: $primary-white;
+    padding: 10px;
+
+    nav {
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            #username-header {
+                & span {
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    color: $primary-yellow;
+                }
+            }
+
+            li {
+                display: inline-block;
+                margin: 0 10px;
+
+                a {
+                    color: $primary-white;
+                    text-decoration: none;
+                    padding: 5px;
+                    display: block;
+
+                    &:hover {
+                        background-color: $primary-white;
+                        color: $primary-black;
+                    }
+                }
+            }
+        }
+    } // Media Query pour rendre le header responsive
+    @media screen and (max-width: 600px) {
+        nav {
+            ul {
+                li {
+                    display: block;
+                    margin: 0;
+
+                    a {
+                        padding: 10px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

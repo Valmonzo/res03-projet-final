@@ -1,0 +1,187 @@
+#tournament-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vh auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: $primary-white;
+
+    h2 {
+        color: $primary-red;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .top32-info {
+        margin-bottom: 30px;
+    }
+
+    .top32-info fieldset {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .top32-info label {
+        color: $primary-black;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .top32-info input[type="text"],
+    .top32-info input[type="datetime-local"],
+    .top32-info input[type="url"],
+    .top32-info textarea {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: $primary-grey;
+        color: $primary-white;
+        font-size: 1.2rem;
+    }
+
+    .top32-info input[type="submit"],
+    .top32-info button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .top32-info input[type="submit"] {
+        background-color: $primary-yellow;
+        color: $primary-black;
+    }
+
+    .top32-info input[type="submit"]:hover {
+        background-color: darken($primary-yellow, 10%);
+    }
+
+    #tournament-create-btn {
+        background-color: $primary-yellow;
+        color: $primary-white;
+        border: none;
+        border-radius: 4px;
+        width: 20%;
+        text-transform: uppercase;
+        margin-top: 2vh;
+    }
+
+    #reset-tournament {
+        background-color: $primary-red;
+        color: $primary-white;
+        border: none;
+        border-radius: 4px;
+        width: 15%;
+        text-transform: uppercase;
+        margin-top: 2vh;
+    }
+
+    #reset-tournament:hover {
+        background-color: darken($primary-red, 10%);
+    }
+
+    .top32 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .top32 fieldset {
+        flex-basis: calc(50% - 10px);
+        margin-bottom: 10px;
+    }
+
+    .top32 label {
+        color: $primary-black;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .top32 input[type="text"] {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: $primary-white;
+        color: $primary-black;
+        font-size: 1rem;
+    }
+
+    .top32 input[type="text"]:focus {
+        outline: none;
+        box-shadow: 0 0 5px $primary-yellow;
+    }
+
+    .top32 textarea {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: $primary-white;
+        color: $primary-black;
+        font-size: 1rem;
+    }
+
+    .top32 textarea:focus {
+        outline: none;
+        box-shadow: 0 0 5px $primary-yellow;
+    }
+
+    .top32 input[type="submit"] {
+        flex-basis: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #tournament-form {
+        padding: 10px;
+    }
+
+    .top32-info,
+    .top32 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .top32 fieldset {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .top32 input[type="text"],
+    .top32 input[type="datetime-local"],
+    .top32 input[type="url"],
+    .top32 textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 5px;
+        background-color: $primary-white;
+        color: $primary-black;
+    }
+
+    #tournament-create-btn,
+    #reset-tournament {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

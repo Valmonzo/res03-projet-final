@@ -1,0 +1,34 @@
+<section>
+<h2 class="sr-only">Bracket tournoi du jour</h2>
+<div class="tournament-bracket">
+  <a href="http://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/schedule" class="btn">Retourner à la liste des tournois</a>
+<?php foreach ($data as $key => $gameround) { ?>
+  <section class="round-bracket">
+    <h3><?= $gameround->getName() ?></h3>
+    <?php foreach ($gameround->getGames() as $game) { ?>
+    <section class="match-bracket">
+      <h4><img src="<?=$game->getTeamA()->getLogo()?>" alt="Image représentant le logo de la team <?=$game->getTeamA()->getName()?>"> vs <img src="<?=$game->getTeamB()->getLogo()?>" alt="Image représentant le logo de la team <?=$game->getTeamB()->getName()?> "></h4>
+      <ul>
+        <li class="team-a"><?= $game->getTeamA()->getName(); ?></li>
+        <li class ="team-b"><?= $game->getTeamB()->getName(); ?></li>
+        <?php if($game->getWinner() !== null) { ?>
+        <li class="winner">
+          <?php
+          if ($game->getWinner() === $game->getTeamA()->getId()) {
+              echo $game->getTeamA()->getName();
+          }
+
+          else {
+              echo $game->getTeamB()->getName();
+            }
+          ?>
+        </li>
+      </ul>
+      <?php } ?>
+    </section>
+<?php } ?>
+</section>
+<?php }?>
+</div>
+</section>
+

@@ -1,0 +1,127 @@
+<section id="edit-tournament">
+    <h2>Edition du tournoi <span id="nbTournamentSpan" idTournoi="<?= $data['tournament']['id']?>">"<?= $data['tournament']['name']?>"</span></h2>
+    <form action="/res03-projet-final/purge_tournament/admin/tournaments/<?= $data['tournament']['id']?>/edit" method="post" id="tournament-edit-info">
+            <fieldset>
+                <label for="tournamentName">Nom</label>
+                <input type="text" name="tournamentName" value="<?= $data['tournament']['name']?>"/>
+            </fieldset>
+            <fieldset>
+                <label for="tournamentDate">Date</label>
+                <input type="datetime-local" name="tournamentDate" value="<?= $data['tournament']['date']?>"/>
+            </fieldset>
+            <fieldset>
+                <label for="gameName">Jeu</label>
+                <input type="text" name="gameName" value="<?= $data['tournament']['gameName']?>"/>
+            </fieldset>
+            <fieldset>
+                <label for="tournamentDescription">Description</label>
+                <textarea name="tournamentDescription"><?= $data['tournament']['description']?></textarea>
+            </fieldset>
+            <fieldset>
+                <label for="streamURL">Url du stream</label>
+                <input type="url" name="streamURL" value="<?= $data['tournament']['streamURL']?>"/>
+            </fieldset>
+            <input type="submit" value="Modifier les infos" name="edit" class="btn-edit"/>
+            <input type="hidden" name="formName" value="tournament-edit-info" idTournoi="<?= $data['tournament']['id']?>" id="tournamentId"/>
+    </form>
+
+    <form action="/res03-projet-final/purge_tournament/admin/tournaments/edit" method="post" id="last32" >
+        <section class="top32-edit" id="first-bracket">
+            <h3>16 ème de finale</h3>
+            <?php
+            // echo '<pre>' ; print_r($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[0]->getGames()) ; echo '</pre>';
+                    foreach($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[0]->getGames() as $game) {
+                        require '_team-fields-32.phtml';
+                    }
+             ?>
+        </section>
+        <input type="submit" value="Générer les 8 ème de finale" name="edit" class="btn-edit"/>
+        <input type="hidden" name="formName" value="tournament-edit-32" idRound="<?= $data['tournament']['id']?>" id="tournamentId"/>
+    </form>
+
+    <form action="/res03-projet-final/purge_tournament/admin/tournaments/edit" method="post" id="last16" >
+
+        <section class="top16-edit" id="third-bracket">
+            <h3>8 ème de finale</h3>
+            <?php
+            // echo '<pre>' ; print_r($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[0]->getGames()) ; echo '</pre>';
+                    foreach($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[1]->getGames() as $game) {
+                        require '_team-fields-16.phtml';
+                    }
+             ?>
+        </section>
+        <input type="submit" value="Générer les quarts de  finale" name="edit" class="btn-edit"/>
+        <input type="hidden" name="formName" value="tournament-edit-16" idTournoi="<?= $data['tournament']['id']?>" id="tournamentId"/>
+    </form>
+
+    <form action="/res03-projet-final/purge_tournament/admin/tournaments/edit" method="post" id="last8" >
+        <section class="top8-edit" id="fifth-bracket">
+            <h3>Quarts de finale</h3>
+            <?php
+            // echo '<pre>' ; print_r($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[0]->getGames()) ; echo '</pre>';
+                    foreach($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[2]->getGames() as $game) {
+                        require '_team-fields-8.phtml';
+                    }
+             ?>
+        </section>
+        <input type="submit" value="Générer les demi finales" name="edit" class="btn-edit"/>
+        <input type="hidden" name="formName" value="tournament-edit-8" idTournoi="<?= $data['tournament']['id']?>" id="tournamentId"/>
+    </form>
+
+    <form action="/res03-projet-final/purge_tournament/admin/tournaments/edit" method="post" id="last4" >
+        <section class="top4-edit" id="seventh-bracket">
+            <h3>Demi finales</h3>
+            <?php
+            // echo '<pre>' ; print_r($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[0]->getGames()) ; echo '</pre>';
+                    foreach($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[3]->getGames() as $game) {
+                        require '_team-fields-4.phtml';
+                    }
+             ?>
+        </section>
+        <input type="submit" value="Générer la finale" name="edit" class="btn-edit"/>
+        <input type="hidden" name="formName" value="tournament-edit-4" idTournoi="<?= $data['tournament']['id']?>" id="tournamentId"/>
+    </form>
+
+    <form action="/res03-projet-final/purge_tournament/admin/tournaments/edit" method="post" id="last2" >
+        <section class="top2-edit" id="ninth-bracket">
+            <h3>Finale</h3>
+            <?php
+            // echo '<pre>' ; print_r($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[0]->getGames()) ; echo '</pre>';
+                    foreach($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[4]->getGames() as $game) { ?>
+                        <fieldset>
+                            <?php if ($game->getTeamA() !== NULL) { ?>
+                                <legend><?= $game->getTeamA()->getName(); ?> vs <?= $game->getTeamB()->getName();?></legend>
+                                <section>
+                                  <input type="radio" id="<?= $game->getTeamA()->getName();?>" name="<?= $game->getId();?>" value="<?= $game->getTeamA()->getId();?>">
+                                  <label for="<?= $game->getTeamA()->getName();?> "><?= $game->getTeamA()->getName();?> </label>
+                                </section>
+                            <?php } ?>
+                            <?php if ($game->getTeamB() !== NULL) { ?>
+                                <section>
+                                  <input type="radio" id="<?= $game->getTeamB()->getName();?>" name="<?= $game->getId(); ?>" value="<?= $game->getTeamB()->getId();?>">
+                                  <label for="<?= $game->getTeamB()->getName(); ?>"><?= $game->getTeamB()->getName(); ?></label>
+                                </section>
+                            <?php } ?>
+                        </fieldset>
+                  <?php  } ?>
+        </section>
+        <input type="submit" value="Vainqueur du tournoi" name="edit" class="btn-edit"/>
+        <input type="hidden" name="formName" value="tournament-edit-2" idTournoi="<?= $data['tournament']['id']?>" id="tournamentId"/>
+    </form>
+    <section id="winner-section">
+        <?php
+        foreach($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[4]->getGames() as $game) {
+            if ($game->getWinner() !== null) {
+                if($game->getTeamA()->getId() === $game->getWinner()) {
+                echo  "Le vainqueur du tournoi est " . $game->getTeamA()->getName();
+                } else {
+                echo "Le vainqueur du tournoi est " . $game->getTeamB()->getName();
+                }
+            }
+        } ?>
+    </section>
+</section>
+<script type="module" src="/res03-projet-final/purge_tournament/assets/js/tournamentEdit.js"></script>
+
+
+

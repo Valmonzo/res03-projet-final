@@ -1,0 +1,15 @@
+<fieldset>
+    <?php if ($game->getTeamA() !== NULL) { ?>
+        <legend><?= $game->getTeamA()->getName(); ?> vs <?= $game->getTeamB()->getName();?></legend>
+        <section>
+          <input type="radio" id="<?= $game->getTeamA()->getName();?>" name="<?= $game->getId();?>" value="<?= $game->getTeamA()->getId();?>">
+          <label for="<?= $game->getTeamA()->getName();?> "><?= $game->getTeamA()->getName();?> </label>
+        </section>
+    <?php } ?>
+    <?php if ($game->getTeamB() !== NULL) { ?>
+        <section>
+          <input type="radio" id="<?= $game->getTeamB()->getName();?>" name="<?= $game->getId(); ?>" value="<?= $game->getTeamB()->getId();?>">
+          <label for="<?= $game->getTeamB()->getName(); ?>"><?= $game->getTeamB()->getName(); ?></label>
+        </section>
+    <?php } ?>
+</fieldset>

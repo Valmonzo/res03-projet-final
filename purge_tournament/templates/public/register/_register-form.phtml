@@ -1,0 +1,26 @@
+<section id="register">
+    <h1 class="sr-only">Register</h1>
+    <form method="post" action="/res03-projet-final/purge_tournament/register">
+        <h2>Register</h2>
+        <fieldset>
+            <label for="newUsername">Username</label>
+            <input type="text" name="newUsername" placeholder="Type a username" />
+        </fieldset>
+        <fieldset>
+            <label for="newEmail">Email</label>
+            <input type="email" name="newEmail" placeholder="Type a email" />
+        </fieldset>
+        <fieldset>
+            <label for="newPassword">Password</label>
+            <input type="password" name="newPassword" placeholder="Type a password"/>
+        </fieldset>
+        <fieldset>
+            <label for="confirm-pwd">Confirm password</label>
+            <input type="password" name="confirm-pwd" placeholder="Confirm password"/>
+        </fieldset>
+        <fieldset>
+            <input type="submit" name="submit" value="S'enregistrer" id="register-button" />
+        </fieldset>
+        <input type="hidden" name="formName" value="register"/>
+    </form>
+</section>

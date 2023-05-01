@@ -1,0 +1,39 @@
+<form action="/res03-projet-final/purge_tournament/admin/teams/<?= $data['team']->getId(); ?>/edit" method="post" class="form-team">
+    <h2>Editer la team <?= $data["team"]->getName(); ?></h2>
+    <fieldset>
+        <label for="teamName">Nom de la team</label>
+        <input type="text" name="teamName" value="<?= $data["team"]->getName(); ?>"/>
+    </fieldset>
+    <fieldset>
+        <label for="teamP1">Joueur 1</label>
+        <input type="text" name="teamP1" value="<?= $data["team"]->getPlayerOne(); ?>"/>
+    </fieldset>
+    <fieldset>
+        <label for="teamP2">Joueur 2</label>
+        <input type="text" name="teamP2" value="<?= $data["team"]->getPlayerTwo(); ?>"/>
+    </fieldset>
+    <fieldset>
+        <label for="teamP3">Joueur 3</label>
+        <input type="text" name="teamP3" value="<?= $data["team"]->getPlayerThree(); ?>"/>
+    </fieldset>
+    <fieldset>
+        <label for="teamP4">Joueur 4</label>
+        <input type="text" name="teamP4" value="<?= $data["team"]->getPlayerFour(); ?>"/>
+    </fieldset>
+    <fieldset>
+        <label for="teamPSub">Remplaçant</label>
+        <input type="text" name="teamPSub" value="<?= $data["team"]->getSubPlayer(); ?>"/>
+    </fieldset>
+    <fieldset>
+        <label for="coach">Nom du coach</label>
+        <input type="text" name="coach" value="<?= $data["team"]->getCoach(); ?>"/>
+    </fieldset>
+    <fieldset>
+        <label for="logo">Logo de la team</label>
+        <input type="url" name="logo" value="<?= $data["team"]->getLogo(); ?>"/>
+    </fieldset>
+    <fieldset>
+        <input type="submit" name="send" value="Edit" id="team-edit-btn" />
+    </fieldset>
+    <input type="hidden" name="formName" value="team-edit"/>
+</form>
