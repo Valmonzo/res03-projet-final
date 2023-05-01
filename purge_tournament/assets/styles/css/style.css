@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Braah+One&family=Darumadrop+One&family=Russo+One&display=swap");
 html,
 body,
 div,
@@ -134,7 +135,8 @@ table {
 }
 
 #main-header {
-  font-size: 1.1rem;
+  font-family: "Russo One", sans-serif;
+  font-size: 1.2rem;
   background: rgb(149, 46, 0);
   background: linear-gradient(115deg, rgb(149, 46, 0) 19%, rgb(195, 34, 60) 57%);
   color: #eeebe8;
@@ -147,7 +149,7 @@ table {
   right: 0;
   z-index: 999;
   max-width: 100vw;
-  border-bottom: 1px solid #91848c;
+  border-bottom: 1px solid #0e1111;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -181,7 +183,7 @@ table {
   transition: all 0.4s ease;
 }
 #main-header nav ul li:first-of-type a:hover {
-  transform: scale(1.1);
+  transform: rotate(360deg) scale(1.4);
 }
 #main-header nav ul li:not(:first-of-type) {
   margin: 0 2%;
@@ -196,15 +198,7 @@ table {
   transition: all 0.2s ease;
 }
 #main-header nav ul li:not(:first-of-type) a:hover {
-  background-color: #4b1a28;
-  transform: scale(1.1);
-}
-#main-header nav ul li:not(:first-of-type) a figure {
-  margin: 0;
-}
-#main-header nav ul li:not(:first-of-type) a figure img {
-  height: 3vw;
-  width: auto;
+  transform: scale(1.2);
 }
 @keyframes underline {
   0% {
@@ -234,17 +228,24 @@ table {
 }
 @keyframes bg-change {
   0% {
-    background-color: #250d14;
+    background: rgb(149, 46, 0);
+    background: linear-gradient(115deg, rgb(149, 46, 0) 19%, rgb(195, 34, 60) 57%);
+  }
+  20% {
+    background: rgb(149, 46, 0);
+    background: linear-gradient(115deg, rgb(149, 46, 0) 29%, rgb(195, 34, 60) 70%);
   }
   50% {
-    background-color: #4b1a28;
+    background: rgb(149, 46, 0);
+    background: linear-gradient(115deg, rgb(149, 46, 0) 49%, rgb(195, 34, 60) 90%);
   }
   100% {
-    background-color: #250d14;
+    background: rgb(149, 46, 0);
+    background: linear-gradient(115deg, rgb(149, 46, 0) 69%, rgb(195, 34, 60) 100%);
   }
 }
 #main-header:hover {
-  animation: bg-change 2s infinite;
+  animation: bg-change 0.4s forwards;
 }
 @media screen and (max-width: 768px) {
   #main-header nav ul {
@@ -279,13 +280,12 @@ table {
     transition: all 0.4s ease;
   }
   #main-header nav ul li:first-of-type a:hover {
-    background-color: #4b1a28;
     transform: scale(1.1);
   }
 }
 
 #admin-header {
-  background-color: #250d14;
+  background-color: #0e1111;
   color: #eeebe8;
   padding: 10px;
 }
@@ -311,7 +311,7 @@ table {
 }
 #admin-header nav ul li a:hover {
   background-color: #eeebe8;
-  color: #250d14;
+  color: #0e1111;
 }
 @media screen and (max-width: 600px) {
   #admin-header nav ul li {
@@ -329,12 +329,13 @@ table {
   background: linear-gradient(0deg, rgba(238, 35, 7, 0.7021009087) 1%, rgba(238, 99, 99, 0.8365546902) 16%, rgba(235, 224, 224, 0.766526679) 60%);
   padding: 1rem;
   text-align: center;
-  color: #250d14;
+  color: #0e1111;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
+  font-family: "Braah One", sans-serif;
 }
 #homepage-header figure {
   padding-top: 3rem;
@@ -370,6 +371,7 @@ table {
   animation: moveInBottom 1s ease-out;
   padding-bottom: 8rem;
   color: #eeebe8;
+  font-family: "Montserrat", sans-serif;
 }
 #homepage-header p {
   margin: 0;
@@ -378,12 +380,13 @@ table {
   letter-spacing: 0.05em;
   animation: moveInBottom 1s ease-out;
   padding-bottom: 6rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 #homepage-main {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Braah One", sans-serif;
   text-align: center;
-  padding: 10rem 0;
+  padding: 4rem;
   transition: all 0.5s ease-in-out;
   height: 100%;
   background: rgb(71, 58, 180);
@@ -397,7 +400,7 @@ table {
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #d01f18;
+  color: #0e1111;
   letter-spacing: 0.1em;
   animation: moveInTop 1s ease-out;
   padding-bottom: 3vh;
@@ -432,7 +435,7 @@ table {
   color: #eeebe8;
 }
 #homepage-main:hover {
-  background-color: #eca804;
+  background-color: #473ab4;
   transform: translateY(-2px);
 }
 
@@ -452,18 +455,18 @@ table {
   }
 }
 #homepage-main h3 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 #homepage-main p {
   font-size: 1.5rem;
 }
 #homepage-main button {
-  font-size: 1.8rem;
-  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  padding: 1rem;
 }
 
 .messagerie-section h2 {
-  color: #250d14;
+  color: #0e1111;
   text-align: center;
   margin-top: 2rem;
   text-transform: uppercase;
@@ -481,7 +484,7 @@ table {
   border: 1px solid #91848c;
 }
 .messagerie-section table th {
-  background-color: #250d14;
+  background-color: #0e1111;
   color: #eeebe8;
 }
 .messagerie-section table td {
@@ -552,7 +555,7 @@ table {
   margin-bottom: 20px;
 }
 #tournament-form .top32-info label {
-  color: #250d14;
+  color: #0e1111;
   font-size: 1.2rem;
   margin-bottom: 5px;
 }
@@ -578,7 +581,7 @@ table {
 }
 #tournament-form .top32-info input[type=submit] {
   background-color: #fbb304;
-  color: #250d14;
+  color: #0e1111;
 }
 #tournament-form .top32-info input[type=submit]:hover {
   background-color: #c98f03;
@@ -615,7 +618,7 @@ table {
   margin-bottom: 10px;
 }
 #tournament-form .top32 label {
-  color: #250d14;
+  color: #0e1111;
   font-size: 1rem;
   margin-bottom: 5px;
 }
@@ -624,7 +627,7 @@ table {
   border: none;
   border-radius: 5px;
   background-color: #eeebe8;
-  color: #250d14;
+  color: #0e1111;
   font-size: 1rem;
 }
 #tournament-form .top32 input[type=text]:focus {
@@ -636,7 +639,7 @@ table {
   border: none;
   border-radius: 5px;
   background-color: #eeebe8;
-  color: #250d14;
+  color: #0e1111;
   font-size: 1rem;
 }
 #tournament-form .top32 textarea:focus {
@@ -679,7 +682,7 @@ table {
     border: none;
     border-radius: 5px;
     background-color: #eeebe8;
-    color: #250d14;
+    color: #0e1111;
   }
   #tournament-create-btn,
   #reset-tournament {
@@ -755,7 +758,7 @@ table {
   width: 100%;
   max-width: 100%;
   background-color: #eeebe8;
-  color: #250d14;
+  color: #0e1111;
 }
 #edit-tournament input[type=text],
 #edit-tournament input[type=url],
@@ -812,7 +815,7 @@ table {
 }
 #admin-tournament-list h2 {
   font-size: 2rem;
-  color: #250d14;
+  color: #0e1111;
   margin-bottom: 2rem;
   font-weight: bold;
 }
@@ -821,7 +824,7 @@ table {
   border-collapse: collapse;
 }
 #admin-tournament-list table thead tr th {
-  color: #250d14;
+  color: #0e1111;
   text-align: left;
   padding: 1rem;
   border-bottom: 1px solid #91848c;
@@ -829,13 +832,13 @@ table {
 #admin-tournament-list table tbody tr td {
   padding: 1rem;
   border-bottom: 1px solid #91848c;
-  color: #250d14;
+  color: #0e1111;
 }
 #admin-tournament-list table tbody tr td:first-child {
   font-weight: bold;
 }
 #admin-tournament-list table tbody tr td a {
-  color: #250d14;
+  color: #0e1111;
   text-decoration: none;
 }
 #admin-tournament-list table tbody tr td a:hover {
@@ -844,7 +847,7 @@ table {
 #admin-tournament-list table tbody tr td button {
   background-color: #fbb304;
   border: none;
-  color: #250d14;
+  color: #0e1111;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
@@ -860,7 +863,7 @@ table {
   max-width: 20rem;
   padding: 1rem;
   background-color: #fbb304;
-  color: #250d14;
+  color: #0e1111;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -871,7 +874,7 @@ table {
 }
 #admin-tournament-list button a {
   text-decoration: none;
-  color: #250d14;
+  color: #0e1111;
 }
 @media (max-width: 768px) {
   #admin-tournament-list {
@@ -902,7 +905,7 @@ table {
 }
 
 #teams-list-title {
-  color: #250d14;
+  color: #0e1111;
   font-size: 28px;
   font-weight: bold;
   margin: 30px 0;
@@ -919,7 +922,7 @@ table {
   border-spacing: 0;
 }
 #teams-list table th {
-  background-color: #250d14;
+  background-color: #0e1111;
   color: #eeebe8;
   padding: 10px;
   text-align: left;
@@ -932,7 +935,7 @@ table {
 }
 #teams-list table td:first-child {
   font-weight: bold;
-  color: #250d14;
+  color: #0e1111;
 }
 #teams-list table td img {
   max-width: 100px;
@@ -940,7 +943,7 @@ table {
 }
 #teams-list table td button {
   background-color: #fbb304;
-  color: #250d14;
+  color: #0e1111;
   border: none;
   padding: 10px;
   margin-right: 10px;
@@ -953,11 +956,11 @@ table {
 }
 #teams-list table td button:hover {
   background-color: #eeebe8;
-  color: #250d14;
+  color: #0e1111;
 }
 #teams-list button {
   background-color: #fbb304;
-  color: #250d14;
+  color: #0e1111;
   border: none;
   padding: 10px;
   margin-top: 20px;
@@ -971,7 +974,7 @@ table {
 }
 #teams-list button:hover {
   background-color: #eeebe8;
-  color: #250d14;
+  color: #0e1111;
 }
 @media screen and (max-width: 600px) {
   #teams-list button table th,
@@ -998,7 +1001,7 @@ table {
     display: inline-block;
     width: 80px;
     margin-right: 10px;
-    color: #250d14;
+    color: #0e1111;
     text-align: left;
   }
 }
@@ -1037,7 +1040,7 @@ table {
   border-radius: 5px;
   margin-bottom: 1rem;
   background-color: #eeebe8;
-  color: #250d14;
+  color: #0e1111;
   transition: all 0.2s ease-in-out;
 }
 .form-team fieldset input:hover,
@@ -1053,7 +1056,7 @@ table {
 }
 .form-team fieldset input[type=submit] {
   background-color: #fbb304;
-  color: #250d14;
+  color: #0e1111;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -1066,7 +1069,7 @@ table {
 }
 
 #login {
-  color: #250d14;
+  color: #0e1111;
   padding: 20px;
   height: 100%;
   display: flex;
@@ -1109,7 +1112,7 @@ table {
   color: #91848c;
 }
 #login fieldset input[type=submit] {
-  background-color: #250d14;
+  background-color: #0e1111;
   color: #eeebe8;
   border: none;
   padding: 10px 20px;
@@ -1173,7 +1176,7 @@ table {
   border: 2px solid #91848c;
   font-size: 16px;
   font-weight: 500;
-  color: #250d14;
+  color: #0e1111;
   background-color: transparent;
 }
 #contact-form fieldset input:focus,
@@ -1187,7 +1190,7 @@ table {
 #contact-form #contact-btn {
   width: 100%;
   background-color: #fbb304;
-  color: #250d14;
+  color: #0e1111;
   border: none;
   border-radius: 5px;
   font-size: 18px;
@@ -1225,10 +1228,11 @@ table {
 }
 .tournament-display h2 {
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   text-transform: uppercase;
-  font-weight: 600;
-  color: #250d14;
+  font-weight: bold;
+  color: #0e1111;
+  font-family: "Braah One", sans-serif;
 }
 .tournament-display p {
   font-size: 1.3rem;
@@ -1239,7 +1243,7 @@ table {
   padding: 1.2rem;
   border-radius: 30px;
   background-color: #fbb304;
-  color: #250d14;
+  color: #0e1111;
   font-size: 24px;
   text-decoration: none;
   transition: background-color 0.3s ease;
@@ -1303,7 +1307,7 @@ table {
   margin-top: 3rem;
   display: inline-block;
   background-color: #fbb304;
-  color: #250d14;
+  color: #0e1111;
   text-decoration: none;
   padding: 1rem;
   border-radius: 5px;
@@ -1350,7 +1354,7 @@ table {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color: #250d14;
+  color: #0e1111;
   margin-bottom: 10px;
 }
 .tournament-bracket .round-bracket .match-bracket h4 img {
@@ -1372,7 +1376,7 @@ table {
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  color: #250d14;
+  color: #0e1111;
   background-color: #eeebe8;
   border: 1px solid #91848c;
   border-radius: 5px;
@@ -1385,15 +1389,15 @@ table {
   margin-bottom: 0;
 }
 .tournament-bracket .round-bracket .match-bracket ul li.team-a {
-  color: #250d14;
+  color: #0e1111;
 }
 .tournament-bracket .round-bracket .match-bracket ul li.team-b {
-  color: #250d14;
+  color: #0e1111;
 }
 .tournament-bracket .round-bracket .match-bracket ul li.winner {
   background-color: #fbb304;
   border: 1px solid #fbb304;
-  color: #250d14;
+  color: #0e1111;
 }
 @media (max-width: 768px) {
   .tournament-bracket .round-bracket h3 {
@@ -1430,15 +1434,17 @@ table {
 }
 .about-us-container .about-us h3 {
   font-size: 3rem;
-  color: #250d14;
+  color: #0e1111;
   margin-bottom: 4rem;
   text-align: center;
   width: 100%;
   font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Braah One", sans-serif;
 }
 .about-us-container .about-us article {
-  margin-bottom: 2rem;
-  width: 23vw;
+  margin-bottom: 3rem;
+  width: 45vw;
   text-align: center;
   border-radius: 8px;
   overflow: hidden;
@@ -1446,8 +1452,9 @@ table {
   background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566) 0%, rgba(24, 24, 41, 0.5480392841) 35%, rgb(8, 85, 101) 100%);
   box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-out;
-  padding: 3vh 2vw;
+  padding: 2vh 4vw;
   box-sizing: border-box;
+  min-height: 130vh;
 }
 .about-us-container .about-us article:hover {
   opacity: 0.8;
@@ -1457,18 +1464,20 @@ table {
 .about-us-container .about-us article h4 {
   color: #eeebe8;
   text-transform: uppercase;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
-  font-weight: bold;
+  font-weight: 500;
+  font-family: "Darumadrop One", cursive;
 }
 .about-us-container .about-us article figure {
   margin-bottom: 2rem;
+  height: 70vh;
 }
 .about-us-container .about-us article img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 15%;
+  border-radius: 10%;
   box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
 }
 .about-us-container .about-us article .card-list {
@@ -1478,8 +1487,8 @@ table {
 }
 .about-us-container .about-us article .card-list li {
   color: #eeebe8;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.3rem;
   text-align: left;
 }
 .about-us-container .about-us article .card-list li span {
@@ -1490,7 +1499,8 @@ table {
     display: grid;
   }
   .about-us-container .about-us article {
-    width: 60vw;
+    min-width: 90vw;
+    justify-self: center;
   }
 }
 .about-us-container .section-friends {
@@ -1498,15 +1508,17 @@ table {
 }
 .about-us-container .section-friends h3 {
   font-size: 3rem;
-  color: #250d14;
+  color: #0e1111;
   margin-bottom: 1rem;
   text-align: center;
   width: 100%;
   font-weight: bold;
+  font-family: "Braah One", sans-serif;
+  text-transform: uppercase;
 }
 .about-us-container .section-friends p {
   color: #91848c;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -1526,7 +1538,6 @@ table {
   height: 200px;
   overflow: hidden;
   border-radius: 30%;
-  border: 2px solid #d01f18;
   transition: all 0.2s ease-out;
 }
 .about-us-container .section-friends .friends-list li figure img {
@@ -1546,7 +1557,7 @@ table {
   width: 100%;
   padding: 33vh 0;
   height: 100%;
-  background-color: #250d14;
+  background-color: #0e1111;
   color: #eeebe8;
 }
 .error-page h3 {
@@ -1560,7 +1571,7 @@ table {
 .error-page .btn {
   display: inline-block;
   background-color: #fbb304;
-  color: #250d14;
+  color: #0e1111;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -1586,7 +1597,7 @@ table {
   background: linear-gradient(115deg, rgb(149, 46, 0) 19%, rgb(195, 34, 60) 57%);
   color: #eeebe8;
   text-align: center;
-  padding: 20px;
+  padding: 3rem;
   border-top: 1px solid #91848c;
   min-height: 10vh;
 }
@@ -1614,8 +1625,7 @@ table {
   margin: 0 10px;
 }
 .main-footer .footer-content .social-links li:hover {
-  transform: translateY(-2px);
-  transform: scale(1.2);
+  transform: translateY(-2px) scale(1.2);
 }
 .main-footer .footer-content .social-links li a {
   color: #eeebe8;

@@ -35,7 +35,7 @@ function loadTodayTournament() {
             }
             else {
                 let section = document.createElement('section');
-                let h2 = document.createElement('h2');
+                let h2 = document.createElement('h3');
                 h2.textContent = "Il n'y a pas de tournoi aujourd'hui !";
                 section.appendChild(h2);
                 let tournamentInfo = document.getElementById('tournament-info');
