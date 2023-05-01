@@ -1,0 +1,145 @@
+.tournament-bracket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $primary-white;
+
+    .btn {
+        margin-top: 3rem;
+        display: inline-block;
+        background-color: $primary-yellow;
+        color: $primary-black;
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: lighten($primary-yellow, 10%);
+        }
+    }
+
+    .round-bracket {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 8rem;
+        width: 70vw;
+        padding: 2rem;
+        background: rgb(59, 57, 99);
+        background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566220238) 0%, rgba(24, 24, 41, 0.5480392840730042) 35%, rgba(8, 85, 101, 1) 100%);
+        box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease-out;
+        padding: 3vh 2vw;
+        box-sizing: border-box;
+
+        &:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+            box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
+        }
+
+
+
+
+        h3 {
+            font-size: 2rem;
+            color: $primary-white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .match-bracket {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+
+            h4 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                color: $primary-black;
+                margin-bottom: 10px;
+
+                img {
+                    margin: 0 10px;
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 14px;
+                    color: $primary-black;
+                    background-color: $primary-white;
+                    border: 1px solid $primary-grey;
+                    border-radius: 5px;
+                    height: 30px;
+                    width: 500px;
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    &.team-a {
+                        color: $primary-black;
+                    }
+
+                    &.team-b {
+                        color: $primary-black;
+                    }
+
+                    &.winner {
+                        background-color: $primary-yellow;
+                        border: 1px solid $primary-yellow;
+                        color: $primary-black;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            h3 {
+                font-size: 18px;
+            }
+
+            .match-bracket {
+                h4 {
+                    font-size: 14px;
+
+                    img {
+                        height: 20px;
+                        width: 20px;
+                        margin: 0 5px;
+                    }
+                }
+
+                ul {
+                    li {
+                        font-size: 12px;
+                        height: 25px;
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}

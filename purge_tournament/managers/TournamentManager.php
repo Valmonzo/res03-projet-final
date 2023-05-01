@@ -79,7 +79,7 @@ class TournamentManager extends AbstractManager
         return $tournamentsTab;
     }
 
-    public function getTournamentById(int $id): Tournament
+    public function getTournamentById(int $id): ?Tournament
     {
         // Récupérer un tournoi par l'id pour l'afficher
 
@@ -92,7 +92,8 @@ class TournamentManager extends AbstractManager
 
         $tournament = $query->fetch(PDO::FETCH_ASSOC);
 
-        $tournamentToLoad = new Tournament(
+        if ($tournament) {
+            $tournamentToLoad = new Tournament(
             $tournament["name"],
             $tournament["date"],
             $tournament["description"],
@@ -102,6 +103,12 @@ class TournamentManager extends AbstractManager
         $tournamentToLoad->setId($tournament["id"]);
 
         return $tournamentToLoad;
+        }
+        else {
+            return null;
+        }
+
+
     }
 
     public function getTournamentsToday(): array

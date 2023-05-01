@@ -46,4 +46,20 @@ class RendererController extends AbstractController
     {
         $this->render("contact/contact", []);
     }
+
+    public function renderEvent(int $id): void
+    {
+        $tournament = $this->tournamentManager->getTournamentById($id);
+        $gamerounds = [];
+        if ($tournament !== null) {
+            $gamerounds = $this->gameRoundManager->getGameRoundsByTournament($tournament);
+            foreach($gamerounds as $gameround) {
+                $games = $this->gameManager->getGamesByGameRound($gameround);
+                $gameround->setGames($games);
+            }
+        }
+
+
+        $this->render("bracket/bracket", $gamerounds);
+    }
 }

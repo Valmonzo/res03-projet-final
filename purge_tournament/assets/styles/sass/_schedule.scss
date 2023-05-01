@@ -1,10 +1,8 @@
 // Styles pour la section tournament-display
 .tournament-display {
-    font-family: 'Montserrat', sans-serif;
-    background-color: $primary-black;
+    background-color: $primary-white;
     opacity: 80%;
-    color: $primary-white;
-    padding: 50px;
+    padding: 3rem;
     text-align: center;
     min-height: 80vh;
 
@@ -13,20 +11,21 @@
     }
 
     h2 {
-        font-size: 40px;
-        margin-bottom: 30px;
+        font-size: 3rem;
+        margin-bottom: 2rem;
         text-transform: uppercase;
         font-weight: 600;
+        color: $primary-black;
     }
 
     p {
-        font-size: 24px;
-        margin-bottom: 15px;
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
     }
 
     a {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 1.2rem;
         border-radius: 30px;
         background-color: $primary-yellow;
         color: $primary-black;
@@ -46,4 +45,38 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 5rem;
+
+    &>section {
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+        background: rgb(59, 57, 99);
+        background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566220238) 0%, rgba(24, 24, 41, 0.5480392840730042) 35%, rgba(8, 85, 101, 1) 100%);
+        box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease-out;
+        padding: 3vh 2vw;
+        box-sizing: border-box;
+
+        &:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+            box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        & h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $primary-white;
+        }
+
+        & p {
+            color: $primary-white;
+        }
+    }
 }

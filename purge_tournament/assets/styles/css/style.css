@@ -134,9 +134,9 @@ table {
 }
 
 #main-header {
-  font-family: "Monserrat", sans-serif;
   font-size: 1.1rem;
-  background-color: #250d14;
+  background: rgb(149, 46, 0);
+  background: linear-gradient(115deg, rgb(149, 46, 0) 19%, rgb(195, 34, 60) 57%);
   color: #eeebe8;
   padding: 2%;
   display: flex;
@@ -176,12 +176,11 @@ table {
   color: #eeebe8;
   text-decoration: none;
   display: block;
-  padding: 2%;
-  width: 30%;
+  padding: 3%;
+  width: 35%;
   transition: all 0.4s ease;
 }
 #main-header nav ul li:first-of-type a:hover {
-  background-color: #4b1a28;
   transform: scale(1.1);
 }
 #main-header nav ul li:not(:first-of-type) {
@@ -193,11 +192,12 @@ table {
   text-decoration: none;
   display: block;
   padding: 2%;
-  width: 30%;
+  width: 35%;
   transition: all 0.2s ease;
 }
 #main-header nav ul li:not(:first-of-type) a:hover {
   background-color: #4b1a28;
+  transform: scale(1.1);
 }
 #main-header nav ul li:not(:first-of-type) a figure {
   margin: 0;
@@ -325,9 +325,8 @@ table {
 }
 
 #homepage-header {
-  font-family: "Montserrat", sans-serif;
-  background: rgb(195, 34, 34);
-  background: linear-gradient(35deg, rgba(195, 34, 34, 0.8393558107) 0%, rgb(196, 128, 36) 54%);
+  background: rgb(238, 35, 7);
+  background: linear-gradient(0deg, rgba(238, 35, 7, 0.7021009087) 1%, rgba(238, 99, 99, 0.8365546902) 16%, rgba(235, 224, 224, 0.766526679) 60%);
   padding: 1rem;
   text-align: center;
   color: #250d14;
@@ -413,7 +412,7 @@ table {
 #homepage-main button {
   background-color: #7289da;
   color: #eeebe8;
-  border: none;
+  border: 1px solid white;
   border-radius: 0.25rem;
   padding: 0.75rem 2rem;
   font-size: 1.5rem;
@@ -464,9 +463,6 @@ table {
   padding: 0.75rem 2.5rem;
 }
 
-.messagerie-section {
-  font-family: "Montserrat", sans-serif;
-}
 .messagerie-section h2 {
   color: #250d14;
   text-align: center;
@@ -533,7 +529,6 @@ table {
 }
 
 #tournament-form {
-  font-family: "Monserrat", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -694,15 +689,18 @@ table {
   }
 }
 #edit-tournament {
-  font-family: "Monserrat", sans-serif;
+  padding: 0.8rem;
 }
 #edit-tournament h2 {
   margin: 1rem 0;
   color: #d01f18;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 #edit-tournament label {
   display: block;
-  margin: 1rem 0;
+  margin: 0.2rem 0;
   text-transform: uppercase;
 }
 #edit-tournament input,
@@ -730,21 +728,26 @@ table {
 #edit-tournament .top2-edit {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   margin: 1rem 0;
   padding: 1rem;
-  background-color: #91848c;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(160deg, rgb(2, 0, 36) 0%, rgba(24, 24, 41, 0.5480392841) 35%, rgb(8, 85, 101) 100%);
   color: #eeebe8;
+  border-radius: 4px;
 }
 #edit-tournament h3 {
   margin: 0;
   font-size: 1.5rem;
   text-align: center;
   width: 100%;
-  color: #250d14;
+  color: #d01f18;
   text-transform: uppercase;
+  padding: 0.5rem;
   font-weight: 600;
+  background-color: white;
+  border-radius: 4px;
 }
 #edit-tournament input[type=text],
 #edit-tournament input[type=url],
@@ -767,9 +770,14 @@ table {
 #edit-tournament input[type=radio] + label {
   position: relative;
   display: inline-block;
-  padding-left: 25px;
-  margin-bottom: 10px;
   cursor: pointer;
+  padding: 0 0.4rem;
+}
+#edit-tournament legend {
+  font-size: 1.2rem;
+  margin: 1.5rem 1rem 1.5rem 0;
+  font-weight: 500;
+  color: #fbb304;
 }
 #edit-tournament .btn-edit {
   margin: 0.5rem;
@@ -784,27 +792,16 @@ table {
 #edit-tournament .btn-edit:hover {
   background-color: #e83a33;
 }
-#edit-tournament #reset-tournament {
-  margin: 0.5rem;
-  background-color: #fbb304;
-  color: #eeebe8;
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-#edit-tournament #reset-tournament:hover {
-  background-color: #e83a33;
-}
 #edit-tournament #winner-section {
-  background-color: #d01f18;
-  padding: 20px;
+  background: rgb(59, 57, 99);
+  background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566) 0%, rgba(24, 24, 41, 0.5480392841) 35%, rgb(8, 85, 101) 100%);
+  padding: 2rem;
   margin-top: 1vh;
   border-radius: 5px;
   color: #eeebe8;
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 #admin-tournament-list {
@@ -1070,7 +1067,6 @@ table {
 }
 
 #login {
-  font-family: "Montserrat", sans-serif;
   color: #250d14;
   padding: 20px;
   height: 100%;
@@ -1141,7 +1137,6 @@ table {
 }
 
 #contact-form {
-  font-family: "Montserrat", sans-serif;
   background-color: #eeebe8;
   padding: 50px;
   margin-left: 3vw;
@@ -1220,11 +1215,9 @@ table {
 }
 
 .tournament-display {
-  font-family: "Montserrat", sans-serif;
-  background-color: #250d14;
+  background-color: #eeebe8;
   opacity: 80%;
-  color: #eeebe8;
-  padding: 50px;
+  padding: 3rem;
   text-align: center;
   min-height: 80vh;
 }
@@ -1232,18 +1225,19 @@ table {
   padding-bottom: 5vh;
 }
 .tournament-display h2 {
-  font-size: 40px;
-  margin-bottom: 30px;
+  font-size: 3rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
   font-weight: 600;
+  color: #250d14;
 }
 .tournament-display p {
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
 }
 .tournament-display a {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 1.2rem;
   border-radius: 30px;
   background-color: #fbb304;
   color: #250d14;
@@ -1261,11 +1255,161 @@ table {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 5rem;
+}
+#tournament-info > section {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgb(59, 57, 99);
+  background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566) 0%, rgba(24, 24, 41, 0.5480392841) 35%, rgb(8, 85, 101) 100%);
+  box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-out;
+  padding: 3vh 2vw;
+  box-sizing: border-box;
+}
+#tournament-info > section:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+  box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
+}
+#tournament-info > section h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #eeebe8;
+}
+#tournament-info > section p {
+  color: #eeebe8;
+}
+
+.tournament-bracket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eeebe8;
+}
+.tournament-bracket .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  background-color: #fbb304;
+  color: #250d14;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.tournament-bracket .btn:hover {
+  background-color: #fcc236;
+}
+.tournament-bracket .round-bracket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8rem;
+  width: 70vw;
+  padding: 2rem;
+  background: rgb(59, 57, 99);
+  background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566) 0%, rgba(24, 24, 41, 0.5480392841) 35%, rgb(8, 85, 101) 100%);
+  box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-out;
+  padding: 3vh 2vw;
+  box-sizing: border-box;
+}
+.tournament-bracket .round-bracket:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+  box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
+}
+.tournament-bracket .round-bracket h3 {
+  font-size: 2rem;
+  color: #eeebe8;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.tournament-bracket .round-bracket .match-bracket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.tournament-bracket .round-bracket .match-bracket h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #250d14;
+  margin-bottom: 10px;
+}
+.tournament-bracket .round-bracket .match-bracket h4 img {
+  margin: 0 10px;
+  height: 100px;
+  width: 100px;
+}
+.tournament-bracket .round-bracket .match-bracket ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tournament-bracket .round-bracket .match-bracket ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #250d14;
+  background-color: #eeebe8;
+  border: 1px solid #91848c;
+  border-radius: 5px;
+  height: 30px;
+  width: 500px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.tournament-bracket .round-bracket .match-bracket ul li:last-child {
+  margin-bottom: 0;
+}
+.tournament-bracket .round-bracket .match-bracket ul li.team-a {
+  color: #250d14;
+}
+.tournament-bracket .round-bracket .match-bracket ul li.team-b {
+  color: #250d14;
+}
+.tournament-bracket .round-bracket .match-bracket ul li.winner {
+  background-color: #fbb304;
+  border: 1px solid #fbb304;
+  color: #250d14;
+}
+@media (max-width: 768px) {
+  .tournament-bracket .round-bracket h3 {
+    font-size: 18px;
+  }
+  .tournament-bracket .round-bracket .match-bracket h4 {
+    font-size: 14px;
+  }
+  .tournament-bracket .round-bracket .match-bracket h4 img {
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+  }
+  .tournament-bracket .round-bracket .match-bracket ul li {
+    font-size: 12px;
+    height: 25px;
+    width: 150px;
+  }
 }
 
 .about-us-container {
-  background: rgb(180, 163, 58);
-  background: radial-gradient(circle, rgba(180, 163, 58, 0.4303922252) 2%, rgba(253, 128, 29, 0.5480392841) 77%, rgba(252, 176, 69, 0.5564426454) 100%);
+  background-color: #eeebe8;
   width: 100%;
   height: 100%;
   padding: 3vh 0;
@@ -1290,10 +1434,10 @@ table {
   margin-bottom: 2rem;
   width: 23vw;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
-  background: rgb(195, 103, 34);
-  background: linear-gradient(0deg, rgba(195, 103, 34, 0.4780112729) 0%, rgb(216, 188, 71) 83%, rgb(253, 187, 45) 100%);
+  background: rgb(59, 57, 99);
+  background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566) 0%, rgba(24, 24, 41, 0.5480392841) 35%, rgb(8, 85, 101) 100%);
   box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-out;
   padding: 3vh 2vw;
@@ -1305,14 +1449,14 @@ table {
   box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
 }
 .about-us-container .about-us article h4 {
-  color: #d01f18;
+  color: #eeebe8;
   text-transform: uppercase;
   font-size: 1.8rem;
   margin-bottom: 2rem;
   font-weight: bold;
 }
 .about-us-container .about-us article figure {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .about-us-container .about-us article img {
   width: 100%;
@@ -1329,7 +1473,8 @@ table {
 .about-us-container .about-us article .card-list li {
   color: #eeebe8;
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 .about-us-container .about-us article .card-list li span {
   font-weight: bold;
@@ -1395,7 +1540,6 @@ table {
   width: 100%;
   padding: 33vh 0;
   height: 100%;
-  font-family: "Montserrat", sans-serif;
   background-color: #250d14;
   color: #eeebe8;
 }
@@ -1432,7 +1576,8 @@ table {
 }
 
 .main-footer {
-  background-color: #250d14;
+  background: rgb(149, 46, 0);
+  background: linear-gradient(115deg, rgb(149, 46, 0) 19%, rgb(195, 34, 60) 57%);
   color: #eeebe8;
   text-align: center;
   padding: 20px;
@@ -1446,8 +1591,9 @@ table {
   align-items: center;
 }
 .main-footer .footer-content p {
-  margin: 0 0 10px;
+  margin: 2vh 2vw;
   color: #eeebe8;
+  font-size: 1.2rem;
 }
 .main-footer .footer-content .social-links {
   display: flex;
@@ -1467,7 +1613,7 @@ table {
 }
 .main-footer .footer-content .social-links li a {
   color: #eeebe8;
-  font-size: 20px;
+  font-size: 25px;
 }
 @media (min-width: 768px) {
   .main-footer .footer-content {
@@ -1491,11 +1637,6 @@ table {
   border-width: 0;
 }
 
-.error {
-  color: #d01f18;
-  border: 3px solid #d01f18;
-}
-
 main {
   min-height: 80vh;
 }
@@ -1506,6 +1647,11 @@ a {
 
 body {
   font-family: "Montserrat", sans-serif;
+}
+
+.error {
+  color: #d01f18;
+  border: 3px solid #d01f18;
 }
 
 /*# sourceMappingURL=style.css.map */

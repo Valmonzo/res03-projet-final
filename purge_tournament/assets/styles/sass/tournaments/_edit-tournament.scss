@@ -1,13 +1,16 @@
 #edit-tournament {
-    font-family: 'Monserrat', sans-serif;
+    padding: 0.8rem;
     h2 {
         margin: 1rem 0;
         color: $primary-red;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 
     label {
         display: block;
-        margin: 1rem 0;
+        margin: .2rem 0;
         text-transform: uppercase;
     }
 
@@ -38,12 +41,14 @@
     .top2-edit {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
         margin: 1rem 0;
         padding: 1rem;
-        background-color: $primary-grey;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(160deg, rgba(2, 0, 36, 1) 0%, rgba(24, 24, 41, 0.5480392840730042) 35%, rgba(8, 85, 101, 1) 100%);
         color: $primary-white;
+        border-radius: 4px;
     }
 
     h3 {
@@ -51,9 +56,12 @@
         font-size: 1.5rem;
         text-align: center;
         width: 100%;
-        color: $primary-black;
+        color: $primary-red;
         text-transform: uppercase;
+        padding: 0.5rem;
         font-weight: 600;
+        background-color: white;
+        border-radius: 4px;
     }
 
     input[type="text"],
@@ -80,9 +88,15 @@
     input[type="radio"]+label {
         position: relative;
         display: inline-block;
-        padding-left: 25px;
-        margin-bottom: 10px;
         cursor: pointer;
+        padding: 0 .4rem;
+    }
+
+    legend {
+        font-size: 1.2rem;
+        margin: 1.5rem 1rem 1.5rem 0;
+        font-weight: 500;
+        color: $primary-yellow;
     }
 
 
@@ -100,27 +114,15 @@
         }
     }
 
-    #reset-tournament {
-        margin: 0.5rem;
-        background-color: $primary-yellow;
-        color: $primary-white;
-        border: none;
-        border-radius: 0.25rem;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        &:hover {
-            background-color: lighten($primary-red, 10%);
-        }
-    }
-
     #winner-section {
-        background-color: $primary-red;
-        padding: 20px;
+        background: rgb(59, 57, 99);
+        background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566220238) 0%, rgba(24, 24, 41, 0.5480392840730042) 35%, rgba(8, 85, 101, 1) 100%);
+        padding: 2rem;
         margin-top: 1vh;
         border-radius: 5px;
         color: $primary-white;
-        font-size: 24px;
+        font-size: 1.5rem;
         text-align: center;
+        text-transform: uppercase;
     }
 }

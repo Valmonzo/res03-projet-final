@@ -46,7 +46,7 @@ class Router {
 
                 if(isset($route[1])) {
 
-                    $this->rendererController->renderEvent($route[1]); // Si je veux afficher un évent en particulier , je prend son id et j'appelle renderEvent
+                    $this->rendererController->renderEvent(intval($route[1])); // Si je veux afficher un évent en particulier , je prend son id et j'appelle renderEvent
                 }
 
                 else {

@@ -1,8 +1,8 @@
 // Header
 #main-header {
-    font-family: 'Monserrat', sans-serif;
     font-size: 1.1rem;
-    background-color: $primary-black;
+    background: rgb(149, 46, 0);
+    background: linear-gradient(115deg, rgba(149, 46, 0, 1) 19%, rgba(195, 34, 60, 1) 57%);
     color: $primary-white;
     padding: 2%;
     display: flex;
@@ -41,12 +41,11 @@
                     color: $primary-white;
                     text-decoration: none;
                     display: block;
-                    padding: 2%;
-                    width: 30%;
+                    padding: 3%;
+                    width: 35%;
                     transition: all 0.4s ease;
 
                     &:hover {
-                        background-color: lighten($primary-black, 10%);
                         transform: scale(1.1);
                     }
                 }
@@ -61,11 +60,12 @@
                     text-decoration: none;
                     display: block;
                     padding: 2%;
-                    width: 30%;
+                    width: 35%;
                     transition: all 0.2s ease;
 
                     &:hover {
                         background-color: lighten($primary-black, 10%);
+                        transform: scale(1.1);
 
                     }
 

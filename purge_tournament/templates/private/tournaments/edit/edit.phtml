@@ -15,7 +15,7 @@
             </fieldset>
             <fieldset>
                 <label for="tournamentDescription">Description</label>
-                <textarea name="tournamentDescription" value="<?= $data['tournament']['description']?>"></textarea>
+                <textarea name="tournamentDescription"><?= $data['tournament']['description']?></textarea>
             </fieldset>
             <fieldset>
                 <label for="streamURL">Url du stream</label>
@@ -108,8 +108,18 @@
         <input type="submit" value="Vainqueur du tournoi" name="edit" class="btn-edit"/>
         <input type="hidden" name="formName" value="tournament-edit-2" idTournoi="<?= $data['tournament']['id']?>" id="tournamentId"/>
     </form>
-    <section id="winner-section"></section>
-    <button id="reset-tournament">Reset</button>
+    <section id="winner-section">
+        <?php
+        foreach($data['tournament']['gameRounds'][0]['tournament']->getGameRounds()[4]->getGames() as $game) {
+            if ($game->getWinner() !== null) {
+                if($game->getTeamA()->getId() === $game->getWinner()) {
+                echo  "Le vainqueur du tournoi est " . $game->getTeamA()->getName();
+                } else {
+                echo "Le vainqueur du tournoi est " . $game->getTeamB()->getName();
+                }
+            }
+        } ?>
+    </section>
 </section>
 <script type="module" src="/res03-projet-final/purge_tournament/assets/js/tournamentEdit.js"></script>
 

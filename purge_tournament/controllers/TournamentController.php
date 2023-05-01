@@ -319,12 +319,12 @@ class TournamentController extends AbstractController
 
             // Je récupère mes games du top d'après et je set les team dans chaque match
 
-            $i = 1;
+            $i = key($post);
 
             foreach ($games16 as $game) {
-                $game->setTeamA($this->teamManager->getTeamById($post[$i]));
+                $game->setTeamA($this->teamManager->getTeamById(intval($post[$i])));
 
-                $game->setTeamB($this->teamManager->getTeamById($post[$i + 1]));
+                $game->setTeamB($this->teamManager->getTeamById(intval($post[$i + 1])));
 
                 $this->gameManager->editGame($game);
 
@@ -354,7 +354,7 @@ class TournamentController extends AbstractController
                 }
             }
 
-            $i = 17;
+            $i = key($post);
 
             foreach ($games8 as $game) {
                 $game->setTeamA($this->teamManager->getTeamById($post[$i]));
@@ -387,7 +387,7 @@ class TournamentController extends AbstractController
                 }
             }
 
-            $i = 25;
+            $i = key($post);
 
             foreach ($games4 as $game) {
                 $game->setTeamA($this->teamManager->getTeamById($post[$i]));
@@ -420,7 +420,7 @@ class TournamentController extends AbstractController
                 }
             }
 
-            $i = 29;
+            $i = key($post);
 
             foreach ($game2 as $game) {
                 $game->setTeamA($this->teamManager->getTeamById($post[$i]));
@@ -434,9 +434,10 @@ class TournamentController extends AbstractController
 
             $this->renderJson([]);
         } elseif ($formName === "tournament-edit-2") {
-            $game2[0]->setWinner($post[31]);
+            $i = key($post);
+            $game2[0]->setWinner($post[$i]);
             $this->gameManager->editGame($game2[0]);
-            $winner = $this->teamManager->getTeamById($post[31]);
+            $winner = $this->teamManager->getTeamById($post[$i]);
             $winnerToJson = $winner->toArray();
             $this->renderJson([$winnerToJson]);
         }

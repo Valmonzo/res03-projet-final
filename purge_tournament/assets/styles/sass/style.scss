@@ -11,6 +11,7 @@
 @import "forms/login";
 @import "forms/contact";
 @import "schedule";
+@import "bracket";
 @import "about-us";
 @import "error-page";
 @import "partials/footer";
@@ -27,11 +28,6 @@
     border-width: 0;
 }
 
-.error {
-    color: $primary-red;
-    border: 3px solid $primary-red;
-}
-
 main {
     min-height: 80vh;
 }
@@ -42,4 +38,9 @@ a {
 
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+.error {
+    color: $primary-red;
+    border: 3px solid $primary-red;
 }

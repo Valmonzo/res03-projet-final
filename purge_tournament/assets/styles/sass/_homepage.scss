@@ -1,8 +1,7 @@
 //Header de la page
 #homepage-header {
-    font-family: 'Montserrat', sans-serif;
-    background: rgb(195, 34, 34);
-    background: linear-gradient(35deg, rgba(195, 34, 34, 0.8393558106836485) 0%, rgba(196, 128, 36, 1) 54%);
+    background: rgb(238, 35, 7);
+    background: linear-gradient(0deg, rgba(238, 35, 7, 0.7021009087228641) 1%, rgba(238, 99, 99, 0.8365546902354692) 16%, rgba(235, 224, 224, 0.7665266790309874) 60%);
     padding: 1rem;
     text-align: center;
     color: $primary-black;
@@ -100,7 +99,7 @@
     button {
         background-color: #7289da;
         color: $primary-white;
-        border: none;
+        border: 1px solid white;
         border-radius: 0.25rem;
         padding: 0.75rem 2rem;
         font-size: 1.5rem;

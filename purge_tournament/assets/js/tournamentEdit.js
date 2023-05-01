@@ -27,7 +27,7 @@ function editTournament() {
         let formData = new FormData(form32);
         console.log(formData);
 
-        const options = {
+        let options = {
             method: 'POST',
             body: formData
         };
@@ -49,7 +49,7 @@ function editTournament() {
         let formData = new FormData(form16);
         console.log(formData);
 
-        const options = {
+        let options = {
             method: 'POST',
             body: formData
         };
@@ -71,7 +71,7 @@ function editTournament() {
         let formData = new FormData(form8);
         console.log(formData);
 
-        const options = {
+        let options = {
             method: 'POST',
             body: formData
         };
@@ -93,7 +93,7 @@ function editTournament() {
         let formData = new FormData(form4);
         console.log(formData);
 
-        const options = {
+        let options = {
             method: 'POST',
             body: formData
         };
@@ -115,7 +115,7 @@ function editTournament() {
         let formData = new FormData(form2);
         console.log(formData);
 
-        const options = {
+        let options = {
             method: 'POST',
             body: formData
         };

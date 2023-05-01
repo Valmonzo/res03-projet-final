@@ -1,5 +1,6 @@
 .main-footer {
-    background-color: $primary-black;
+    background: rgb(149, 46, 0);
+    background: linear-gradient(115deg, rgba(149, 46, 0, 1) 19%, rgba(195, 34, 60, 1) 57%);
     color: $primary-white;
     text-align: center;
     padding: 20px;
@@ -14,8 +15,9 @@
         align-items: center;
 
         p {
-            margin: 0 0 10px;
+            margin: 2vh 2vw;
             color: $primary-white;
+            font-size: 1.2rem;
         }
 
         .social-links {
@@ -37,7 +39,7 @@
 
                 a {
                     color: $primary-white;
-                    font-size: 20px;
+                    font-size: 25px;
                 }
             }
         }
