@@ -58,8 +58,9 @@
         background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566220238) 0%, rgba(24, 24, 41, 0.5480392840730042) 35%, rgba(8, 85, 101, 1) 100%);
         box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.1);
         transition: all 0.2s ease-out;
-        padding: 3vh 2vw;
+        padding: 5vh 5vw;
         box-sizing: border-box;
+        min-width: 80vw;
 
         &:hover {
             opacity: 0.8;
@@ -77,6 +78,13 @@
 
         & p {
             color: $primary-white;
+        }
+
+        @media (min-width: 768px) {
+            & {
+                min-width: 50vw;
+                padding: 3vh 2vw;
+            }
         }
     }
 }

@@ -382,9 +382,8 @@ table {
 
 #homepage-main {
   font-family: "Montserrat", sans-serif;
-  padding: 10rem;
   text-align: center;
-  padding: 4rem auto;
+  padding: 10rem 0;
   transition: all 0.5s ease-in-out;
   height: 100%;
   background: rgb(71, 58, 180);
@@ -1268,8 +1267,9 @@ table {
   background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566) 0%, rgba(24, 24, 41, 0.5480392841) 35%, rgb(8, 85, 101) 100%);
   box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-out;
-  padding: 3vh 2vw;
+  padding: 5vh 5vw;
   box-sizing: border-box;
+  min-width: 80vw;
 }
 #tournament-info > section:hover {
   opacity: 0.8;
@@ -1285,6 +1285,12 @@ table {
 }
 #tournament-info > section p {
   color: #eeebe8;
+}
+@media (min-width: 768px) {
+  #tournament-info > section {
+    min-width: 50vw;
+    padding: 3vh 2vw;
+  }
 }
 
 .tournament-bracket {
