@@ -2,7 +2,7 @@ function resetForm() {
     let reset = document.getElementById('reset-tournament');
 
     reset.addEventListener('click', function(e) {
-        fetch(`http://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/admin/tournaments/create/reset`)
+        fetch(`https://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/admin/tournaments/create/reset`)
             .then(response => response.json())
             .then(data => {
                     console.log(`C'est reset`);
