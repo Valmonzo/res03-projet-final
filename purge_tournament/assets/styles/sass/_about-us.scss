@@ -20,11 +20,13 @@
             text-align: center;
             width: 100%;
             font-weight: bold;
+            text-transform: uppercase;
+            font-family: $title-font;
         }
 
         article {
-            margin-bottom: 2rem;
-            width: 23vw;
+            margin-bottom: 3rem;
+            width: 45vw;
             text-align: center;
             border-radius: 8px;
             overflow: hidden;
@@ -32,8 +34,9 @@
             background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566220238) 0%, rgba(24, 24, 41, 0.5480392840730042) 35%, rgba(8, 85, 101, 1) 100%);
             box-shadow: 2px 0px 10px 0px rgba(0, 0, 0, 0.1);
             transition: all 0.2s ease-out;
-            padding: 3vh 2vw;
+            padding: 2vh 4vw;
             box-sizing: border-box;
+            min-height: 130vh;
 
             &:hover {
                 opacity: 0.8;
@@ -44,20 +47,22 @@
             h4 {
                 color: $primary-white;
                 text-transform: uppercase;
-                font-size: 1.8rem;
+                font-size: 2.5rem;
                 margin-bottom: 2rem;
-                font-weight: bold;
+                font-weight: 500;
+                font-family: $name-font;
             }
 
             figure {
                 margin-bottom: 2rem;
+                height: 70vh;
             }
 
             img {
                 width: 100%;
-                height: auto;
+                height: 100%;
                 object-fit: cover;
-                border-radius: 15%;
+                border-radius: 10%;
                 box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
             }
 
@@ -68,8 +73,8 @@
 
                 li {
                     color: $primary-white;
-                    font-size: 1.2rem;
-                    margin-bottom: 1rem;
+                    font-size: 1.5rem;
+                    margin-bottom: 1.3rem;
                     text-align: left;
 
                     span {
@@ -85,7 +90,8 @@
             }
 
             & article {
-                width: 60vw;
+                min-width: 90vw;
+                justify-self: center;
             }
         }
     } // Sponsor section
@@ -99,11 +105,13 @@
             text-align: center;
             width: 100%;
             font-weight: bold;
+            font-family: $title-font;
+            text-transform: uppercase;
         }
 
         p {
             color: $primary-grey;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -124,7 +132,6 @@
                     height: 200px;
                     overflow: hidden;
                     border-radius: 30%;
-                    border: 2px solid $primary-red;
                     transition: all 0.2s ease-out;
 
 

@@ -1,6 +1,7 @@
 // Header
 #main-header {
-    font-size: 1.1rem;
+    font-family: $header-font;
+    font-size: 1.2rem;
     background: rgb(149, 46, 0);
     background: linear-gradient(115deg, rgba(149, 46, 0, 1) 19%, rgba(195, 34, 60, 1) 57%);
     color: $primary-white;
@@ -13,7 +14,7 @@
     right: 0;
     z-index: 999;
     max-width: 100vw;
-    border-bottom: 1px solid $primary-grey;
+    border-bottom: 1px solid $primary-black;
     text-transform: uppercase;
     font-weight: 500;
 
@@ -36,6 +37,7 @@
                     & img {
                         width: 100%;
                     }
+
                 }
                 a {
                     color: $primary-white;
@@ -46,7 +48,7 @@
                     transition: all 0.4s ease;
 
                     &:hover {
-                        transform: scale(1.1);
+                        transform: rotate(360deg) scale(1.4);
                     }
                 }
             }
@@ -64,17 +66,8 @@
                     transition: all 0.2s ease;
 
                     &:hover {
-                        background-color: lighten($primary-black, 10%);
-                        transform: scale(1.1);
+                        transform: scale(1.2);
 
-                    }
-
-                    figure {
-                        margin: 0;
-                        img {
-                            height: 3vw;
-                            width: auto;
-                        }
                     } // Ajout d'une animation au survol des liens
                     @keyframes underline {
                         0% {
@@ -110,17 +103,25 @@
     } // Ajout d'une animation au changement de la couleur de fond
     @keyframes bg-change {
         0% {
-            background-color: $primary-black;
+            background: rgb(149, 46, 0);
+            background: linear-gradient(115deg, rgba(149, 46, 0, 1) 19%, rgba(195, 34, 60, 1) 57%);
+        }
+        20% {
+            background: rgb(149, 46, 0);
+            background: linear-gradient(115deg, rgba(149, 46, 0, 1) 29%, rgba(195, 34, 60, 1) 70%);
         }
         50% {
-            background-color: lighten($primary-black, 10%);
+            background: rgb(149, 46, 0);
+            background: linear-gradient(115deg, rgba(149, 46, 0, 1) 49%, rgba(195, 34, 60, 1) 90%);
         }
         100% {
-            background-color: $primary-black;
+            background: rgb(149, 46, 0);
+            background: linear-gradient(115deg, rgba(149, 46, 0, 1) 69%, rgba(195, 34, 60, 1) 100%);
         }
     }
     &:hover {
-        animation: bg-change 2s infinite;
+        animation: bg-change 0.4s forwards;
+
     } // Media queries
     @media screen and (max-width: 768px) {
         nav {
@@ -159,7 +160,6 @@
                         transition: all 0.4s ease;
 
                         &:hover {
-                            background-color: lighten($primary-black, 10%);
                             transform: scale(1.1);
                         }
                     }
