@@ -15,7 +15,19 @@ Le site permettra cependant de créer des événements et de générer des arbre
 Back-end : PHP , MYSQL
 Front-end : JS Vanilla, HTML, CSS
 
+**Project summary**
+
+Showcase site to promote the company PURGE CORP which organizes tournaments all over the world for structures such as RIOT, TENCENT but also E-Sport companies and streamers.
+
+However, the site will allow you to create events and generate tournament trees (bracket).
+
+**Languages used**
+
+Backend: PHP, MYSQL
+Front-end: Vanilla JS, HTML, CSS
+
 
 **S/O**
 
-Thank's to my mentor @Gaellan & @Lufolas
+
+Thank's to my mentors @Gaellan & @Lufolas
