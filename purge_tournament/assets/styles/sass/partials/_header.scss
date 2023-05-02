@@ -54,21 +54,16 @@
             }
 
             li:not(:first-of-type, :last-of-type) {
-                margin: 2% 2%;
+                margin: 2% 1%;
                 width: 100%;
 
-                span {
-                    transition: all 0.2s ease;
-                    margin: 2%;
-
-                }
 
                 a {
                     color: $primary-white;
                     text-decoration: none;
                     display: block;
-                    padding: 2%;
-                    width: 45%;
+                    padding: 4%;
+                    width: 50%;
                     transition: all 0.2s ease;
                     text-align: center;
                     text-shadow: 2px 2px 3px $primary-black;
@@ -215,7 +210,6 @@
                 li {
                     display: block;
                     margin: 0;
-
                     a {
                         padding: 10px;
                         display: block;

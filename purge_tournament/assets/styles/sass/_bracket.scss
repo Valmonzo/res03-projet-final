@@ -5,7 +5,7 @@
     background-color: $primary-white;
 
     .btn {
-        margin-top: 3rem;
+        margin: 3rem 0;
         display: inline-block;
         background-color: $primary-yellow;
         color: $primary-black;
@@ -52,6 +52,7 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: bold;
+            text-shadow: 1px 1px 2px $primary-black;
         }
 
         .match-bracket {
@@ -66,8 +67,9 @@
                 align-items: center;
                 justify-content: center;
                 font-size: 2rem;
-                color: $primary-black;
+                color: $primary-white;
                 margin-bottom: 10px;
+                text-shadow: 1px 1px 2px $primary-black;
 
                 img {
                     margin: 0 10px;
@@ -85,7 +87,15 @@
                 flex-direction: column;
                 align-items: center;
 
-                li {
+                .vs {
+                    margin-bottom: 10px;
+                    font-size: 1.8rem;
+                    color: $primary-white;
+                    text-shadow: 1px 1px 1px $primary-black;
+                    text-align: center;
+                }
+
+                li:not(.vs) {
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -102,6 +112,8 @@
                     &:last-child {
                         margin-bottom: 0;
                     }
+
+
 
                     &.team-a {
                         color: $primary-black;

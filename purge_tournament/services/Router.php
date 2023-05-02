@@ -38,8 +38,14 @@ class Router {
             //Pages publiques
 
             if ($route[0] === "about-us") {
-
-                $this->rendererController->visitorAboutUs(); // Qui affichera la page about-us
+                if(!isset($route[1])) {
+                    
+                    $this->rendererController->visitorAboutUs(); // Qui affichera la page about-us
+                }
+                
+                else {
+                    $this->rendererController->page404();
+                }
             }
 
             else if ($route[0] === "schedule") {
@@ -55,7 +61,7 @@ class Router {
                 }
             }
 
-            else if($route[0] === "loadTodayTournaments") {
+            else if($route[0] === "loadTodayTournaments") { // Fetch de la part de JS pour charger les tournois du jour
                 $this->tournamentController->renderTournamentsOfTheDay();
             }
 
@@ -66,11 +72,24 @@ class Router {
                     $this->contactController->newMessage($post); // J'appelle le contactController pour recevoir le formulaire et traiter la données puis Render avec un msg
                 }
 
-                else {
-
-                    $this->rendererController->visitorContact(); // J'affiche la page de contact
+                else if (!isset($route[1])) {
+                     $this->rendererController->visitorContact(); // J'affiche la page de contact
                 }
 
+                else {
+                    $this->rendererController->page404();
+                }
+
+            }
+
+            else if($route[0] === "stream") {
+                if (!isset($route[1])) {
+                    $this->rendererController->visitorStream();
+                }
+
+                else {
+                    $this->rendererController->page404();
+                }
             }
 
             /* else if($route[0] === "register") {
@@ -142,8 +161,8 @@ class Router {
                                     else if ($route[3] === "delete") {
                                         match ($route[1]) {
                                         'tournaments' => $this->tournamentController->deleteTournament(intval($route[2])),// J'affiche  /admin/event/:id/delete
-                                        'teams' => $this->teamController->deleteTeam($route[2]), // J'affiche  /admin/team/:id/delete
-                                        'messages' => $this->contactController->deleteMessage($route[2]), // Je supprime un message
+                                        'teams' => $this->teamController->deleteTeam(intval($route[2])), // J'affiche  /admin/team/:id/delete
+                                        'messages' => $this->contactController->deleteMessage(intval($route[2])), // Je supprime un message
                                         default => $this->rendererController->page404(), // Si le chemin est mauvais je redirige sur 404 /page404
                                         };
                                     }

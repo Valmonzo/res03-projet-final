@@ -1,0 +1,65 @@
+#live-title {
+    font-family: $header-font;
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+    color: $primary-black;
+    text-shadow: 2px 2px 2px $primary-grey;
+    text-transform: uppercase;
+}
+
+.twitch .twitch-video {
+    padding-top: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.twitch .twitch-video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.twitch .twitch-chat {
+    height: 500px;
+}
+
+.twitch .twitch-chat iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 850px) {
+    #live-title {
+
+
+        & span {
+            color: $primary-red;
+        }
+    }
+    .twitch-container {
+        display: flex;
+        justify-content: center;
+
+        .twitch {
+            display: flex;
+            align-item: center;
+            justify-content: center;
+            width: 90vw;
+            margin: 4rem 0;
+            box-shadow: rgba(177, 50, 63, 0.5) 5px 5px, rgba(177, 50, 63, 0.4) 10px 10px, rgba(177, 50, 63, 0.4) 15px 15px;
+
+        }
+
+        .twitch .twitch-video {
+            width: 100%;
+        }
+
+        .twitch .twitch-chat {
+            width: 25%;
+            height: auto;
+
+        }
+    }
+}

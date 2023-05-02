@@ -18,7 +18,7 @@ function loadAllMessagesInAdminIndex() {
                 tdMessage.textContent = decodeHTMLEntities(message.message);
 
                 deleteLink.textContent = "Supprimer";
-                deleteLink.href = `https://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/admin/contacts/${message.id}/delete`;
+                deleteLink.href = `https://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/admin/messages/${message.id}/delete`;
                 deleteBtn.classList.add("delete-message-btn");
                 deleteBtn.appendChild(deleteLink);
                 tdDelete.appendChild(deleteBtn);
