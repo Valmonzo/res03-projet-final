@@ -176,6 +176,7 @@ table {
 }
 #main-header nav ul li:first-of-type a {
   color: #eeebe8;
+  text-shadow: 2px 2px 3px #0e1111;
   text-decoration: none;
   display: block;
   padding: 3%;
@@ -183,7 +184,7 @@ table {
   transition: all 0.4s ease;
 }
 #main-header nav ul li:first-of-type a:hover {
-  transform: rotate(360deg) scale(1.4);
+  transform: rotate(360deg) scale(1.2);
 }
 #main-header nav ul li:not(:first-of-type) {
   margin: 0 2%;
@@ -326,7 +327,7 @@ table {
 
 #homepage-header {
   background: rgb(238, 35, 7);
-  background: linear-gradient(0deg, rgba(238, 35, 7, 0.7021009087) 1%, rgba(238, 99, 99, 0.8365546902) 16%, rgba(235, 224, 224, 0.766526679) 60%);
+  background: linear-gradient(180deg, rgba(238, 35, 7, 0.7021009087) 1%, rgba(238, 99, 99, 0.8365546902) 16%, rgba(235, 224, 224, 0.766526679) 60%);
   padding: 1rem;
   text-align: center;
   color: #0e1111;
@@ -336,14 +337,23 @@ table {
   align-items: center;
   min-height: 80vh;
   font-family: "Braah One", sans-serif;
+  transition: all 0.5s ease-in-out;
+}
+#homepage-header:hover {
+  transform: translateY(-2px);
 }
 #homepage-header figure {
   padding-top: 3rem;
   max-width: 100px;
   max-height: 100px;
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
 }
 #homepage-header figure > img {
   width: 100%;
+}
+#homepage-header .show {
+  transform: translateX(0);
 }
 #homepage-header h3 {
   margin: 0;
@@ -353,6 +363,7 @@ table {
   letter-spacing: 0.1em;
   animation: moveInTop 1s ease-out;
   padding-bottom: 1rem;
+  text-shadow: 1px 1px 2px #eeebe8;
 }
 #homepage-header h4 {
   margin: 0;
@@ -362,6 +373,7 @@ table {
   letter-spacing: 0.1em;
   animation: moveInTop 1s ease-out;
   padding-bottom: 1rem;
+  text-shadow: 1px 1px 2px #eeebe8;
 }
 #homepage-header q {
   margin: 0;
@@ -370,7 +382,7 @@ table {
   letter-spacing: 0.05em;
   animation: moveInBottom 1s ease-out;
   padding-bottom: 8rem;
-  color: #eeebe8;
+  color: #0e1111;
   font-family: "Montserrat", sans-serif;
 }
 #homepage-header p {
@@ -389,8 +401,8 @@ table {
   padding: 4rem;
   transition: all 0.5s ease-in-out;
   height: 100%;
-  background: rgb(71, 58, 180);
-  background: radial-gradient(circle, rgba(71, 58, 180, 0.4303922252) 2%, rgba(29, 167, 253, 0.2147059507) 77%, rgba(252, 176, 69, 0.1222689759) 100%);
+  background: rgb(235, 224, 224);
+  background: linear-gradient(180deg, rgb(235, 224, 224) 1%, rgba(69, 215, 255, 0.634874018) 47%, rgb(235, 224, 224) 91%, rgba(226, 114, 97, 0.6544818611) 98%);
 }
 #homepage-main:hover {
   transform: scale(1.02);
@@ -404,6 +416,7 @@ table {
   letter-spacing: 0.1em;
   animation: moveInTop 1s ease-out;
   padding-bottom: 3vh;
+  text-shadow: 2px 2px 3px #91848c;
 }
 #homepage-main p {
   font-size: 1.4rem;
@@ -416,13 +429,15 @@ table {
   color: #eeebe8;
   border: 1px solid white;
   border-radius: 0.25rem;
-  padding: 0.75rem 2rem;
-  font-size: 1.5rem;
+  padding: 1rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
   letter-spacing: 0.05em;
   animation: moveInBottom 1s ease-out;
+  transform: translateX(-400%);
+  transition: transform 0.4s ease;
 }
 #homepage-main button:hover {
   transform: translateY(-2px);
@@ -431,11 +446,13 @@ table {
 #homepage-main button span {
   padding-right: 1rem;
 }
+#homepage-main .show {
+  transform: translateX(0);
+}
 #homepage-main a {
   color: #eeebe8;
 }
 #homepage-main:hover {
-  background-color: #473ab4;
   transform: translateY(-2px);
 }
 
@@ -453,18 +470,17 @@ table {
   #homepage-header figure > img {
     width: 100%;
   }
+  #homepage-main h3 {
+    font-size: 2.2rem;
+  }
+  #homepage-main p {
+    font-size: 1.5rem;
+  }
+  #homepage-main button {
+    font-size: 1.5rem;
+    padding: 1.2rem 4rem;
+  }
 }
-#homepage-main h3 {
-  font-size: 2.2rem;
-}
-#homepage-main p {
-  font-size: 1.5rem;
-}
-#homepage-main button {
-  font-size: 1rem;
-  padding: 1rem;
-}
-
 .messagerie-section h2 {
   color: #0e1111;
   text-align: center;
@@ -1233,6 +1249,7 @@ table {
   font-weight: bold;
   color: #0e1111;
   font-family: "Braah One", sans-serif;
+  text-shadow: 2px 2px 3px #91848c;
 }
 .tournament-display p {
   font-size: 1.3rem;
@@ -1441,6 +1458,7 @@ table {
   font-weight: bold;
   text-transform: uppercase;
   font-family: "Braah One", sans-serif;
+  text-shadow: 1px 1px 3px #91848c;
 }
 .about-us-container .about-us article {
   margin-bottom: 3rem;
@@ -1468,6 +1486,7 @@ table {
   margin-bottom: 2rem;
   font-weight: 500;
   font-family: "Darumadrop One", cursive;
+  text-shadow: 2px 2px 3px #0e1111;
 }
 .about-us-container .about-us article figure {
   margin-bottom: 2rem;
@@ -1493,6 +1512,7 @@ table {
 }
 .about-us-container .about-us article .card-list li span {
   font-weight: bold;
+  text-shadow: 2px 2px 3px #0e1111;
 }
 @media screen and (max-width: 768px) {
   .about-us-container .about-us {
@@ -1515,12 +1535,14 @@ table {
   font-weight: bold;
   font-family: "Braah One", sans-serif;
   text-transform: uppercase;
+  text-shadow: 1px 1px 3px #91848c;
 }
 .about-us-container .section-friends p {
-  color: #91848c;
+  color: #0e1111;
   font-size: 1.4rem;
   margin-bottom: 20px;
   text-align: center;
+  text-shadow: 1px 1px 1px #91848c;
 }
 .about-us-container .section-friends .friends-list {
   display: flex;

@@ -22,6 +22,8 @@
             font-weight: bold;
             text-transform: uppercase;
             font-family: $title-font;
+            text-shadow: 1px 1px 3px $primary-grey;
+
         }
 
         article {
@@ -51,6 +53,7 @@
                 margin-bottom: 2rem;
                 font-weight: 500;
                 font-family: $name-font;
+                text-shadow: 2px 2px 3px $primary-black;
             }
 
             figure {
@@ -79,6 +82,7 @@
 
                     span {
                         font-weight: bold;
+                        text-shadow: 2px 2px 3px $primary-black;
                     }
                 }
             }
@@ -107,13 +111,15 @@
             font-weight: bold;
             font-family: $title-font;
             text-transform: uppercase;
+            text-shadow: 1px 1px 3px $primary-grey;
         }
 
         p {
-            color: $primary-grey;
+            color: $primary-black;
             font-size: 1.4rem;
             margin-bottom: 20px;
             text-align: center;
+            text-shadow: 1px 1px 1px $primary-grey;
         }
 
         .friends-list {

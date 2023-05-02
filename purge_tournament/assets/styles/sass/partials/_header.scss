@@ -41,6 +41,7 @@
                 }
                 a {
                     color: $primary-white;
+                    text-shadow: 2px 2px 3px $primary-black;
                     text-decoration: none;
                     display: block;
                     padding: 3%;
@@ -48,7 +49,7 @@
                     transition: all 0.4s ease;
 
                     &:hover {
-                        transform: rotate(360deg) scale(1.4);
+                        transform: rotate(360deg) scale(1.2);
                     }
                 }
             }
