@@ -1,7 +1,7 @@
 //Header de la page
 #homepage-header {
     background: rgb(238, 35, 7);
-    background: linear-gradient(0deg, rgba(238, 35, 7, 0.7021009087228641) 1%, rgba(238, 99, 99, 0.8365546902354692) 16%, rgba(235, 224, 224, 0.7665266790309874) 60%);
+    background: linear-gradient(180deg, rgba(238, 35, 7, 0.7021009087228641) 1%, rgba(238, 99, 99, 0.8365546902354692) 16%, rgba(235, 224, 224, 0.7665266790309874) 60%);
     padding: 1rem;
     text-align: center;
     color: $primary-black;
@@ -11,15 +11,26 @@
     align-items: center;
     min-height: 80vh;
     font-family: $title-font;
+    transition: all 0.5s ease-in-out;
+
+
+    &:hover {
+        transform: translateY(-2px);
+    }
 
     figure {
         padding-top: 3rem;
         max-width: 100px;
         max-height: 100px;
+        transform: translateX(400%);
+        transition: transform 0.4s ease;
 
         &>img {
             width: 100%;
         }
+    }
+    .show {
+        transform: translateX(0);
     }
 
     h3 {
@@ -30,6 +41,7 @@
         letter-spacing: 0.1em;
         animation: moveInTop 1s ease-out;
         padding-bottom: 1rem;
+        text-shadow: 1px 1px 2px $primary-white;
     }
 
     h4 {
@@ -40,6 +52,7 @@
         letter-spacing: 0.1em;
         animation: moveInTop 1s ease-out;
         padding-bottom: 1rem;
+        text-shadow: 1px 1px 2px $primary-white;
     }
 
     q {
@@ -49,7 +62,7 @@
         letter-spacing: 0.05em;
         animation: moveInBottom 1s ease-out;
         padding-bottom: 8rem;
-        color: $primary-white;
+        color: $primary-black;
         font-family: $base-font;
     }
 
@@ -73,9 +86,8 @@
     padding: 4rem;
     transition: all 0.5s ease-in-out;
     height: 100%;
-    background: rgb(71, 58, 180);
-    background: radial-gradient(circle, rgba(71, 58, 180, 0.43039222524947474) 2%, rgba(29, 167, 253, 0.21470595073967091) 77%, rgba(252, 176, 69, 0.12226897594975494) 100%);
-
+    background: rgb(235, 224, 224);
+    background: linear-gradient(180deg, rgba(235, 224, 224, 1) 1%, rgba(69, 215, 255, 0.6348740179665616) 47%, rgba(235, 224, 224, 1) 91%, rgba(226, 114, 97, 0.6544818611038166) 98%);
     &:hover {
         transform: scale(1.02);
     }
@@ -89,6 +101,7 @@
         letter-spacing: 0.1em;
         animation: moveInTop 1s ease-out;
         padding-bottom: 3vh;
+        text-shadow: 2px 2px 3px $primary-grey;
     }
 
     p {
@@ -103,13 +116,15 @@
         color: $primary-white;
         border: 1px solid white;
         border-radius: 0.25rem;
-        padding: 0.75rem 2rem;
-        font-size: 1.5rem;
+        padding: 1rem;
+        font-size: 1rem;
         font-weight: bold;
         text-transform: uppercase;
         transition: all 0.2s ease-in-out;
         letter-spacing: 0.05em;
         animation: moveInBottom 1s ease-out;
+        transform: translateX(-400%);
+        transition: transform 0.4s ease;
 
         &:hover {
             transform: translateY(-2px);
@@ -121,12 +136,15 @@
         }
     }
 
+    .show {
+        transform: translateX(0);
+    }
+
     & a {
         color: $primary-white;
     }
 
     &:hover {
-        background-color: darken(rgba(71, 58, 180, 30), .1%);
         transform: translateY(-2px);
     }
 } //Media queries pour la mise en page responsive
@@ -149,19 +167,21 @@
             }
         }
     }
-}
 
-#homepage-main {
-    h3 {
-        font-size: 2.2rem;
+
+    #homepage-main {
+        h3 {
+            font-size: 2.2rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        button {
+            font-size: 1.5rem;
+            padding: 1.2rem 4rem;
+        }
     }
 
-    p {
-        font-size: 1.5rem;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 1rem;
-    }
 }
