@@ -29,7 +29,7 @@
         display: inline-block;
         padding: 1.2rem;
         border-radius: 20px;
-        background-color: $primary-white;
+        background-color: $primary-yellow;
         color: $primary-black;
         font-size: 24px;
         text-decoration: none;
@@ -63,7 +63,7 @@
         transition: all 0.2s ease-out;
         padding: 5vh 5vw;
         box-sizing: border-box;
-        min-width: 80vw;
+        width: 80vw;
 
         &:hover {
             opacity: 0.8;

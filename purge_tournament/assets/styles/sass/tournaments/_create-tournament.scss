@@ -22,6 +22,7 @@
     .top32-info fieldset {
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin-bottom: 20px;
     }
 
@@ -41,6 +42,7 @@
         background-color: $primary-grey;
         color: $primary-white;
         font-size: 1.2rem;
+        width: 20vw;
     }
 
     .top32-info input[type="submit"],
@@ -89,7 +91,8 @@
     .top32 {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
         margin-bottom: 20px;
     }
 

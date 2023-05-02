@@ -1,7 +1,6 @@
 #admin-tournament-list {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 2rem;
+    max-width: 100vw;
+    padding: 1rem;
     background-color: $primary-white;
     min-height: 100vh;
 
@@ -12,8 +11,8 @@
         font-weight: bold;
     }
 
-    table {
-        width: 100%;
+    & table {
+        max-width: 70vw;
         border-collapse: collapse;
 
         thead {
@@ -96,7 +95,7 @@
         }
 
         table {
-            max-width: 700px;
+            max-width: 100vw;
             thead {
                 tr {
                     th {
