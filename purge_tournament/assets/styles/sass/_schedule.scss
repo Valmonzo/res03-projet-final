@@ -28,14 +28,15 @@
     a {
         display: inline-block;
         padding: 1.2rem;
-        border-radius: 30px;
-        background-color: $primary-yellow;
+        border-radius: 20px;
+        background-color: $primary-white;
         color: $primary-black;
         font-size: 24px;
         text-decoration: none;
         transition: background-color 0.3s ease;
         margin-bottom: 3vh;
-
+        text-shadow: 2px 2px 3px $primary-grey;
+        box-shadow: 2px 2px 3px $primary-grey;
         &:hover {
             background-color: $primary-red;
         }
@@ -73,18 +74,24 @@
         & h3 {
             font-size: 2rem;
             margin-bottom: 2rem;
+            padding-top: 1rem;
             text-transform: uppercase;
             font-weight: 600;
             color: $primary-white;
+            font-family: $title-font;
+            text-shadow: 2px 2px 3px $primary-black;
+
         }
 
         & p {
             color: $primary-white;
+            text-shadow: 2px 2px 3px $primary-black;
+            text-transform: uppercase;
         }
 
         @media (min-width: 768px) {
             & {
-                min-width: 50vw;
+                min-width: 55vw;
                 padding: 3vh 2vw;
             }
         }

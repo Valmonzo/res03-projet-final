@@ -2,7 +2,7 @@ function editTournament() {
 
     let tournament = document.getElementById('nbTournamentSpan');
 
-    let tournamentId = tournament.getAttribute('idTournoi');
+    let tournamentId = tournament.getAttribute('value');
 
     let radioLast32 = document.querySelectorAll('.top32-edit input');
 

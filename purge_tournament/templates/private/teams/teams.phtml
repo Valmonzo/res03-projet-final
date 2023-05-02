@@ -30,11 +30,11 @@
                     <td><?= $team->getCoach(); ?></td>
                     <td>
                         <figure>
-                            <img src="<?= $team->getLogo();?>"></img>
+                            <img src="<?= $team->getLogo();?>" alt="Logo de la team <?= $team->getName()?>">
                         </figure>
                     </td>
                     <td><button class="team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/edit">Modifier</a></button></td>
-                    <td><button class="delete-team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/delete">Supprimer</a></td>
+                    <td><button class="delete-team-btn"><a href="/res03-projet-final/purge_tournament/admin/teams/<?= $team->getId(); ?>/delete">Supprimer</a></button></td>
                 </tr>
                 <?php
                 }

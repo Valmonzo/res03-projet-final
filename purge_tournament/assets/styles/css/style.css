@@ -335,7 +335,7 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 75vh;
   font-family: "Braah One", sans-serif;
   transition: all 0.5s ease-in-out;
 }
@@ -343,9 +343,9 @@ table {
   transform: translateY(-2px);
 }
 #homepage-header figure {
-  padding-top: 3rem;
-  max-width: 100px;
-  max-height: 100px;
+  padding: 2.36rem 0;
+  max-width: 150px;
+  max-height: 150px;
   transform: translateX(400%);
   transition: transform 0.4s ease;
 }
@@ -1258,13 +1258,15 @@ table {
 .tournament-display a {
   display: inline-block;
   padding: 1.2rem;
-  border-radius: 30px;
-  background-color: #fbb304;
+  border-radius: 20px;
+  background-color: #eeebe8;
   color: #0e1111;
   font-size: 24px;
   text-decoration: none;
   transition: background-color 0.3s ease;
   margin-bottom: 3vh;
+  text-shadow: 2px 2px 3px #91848c;
+  box-shadow: 2px 2px 3px #91848c;
 }
 .tournament-display a:hover {
   background-color: #d01f18;
@@ -1300,16 +1302,21 @@ table {
 #tournament-info > section h3 {
   font-size: 2rem;
   margin-bottom: 2rem;
+  padding-top: 1rem;
   text-transform: uppercase;
   font-weight: 600;
   color: #eeebe8;
+  font-family: "Braah One", sans-serif;
+  text-shadow: 2px 2px 3px #0e1111;
 }
 #tournament-info > section p {
   color: #eeebe8;
+  text-shadow: 2px 2px 3px #0e1111;
+  text-transform: uppercase;
 }
 @media (min-width: 768px) {
   #tournament-info > section {
-    min-width: 50vw;
+    min-width: 55vw;
     padding: 3vh 2vw;
   }
 }
@@ -1326,19 +1333,23 @@ table {
   background-color: #fbb304;
   color: #0e1111;
   text-decoration: none;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  transition: transform 0.4s ease;
+  text-shadow: 1px 1px 2px #eeebe8;
+  text-transform: uppercase;
 }
 .tournament-bracket .btn:hover {
   background-color: #fcc236;
+  transform: scale(1.05);
 }
 .tournament-bracket .round-bracket {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 8rem;
-  width: 70vw;
+  margin: 6.5rem;
+  min-width: 70vw;
   padding: 2rem;
   background: rgb(59, 57, 99);
   background: radial-gradient(circle, rgba(59, 57, 99, 0.6264706566) 0%, rgba(24, 24, 41, 0.5480392841) 35%, rgb(8, 85, 101) 100%);
@@ -1418,14 +1429,17 @@ table {
 }
 @media (max-width: 768px) {
   .tournament-bracket .round-bracket h3 {
-    font-size: 18px;
+    font-size: 3rem;
+  }
+  .tournament-bracket .round-bracket .match-bracket {
+    min-width: 90vw;
   }
   .tournament-bracket .round-bracket .match-bracket h4 {
-    font-size: 14px;
+    font-size: 2rem;
   }
   .tournament-bracket .round-bracket .match-bracket h4 img {
-    height: 20px;
-    width: 20px;
+    height: 50px;
+    width: 50px;
     margin: 0 5px;
   }
   .tournament-bracket .round-bracket .match-bracket ul li {

@@ -19,9 +19,8 @@
                     <td><?= $tournament->getGameName(); ?></td>
                     <td><?= $tournament->getDescription(); ?></td>
                     <td><?= $tournament->getDate(); ?></td>
-                    </td>
                     <td><button><a href="/res03-projet-final/purge_tournament/admin/tournaments/<?= $tournament->getId(); ?>/edit">Modifier</a></button></td>
-                    <td><button><a href="/res03-projet-final/purge_tournament/admin/tournaments/<?= $tournament->getId(); ?>/delete">Supprimer</a></td>
+                    <td><button><a href="/res03-projet-final/purge_tournament/admin/tournaments/<?= $tournament->getId(); ?>/delete">Supprimer</a></button></td>
                 </tr>
                 <?php
                 }

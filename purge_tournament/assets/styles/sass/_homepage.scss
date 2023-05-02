@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 75vh;
     font-family: $title-font;
     transition: all 0.5s ease-in-out;
 
@@ -19,9 +19,9 @@
     }
 
     figure {
-        padding-top: 3rem;
-        max-width: 100px;
-        max-height: 100px;
+        padding: 2.36rem 0;
+        max-width: 150px;
+        max-height: 150px;
         transform: translateX(400%);
         transition: transform 0.4s ease;
 
