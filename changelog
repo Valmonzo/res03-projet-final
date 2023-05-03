@@ -1,0 +1,12 @@
+### Changelog 
+## 1.0V
+- Première release, 
+  - Admin : CRUD sur teams , tournoi , gameround et round. Consultation et suppression de message (ContactForm)
+  - User : Consultation des tournois du jour, de ses brackets à jour en direct grâce au fetch, prise de contact via le formulaire (sécurisé front et back)
+    intégration API twitch pour les tournois.
+
+
+## A venir 1.1V :
+  - Modification du bracket (affichage en mode arbre de tournoi).
+  - Possibilité de créer un tournoi avec un autre format que 32 teams. 
+  - Ajout d'une table Game pour pouvoir selectionner les jeux et le format correspondant pour la création de tournoi. 
