@@ -18,25 +18,13 @@ page bonus : Page qui affiche le stream de l'event en cours avec son bracket par
 
 "/admin" , qui affichera un formulaire de Login pour l'admin s'il n'est pas connecté ou qui affichera l'index admin.
 
-"/admin/event/create" , qui permettra de créer un événement avec un formulaire 
+"/admin/tournaments/create" , qui permettra de créer un événement avec un formulaire 
 
-"/admin/events" , qui affichera tous les événements et permettra de les éditer , ou de les supprimer ou de les consulter en détails et pour finir un bouton ajouter. 
+"/admin/tournaments" , qui affichera tous les événements et permettra de les éditer , ou de les supprimer ou de les consulter en détails et pour finir un bouton ajouter. 
 
-"/admin/event/:id/edit" , qui permettra d'éditer l'événement choisi, et de choisir le bracket correspondant. 
+"/admin/tournaments/:id/edit" , qui permettra d'éditer l'événement choisi, et de choisir le bracket correspondant. 
 
-"admin/event/:id/delete" , qui permettra de supprimer l'événement choisi , il fera apparaître un window.prompt pour s'assurer que l'user veut supprimer l'event.
-
-"admin/event/:id , qui permettra de consulter en détail l'événement choisi. 
-
-"admin/brackets" , affichera la liste des brackets et à quel tournoi il appartient , permettra d'accéder à l'édition ou à la suppression et aura un bouton ajouter. 
-
-"admin/bracket/create , qui permettra de créer un bracket et de choisir à quel événement le lier, de choisir les team
-
-"admin/bracket/:id , qui affichera le bracket voulu. 
-
-"admin/bracket/:id/edit , qui permettra d'éditer le bracket (qui a gagné qui a perdu etc). 
-
-"admin/bracket/:id/delete" , qui supprimera le bracket choisi.
+"admin/tournaments/:id/delete" , qui permettra de supprimer l'événement choisi , il fera apparaître un window.prompt pour s'assurer que l'user veut supprimer l'event.
 
 "admin/teams" , qui affichera les teams 
 
@@ -47,5 +35,3 @@ page bonus : Page qui affiche le stream de l'event en cours avec son bracket par
 "admin/team/:id/edit" , qui permettra d'éditer une team. 
 
 "admin/team/:id/delete" , qui permettra de supprimer la team en question.
-
-"admin/message", qui affichera toutes les demandes de contact.
