@@ -62,4 +62,9 @@ class RendererController extends AbstractController
 
         $this->render("bracket/bracket", $gamerounds);
     }
+
+    public function visitorStream(): void
+    {
+        $this->render("stream/stream", []);
+    }
 }

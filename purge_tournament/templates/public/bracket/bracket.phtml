@@ -1,3 +1,4 @@
+
 <section>
 <h2 class="sr-only">Bracket tournoi du jour</h2>
 <div class="tournament-bracket">
@@ -7,20 +8,47 @@
     <h3><?= $gameround->getName() ?></h3>
     <?php foreach ($gameround->getGames() as $game) { ?>
     <section class="match-bracket">
+      <?php if ($game->getTeamA() && $game->getTeamB() ) { ?>
       <h4><img src="<?=$game->getTeamA()->getLogo()?>" alt="Image représentant le logo de la team <?=$game->getTeamA()->getName()?>"> vs <img src="<?=$game->getTeamB()->getLogo()?>" alt="Image représentant le logo de la team <?=$game->getTeamB()->getName()?> "></h4>
       <ul>
         <li class="team-a"><?= $game->getTeamA()->getName(); ?></li>
+        <li class="vs">vs</li>
         <li class ="team-b"><?= $game->getTeamB()->getName(); ?></li>
-        <?php if($game->getWinner() !== null) { ?>
+      <?php }
+      else if ($game->getTeamA()  && !game->getTeamB() === null) { ?>
+      <h4><img src="<?=$game->getTeamA()->getLogo()?>" alt="Image représentant le logo de la team <?=$game->getTeamA()->getName()?>"> vs A venir !</h4>
+      <ul>
+        <li class="team-a"><?= $game->getTeamA()->getName(); ?></li>
+        <li class="vs">vs</li>
+        <li class ="team-b">A venir</li>
+      <?php }
+      else if ($game->getTeamA() === null && $game->getTeamB() !== null) { ?>
+      <h4> A venir ! vs <img src="<?=$game->getTeamB()->getLogo()?>" alt="Image représentant le logo de la team <?=$game->getTeamB()->getName()?>"></h4>
+      <ul>
+        <li class="team-a">A venir !</li>
+        <li class="vs">vs</li>
+        <li class ="team-b"><?= $game->getTeamB()->getName(); ?></li>
+      <?php }
+      else { ?>
+        <h4> A venir  vs  A venir </h4>
+      <ul>
+        <li class="team-a">A venir !</li>
+        <li class="vs">vs</li>
+        <li class ="team-b">A venir !</li>
+      <?php }
+         if($game->getWinner() !== null) { ?>
         <li class="winner">
+          Gagnant:
           <?php
           if ($game->getWinner() === $game->getTeamA()->getId()) {
               echo $game->getTeamA()->getName();
           }
-
-          else {
+          else if ($game->getWinner() === $game->getTeamB()->getId()) {
               echo $game->getTeamB()->getName();
-            }
+          }
+          else {
+              echo 'A venir';
+          }
           ?>
         </li>
       </ul>

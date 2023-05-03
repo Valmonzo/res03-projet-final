@@ -155,26 +155,27 @@ table {
 }
 #main-header nav {
   width: 100%;
+  display: flex;
 }
 #main-header nav ul {
   width: 100%;
   display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
   align-items: center;
-  text-align: center;
 }
-#main-header nav ul li:first-of-type {
+#main-header nav ul li:first-of-type,
+#main-header nav ul li:last-of-type {
   width: 100%;
 }
-#main-header nav ul li:first-of-type figure {
-  height: 100px;
+#main-header nav ul li:first-of-type figure,
+#main-header nav ul li:last-of-type figure {
+  height: 70px;
 }
-#main-header nav ul li:first-of-type figure img {
+#main-header nav ul li:first-of-type figure img,
+#main-header nav ul li:last-of-type figure img {
   width: 100%;
 }
-#main-header nav ul li:first-of-type a {
+#main-header nav ul li:first-of-type a,
+#main-header nav ul li:last-of-type a {
   color: #eeebe8;
   text-shadow: 2px 2px 3px #0e1111;
   text-decoration: none;
@@ -182,24 +183,29 @@ table {
   padding: 3%;
   width: 35%;
   transition: all 0.4s ease;
+  text-align: center;
 }
-#main-header nav ul li:first-of-type a:hover {
+#main-header nav ul li:first-of-type a:hover,
+#main-header nav ul li:last-of-type a:hover {
   transform: rotate(360deg) scale(1.2);
 }
-#main-header nav ul li:not(:first-of-type) {
-  margin: 0 2%;
+#main-header nav ul li:not(:first-of-type, :last-of-type) {
+  margin: 2% 1%;
   width: 100%;
 }
-#main-header nav ul li:not(:first-of-type) a {
+#main-header nav ul li:not(:first-of-type, :last-of-type) a {
   color: #eeebe8;
   text-decoration: none;
   display: block;
-  padding: 2%;
-  width: 35%;
+  padding: 4%;
+  width: 50%;
   transition: all 0.2s ease;
+  text-align: center;
+  text-shadow: 2px 2px 3px #0e1111;
 }
-#main-header nav ul li:not(:first-of-type) a:hover {
+#main-header nav ul li:not(:first-of-type, :last-of-type) a:hover {
   transform: scale(1.2);
+  text-shadow: 2px 2px 3px #d01f18;
 }
 @keyframes underline {
   0% {
@@ -209,7 +215,7 @@ table {
     width: 100%;
   }
 }
-#main-header nav ul li:not(:first-of-type) a:after {
+#main-header nav ul li:not(:first-of-type, :last-of-type) a:after {
   content: "";
   display: block;
   height: 2px;
@@ -217,15 +223,9 @@ table {
   width: 0;
   transition: all 0.3s ease;
 }
-#main-header nav ul li:not(:first-of-type) a:hover:after {
+#main-header nav ul li:not(:first-of-type, :last-of-type) a:hover:after {
   width: 100%;
   animation: underline 0.3s forwards;
-}
-#main-header nav ul li:not(:first-of-type):first-child {
-  margin-left: 0;
-}
-#main-header nav ul li:not(:first-of-type):last-child {
-  margin-right: 0;
 }
 @keyframes bg-change {
   0% {
@@ -438,10 +438,12 @@ table {
   animation: moveInBottom 1s ease-out;
   transform: translateX(-400%);
   transition: transform 0.4s ease;
+  text-shadow: 2px 2px 3px #0e1111;
 }
 #homepage-main button:hover {
   transform: translateY(-2px);
   transform: scale(1.1);
+  box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
 }
 #homepage-main button span {
   padding-right: 1rem;
@@ -481,6 +483,9 @@ table {
     padding: 1.2rem 4rem;
   }
 }
+.messagerie-section {
+  max-width: 100vw;
+}
 .messagerie-section h2 {
   color: #0e1111;
   text-align: center;
@@ -488,8 +493,7 @@ table {
   text-transform: uppercase;
 }
 .messagerie-section table {
-  width: 100%;
-  margin: 2rem auto;
+  margin: 2rem;
   border-collapse: collapse;
   background-color: #eeebe8;
 }
@@ -568,6 +572,7 @@ table {
 #tournament-form .top32-info fieldset {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
 }
 #tournament-form .top32-info label {
@@ -585,6 +590,7 @@ table {
   background-color: #91848c;
   color: #eeebe8;
   font-size: 1.2rem;
+  width: 20vw;
 }
 #tournament-form .top32-info input[type=submit],
 #tournament-form .top32-info button {
@@ -626,7 +632,8 @@ table {
 #tournament-form .top32 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 #tournament-form .top32 fieldset {
@@ -823,9 +830,8 @@ table {
 }
 
 #admin-tournament-list {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100vw;
+  padding: 1rem;
   background-color: #eeebe8;
   min-height: 100vh;
 }
@@ -836,7 +842,7 @@ table {
   font-weight: bold;
 }
 #admin-tournament-list table {
-  width: 100%;
+  max-width: 70vw;
   border-collapse: collapse;
 }
 #admin-tournament-list table thead tr th {
@@ -900,7 +906,7 @@ table {
     font-size: 1.5rem;
   }
   #admin-tournament-list table {
-    max-width: 700px;
+    max-width: 100vw;
   }
   #admin-tournament-list table thead tr th {
     font-size: 0.8rem;
@@ -925,18 +931,18 @@ table {
 
 #teams-list-title {
   color: #0e1111;
-  font-size: 28px;
+  font-size: 2rem;
   font-weight: bold;
-  margin: 30px 0;
   text-align: center;
+  max-width: 100vw;
 }
 
 #teams-list {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 80vw;
+  margin: 2vh 2vw;
 }
 #teams-list table {
-  width: 100%;
+  width: 50vw;
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -995,33 +1001,30 @@ table {
   background-color: #eeebe8;
   color: #0e1111;
 }
-@media screen and (max-width: 600px) {
-  #teams-list button table th,
-  #teams-list button table td {
+@media only screen and (max-width: 767px) {
+  #teams-list button #teams-list table {
     display: block;
-    width: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
+  #teams-list button #teams-list table thead {
+    display: none;
+  }
+  #teams-list button #teams-list table td,
+  #teams-list button #teams-list table th {
+    display: inline-block;
+    vertical-align: top;
+    width: 100px;
     text-align: center;
   }
-  #teams-list button table td:first-child {
-    margin-top: 10px;
-  }
-  #teams-list button table td:last-child {
-    margin-bottom: 10px;
-  }
-  #teams-list button table tr {
-    border-bottom: none;
-  }
-  #teams-list button table tr td {
-    border-bottom: 1px solid #91848c;
-  }
-  #teams-list button table tr td:before {
-    content: attr(data-th);
+  #teams-list button #teams-list table td:first-child {
     font-weight: bold;
-    display: inline-block;
-    width: 80px;
-    margin-right: 10px;
-    color: #0e1111;
+    width: 150px;
     text-align: left;
+  }
+  #teams-list button #teams-list button.team-btn {
+    display: block;
+    margin: 10px auto;
   }
 }
 
@@ -1214,7 +1217,6 @@ table {
   border-radius: 5px;
   font-size: 18px;
   font-weight: 700;
-  padding: 10px;
   cursor: pointer;
   transition: all 0.3s;
   text-transform: uppercase;
@@ -1237,7 +1239,6 @@ table {
 
 .tournament-display {
   background-color: #eeebe8;
-  opacity: 80%;
   padding: 3rem;
   text-align: center;
   min-height: 80vh;
@@ -1262,7 +1263,7 @@ table {
   display: inline-block;
   padding: 1.2rem;
   border-radius: 20px;
-  background-color: #eeebe8;
+  background-color: #fbb304;
   color: #0e1111;
   font-size: 24px;
   text-decoration: none;
@@ -1295,10 +1296,9 @@ table {
   transition: all 0.2s ease-out;
   padding: 5vh 5vw;
   box-sizing: border-box;
-  min-width: 80vw;
+  width: 80vw;
 }
 #tournament-info > section:hover {
-  opacity: 0.8;
   transform: scale(1.05);
   box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
 }
@@ -1331,7 +1331,7 @@ table {
   background-color: #eeebe8;
 }
 .tournament-bracket .btn {
-  margin-top: 3rem;
+  margin: 3rem 0;
   display: inline-block;
   background-color: #fbb304;
   color: #0e1111;
@@ -1372,6 +1372,7 @@ table {
   margin-bottom: 20px;
   text-transform: uppercase;
   font-weight: bold;
+  text-shadow: 1px 1px 2px #0e1111;
 }
 .tournament-bracket .round-bracket .match-bracket {
   display: flex;
@@ -1385,8 +1386,9 @@ table {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  color: #0e1111;
+  color: #eeebe8;
   margin-bottom: 10px;
+  text-shadow: 1px 1px 2px #0e1111;
 }
 .tournament-bracket .round-bracket .match-bracket h4 img {
   margin: 0 10px;
@@ -1402,7 +1404,14 @@ table {
   flex-direction: column;
   align-items: center;
 }
-.tournament-bracket .round-bracket .match-bracket ul li {
+.tournament-bracket .round-bracket .match-bracket ul .vs {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #eeebe8;
+  text-shadow: 1px 1px 1px #0e1111;
+  text-align: center;
+}
+.tournament-bracket .round-bracket .match-bracket ul li:not(.vs) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1416,16 +1425,16 @@ table {
   margin-bottom: 10px;
   text-transform: uppercase;
 }
-.tournament-bracket .round-bracket .match-bracket ul li:last-child {
+.tournament-bracket .round-bracket .match-bracket ul li:not(.vs):last-child {
   margin-bottom: 0;
 }
-.tournament-bracket .round-bracket .match-bracket ul li.team-a {
+.tournament-bracket .round-bracket .match-bracket ul li:not(.vs).team-a {
   color: #0e1111;
 }
-.tournament-bracket .round-bracket .match-bracket ul li.team-b {
+.tournament-bracket .round-bracket .match-bracket ul li:not(.vs).team-b {
   color: #0e1111;
 }
-.tournament-bracket .round-bracket .match-bracket ul li.winner {
+.tournament-bracket .round-bracket .match-bracket ul li:not(.vs).winner {
   background-color: #fbb304;
   border: 1px solid #fbb304;
   color: #0e1111;
@@ -1452,6 +1461,62 @@ table {
   }
 }
 
+#live-title {
+  font-family: "Russo One", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  color: #0e1111;
+  text-shadow: 2px 2px 2px #91848c;
+  text-transform: uppercase;
+}
+#live-title span {
+  color: #d01f18;
+}
+
+.twitch .twitch-video {
+  padding-top: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.twitch .twitch-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.twitch .twitch-chat {
+  height: 500px;
+}
+
+.twitch .twitch-chat iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 850px) {
+  .twitch-container {
+    display: flex;
+    justify-content: center;
+  }
+  .twitch-container .twitch {
+    display: flex;
+    align-item: center;
+    justify-content: center;
+    width: 90vw;
+    margin: 4rem 0;
+    box-shadow: rgba(177, 50, 63, 0.5) 5px 5px, rgba(177, 50, 63, 0.4) 10px 10px, rgba(177, 50, 63, 0.4) 15px 15px;
+  }
+  .twitch-container .twitch .twitch-video {
+    width: 100%;
+  }
+  .twitch-container .twitch .twitch-chat {
+    width: 25%;
+    height: auto;
+  }
+}
 .about-us-container {
   background-color: #eeebe8;
   width: 100%;
@@ -1466,7 +1531,7 @@ table {
   width: 100%;
   height: 100%;
 }
-.about-us-container .about-us h3 {
+.about-us-container .about-us h2 {
   font-size: 3rem;
   color: #0e1111;
   margin-bottom: 4rem;
@@ -1496,7 +1561,7 @@ table {
   transform: scale(1.05);
   box-shadow: 10px 6px 0px 0px rgba(0, 0, 0, 0.5);
 }
-.about-us-container .about-us article h4 {
+.about-us-container .about-us article h3 {
   color: #eeebe8;
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -1543,7 +1608,7 @@ table {
 .about-us-container .section-friends {
   margin: 3rem;
 }
-.about-us-container .section-friends h3 {
+.about-us-container .section-friends h2 {
   font-size: 3rem;
   color: #0e1111;
   margin-bottom: 1rem;
@@ -1595,9 +1660,9 @@ table {
   text-align: center;
   width: 100%;
   padding: 33vh 0;
-  height: 100%;
-  background-color: #0e1111;
-  color: #eeebe8;
+  min-height: 100vh;
+  background-color: #eeebe8;
+  color: #0e1111;
 }
 .error-page h3 {
   font-size: 3rem;
@@ -1615,9 +1680,12 @@ table {
   padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  transition: transform 0.4s ease;
 }
 .error-page .btn:hover {
   background-color: #fcc236;
+  transform: scale(1.2);
+  box-shadow: 1px 2px 2px 2px #0e1111;
 }
 @media (max-width: 768px) {
   .error-page h3 {
@@ -1693,7 +1761,8 @@ table {
 }
 
 main {
-  min-height: 80vh;
+  min-height: 100vh;
+  max-width: 100vw;
 }
 
 a {
@@ -1702,6 +1771,8 @@ a {
 
 body {
   font-family: "Montserrat", sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .error {

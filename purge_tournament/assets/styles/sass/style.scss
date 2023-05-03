@@ -13,6 +13,7 @@
 @import "forms/contact";
 @import "schedule";
 @import "bracket";
+@import "stream";
 @import "about-us";
 @import "error-page";
 @import "partials/footer";
@@ -30,7 +31,8 @@
 }
 
 main {
-    min-height: 80vh;
+    min-height: 100vh;
+    max-width: 100vw;
 }
 
 a {
@@ -39,6 +41,8 @@ a {
 
 body {
     font-family: 'Montserrat', sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .error {

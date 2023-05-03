@@ -20,19 +20,17 @@
 
     nav {
         width: 100%;
+        display: flex;
         ul {
             width: 100%;
             display: flex;
-            margin: 0;
-            padding: 0;
-            list-style: none;
             align-items: center;
-            text-align: center;
 
-            li:first-of-type {
+            li:first-of-type,
+            li:last-of-type {
                 width: 100%;
                 & figure {
-                    height: 100px;
+                    height: 70px;
 
                     & img {
                         width: 100%;
@@ -47,6 +45,7 @@
                     padding: 3%;
                     width: 35%;
                     transition: all 0.4s ease;
+                    text-align: center;
 
                     &:hover {
                         transform: rotate(360deg) scale(1.2);
@@ -54,20 +53,25 @@
                 }
             }
 
-            li:not(:first-of-type) {
-                margin: 0 2%;
+            li:not(:first-of-type, :last-of-type) {
+                margin: 2% 1%;
                 width: 100%;
+
 
                 a {
                     color: $primary-white;
                     text-decoration: none;
                     display: block;
-                    padding: 2%;
-                    width: 35%;
+                    padding: 4%;
+                    width: 50%;
                     transition: all 0.2s ease;
+                    text-align: center;
+                    text-shadow: 2px 2px 3px $primary-black;
 
                     &:hover {
                         transform: scale(1.2);
+                        text-shadow: 2px 2px 3px $primary-red;
+
 
                     } // Ajout d'une animation au survol des liens
                     @keyframes underline {
@@ -90,14 +94,6 @@
                         width: 100%;
                         animation: underline 0.3s forwards;
                     }
-                }
-
-                &:first-child {
-                    margin-left: 0;
-                }
-
-                &:last-child {
-                    margin-right: 0;
                 }
             }
         }
@@ -214,7 +210,6 @@
                 li {
                     display: block;
                     margin: 0;
-
                     a {
                         padding: 10px;
                         display: block;

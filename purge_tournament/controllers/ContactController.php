@@ -27,9 +27,8 @@ class ContactController extends AbstractController
                 $post["contactEmail"],
                 FILTER_SANITIZE_EMAIL
             );
-            $contactMessage = filter_var(
-                $post["contactMessage"],
-                FILTER_SANITIZE_STRING
+            $contactMessage = htmlspecialchars(
+                mb_convert_encoding($post["contactMessage"], "UTF-32"),
             );
             $messageToAdd = new Contact(
                 $contactName,
@@ -50,6 +49,7 @@ class ContactController extends AbstractController
         $messages = $this->contactManager->getAllMessages();
         $messagesToJson = [];
         foreach ($messages as $message) {
+            $message->setMessage(html_entity_decode($message->getMessage()));
             $messagesToJson[] = $message->toArray();
         }
         $this->renderJson($messagesToJson);

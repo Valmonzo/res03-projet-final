@@ -25,7 +25,6 @@ function editTournament() {
 
         // Je dois d'abord instancier un FormData qui est la représentation en JavaScript d'un formulaire
         let formData = new FormData(form32);
-        console.log(formData);
 
         let options = {
             method: 'POST',
@@ -47,7 +46,6 @@ function editTournament() {
 
         // Je dois d'abord instancier un FormData qui est la représentation en JavaScript d'un formulaire
         let formData = new FormData(form16);
-        console.log(formData);
 
         let options = {
             method: 'POST',
@@ -69,7 +67,6 @@ function editTournament() {
 
         // Je dois d'abord instancier un FormData qui est la représentation en JavaScript d'un formulaire
         let formData = new FormData(form8);
-        console.log(formData);
 
         let options = {
             method: 'POST',
@@ -91,7 +88,6 @@ function editTournament() {
 
         // Je dois d'abord instancier un FormData qui est la représentation en JavaScript d'un formulaire
         let formData = new FormData(form4);
-        console.log(formData);
 
         let options = {
             method: 'POST',
@@ -113,7 +109,6 @@ function editTournament() {
 
         // Je dois d'abord instancier un FormData qui est la représentation en JavaScript d'un formulaire
         let formData = new FormData(form2);
-        console.log(formData);
 
         let options = {
             method: 'POST',
@@ -123,7 +118,6 @@ function editTournament() {
         fetch(`https://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/admin/tournaments/${tournamentId}/add-winner`, options)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 let winnerContainer = document.querySelector('#winner-section');
                 winnerContainer.innerHTML = `Le vainqueur du tournoi est ${data[0].name}.`;
             });
