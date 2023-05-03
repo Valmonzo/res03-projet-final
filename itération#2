@@ -1,0 +1,32 @@
+# **Compte Rendu d'itération #2**
+
+==========================================
+
+**Nom du projet :** RESO3-Projet-Final
+
+**Période de l'itération :** du 13/03/2023 au 17/03/2023
+
+==========================================
+
+
+### **Résumé de l'itération :**
+---
+Au cours de cette itération, j'ai accompli les tâches suivantes:
+
+*  **Routing**  :  Modification + ajout de route pour permettre d'ajouter des teams au formulaire de création de tournoi. 
+* **PHP** : Création , affichage, suppression de teams fonctionnels, début de gestion de création de tournois. 
+Mes models sont terminés , et la plupart de mes controllers et managers aussi. 
+
+
+### Prochaines étapes:
+---
+Au cours de la prochaine itération, je vais travailler sur les tâches suivantes:
+
+*  Finir la création , l'édition et la suppression de tournoi
+* Commencer l'intégration côté publique et admin
+
+
+
+### Remarques:
+---
+Cette itération a été productive et m'a permis d'avancer significativement dans le développement du projet. Bien que j'ai rencontré quelques difficultés, j'ai réussi à atteindre tous les objectifs que j'avais fixés pour cette semaine. Je suis satisfait de mon travail même si j'espérais finir mon php aujourd'hui.  Je suis prêt à  poursuivre mon travail dans la semaine prochaine.

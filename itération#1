@@ -1,0 +1,33 @@
+# **Compte Rendu d'itération #1**
+
+==========================================
+
+**Nom du projet :** RESO3-Projet-Final
+
+**Période de l'itération :** du 06/03/2023 au 10/03/2023
+
+==========================================
+
+
+### **Résumé de l'itération :**
+---
+Au cours de cette itération, j'ai accompli les tâches suivantes:
+
+* Structure de dossiers (#8) : création des dossiers relatifs à une structure MVC.
+* Créer les templates (#9) : création des différents templates contenant un `<h1>` simple.
+* Routing (#7) : création du routeur et test de toutes les routes publiques/admin 
+* Créer le modèle d'authentification (#6) : Login , logout , hash , tout est fonctionnel. 
+
+
+### Prochaines étapes:
+---
+Au cours de la prochaine itération, je vais travailler sur les tâches suivantes:
+
+*  Créer les méthodes de tout mes controllers et managers.
+* Commencer l'intégration côté publique. 
+
+
+
+### Remarques:
+---
+Cette itération a été productive et m'a permis d'avancer significativement dans le développement du projet. Bien que j'ai rencontré quelques difficultés, j'ai réussi à atteindre tous les objectifs que j'avais fixés pour cette semaine. Je suis satisfait de mon travail et je suis prêt à  poursuivre mon travail dans la semaine prochaine.
