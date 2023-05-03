@@ -10,7 +10,7 @@
 
 "/schedule" , page qui affichera le calendrier des événements à venir avec des liens vers la page de l'événement en question.. 
 
-"/event/:id" , page qui affichera l'événement sur lequel le client a cliqué , pour afficher les détails comme le bracket etc ... 
+"/schedule/:id" , page qui affichera l'événement sur lequel le client a cliqué , pour afficher les détails comme le bracket etc ... 
 
 page bonus : Page qui affiche le stream de l'event en cours avec son bracket par le biais du API . 
 
