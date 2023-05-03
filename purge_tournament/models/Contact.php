@@ -59,7 +59,7 @@ class Contact
 
     public function setMessage(string $message): void
     {
-        $this->password = $password;
+        $this->message = $message;
     }
 
     public function toArray(): array

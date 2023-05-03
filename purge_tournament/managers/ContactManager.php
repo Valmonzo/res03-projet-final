@@ -23,11 +23,6 @@ class ContactManager extends AbstractManager
         return $messagesTab;
     }
 
-    public function getMessageById(int $id): array
-    {
-        // Récupérer un message par l'id pour le lire
-    }
-
     public function insertMessage(Contact $contact): void
     {
         $query = $this->db->prepare(

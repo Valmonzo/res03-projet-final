@@ -1470,6 +1470,9 @@ table {
   text-shadow: 2px 2px 2px #91848c;
   text-transform: uppercase;
 }
+#live-title span {
+  color: #d01f18;
+}
 
 .twitch .twitch-video {
   padding-top: 56.25%;
@@ -1494,9 +1497,6 @@ table {
 }
 
 @media screen and (min-width: 850px) {
-  #live-title span {
-    color: #d01f18;
-  }
   .twitch-container {
     display: flex;
     justify-content: center;

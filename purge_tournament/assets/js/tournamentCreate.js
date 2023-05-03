@@ -10,8 +10,6 @@ function createTournament() {
 
             let teamId = e.target.value;
 
-            console.log(teamId);
-
             fetch(`https://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/admin/tournaments/create/add-team/${teamId}`)
                 .then(response => response.json())
                 .then(data => {

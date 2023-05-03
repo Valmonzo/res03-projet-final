@@ -6,6 +6,10 @@
     color: $primary-black;
     text-shadow: 2px 2px 2px $primary-grey;
     text-transform: uppercase;
+
+    & span {
+        color: $primary-red;
+    }
 }
 
 .twitch .twitch-video {
@@ -31,13 +35,6 @@
 }
 
 @media screen and (min-width: 850px) {
-    #live-title {
-
-
-        & span {
-            color: $primary-red;
-        }
-    }
     .twitch-container {
         display: flex;
         justify-content: center;

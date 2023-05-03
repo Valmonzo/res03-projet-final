@@ -2,7 +2,6 @@ function loadTodayTournament() {
     fetch('https://valmontpehautpietri.sites.3wa.io/res03-projet-final/purge_tournament/loadTodayTournaments')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             if (data.length > 0) {
                 for (let i = 0; i < data.length; i++) {
                     // Récupération des données du tournoi du jour
