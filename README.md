@@ -1,6 +1,6 @@
 # res03-projet-final
 
-                ![Logo Purge Tournament](https://media.discordapp.net/attachments/1047946400358482011/1048132744397471774/purgelogo.png?width=553&height=454)
+![Logo Purge Tournament](https://media.discordapp.net/attachments/1047946400358482011/1048132744397471774/purgelogo.png?width=553&height=454)
 
 ## PROJET PURGE BRACKET
 
