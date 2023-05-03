@@ -18,6 +18,7 @@ function loadTodayTournament() {
                     p3.textContent = `Date : ${tournament.date}`;
                     let a = document.createElement('a');
                     a.href = tournament.streamURL;
+                    a.target = '_blank';
                     a.textContent = 'Regarder le stream';
                     let bracket = document.createElement('a');
                     bracket.href = `/res03-projet-final/purge_tournament/schedule/${tournament.id}`;
