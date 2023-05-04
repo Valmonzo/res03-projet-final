@@ -385,6 +385,7 @@ table {
   padding-bottom: 8rem;
   color: #eeebe8;
   font-family: "Montserrat", sans-serif;
+  text-shadow: 1px 1px 2px #d01f18;
 }
 #homepage-header p {
   margin: 0;
@@ -394,6 +395,7 @@ table {
   animation: moveInBottom 1s ease-out;
   padding-bottom: 6rem;
   font-family: "Montserrat", sans-serif;
+  text-shadow: 1px 1px 2px #d01f18;
 }
 
 #homepage-main {
@@ -402,7 +404,7 @@ table {
   padding: 6rem;
   transition: all 0.5s ease-in-out;
   height: 100%;
-  background: rgb(235, 224, 224);
+  background: url("https://wallpaperaccess.com/full/8823431.jpg");
 }
 #homepage-main:hover {
   transform: scale(1.02);
@@ -412,17 +414,19 @@ table {
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #0e1111;
+  color: #eeebe8;
   letter-spacing: 0.1em;
   animation: moveInTop 1s ease-out;
   padding-bottom: 3vh;
-  text-shadow: 2px 2px 3px #91848c;
+  text-shadow: 2px 2px 3px #0e1111;
 }
 #homepage-main p {
   font-size: 1.4rem;
   margin: 0 0 2rem;
+  color: #eeebe8;
   animation: moveInBottom 1s ease-out;
   font-weight: 400;
+  text-shadow: 1px 2px 3px #0e1111;
 }
 #homepage-main button {
   background-color: #7289da;
