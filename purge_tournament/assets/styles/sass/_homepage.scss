@@ -1,10 +1,11 @@
 //Header de la page
 #homepage-header {
-    background: rgb(238, 35, 7);
-    background: linear-gradient(180deg, rgba(238, 35, 7, 0.7021009087228641) 1%, rgba(238, 99, 99, 0.8365546902354692) 16%, rgba(235, 224, 224, 0.7665266790309874) 60%);
+    background: no-repeat url('https://thumbs.gfycat.com/BetterEnchantingCrane-size_restricted.gif');
+    background-position: center center;
+    background-size: cover;
     padding: 1rem;
     text-align: center;
-    color: $primary-black;
+    color: $primary-yellow;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +42,7 @@
         letter-spacing: 0.1em;
         animation: moveInTop 1s ease-out;
         padding-bottom: 1rem;
-        text-shadow: 1px 1px 2px $primary-white;
+        text-shadow: 2px 2px 2px $primary-red;
     }
 
     h4 {
@@ -52,7 +53,7 @@
         letter-spacing: 0.1em;
         animation: moveInTop 1s ease-out;
         padding-bottom: 1rem;
-        text-shadow: 1px 1px 2px $primary-white;
+        text-shadow: 2px 2px 2px $primary-red;
     }
 
     q {
@@ -62,7 +63,7 @@
         letter-spacing: 0.05em;
         animation: moveInBottom 1s ease-out;
         padding-bottom: 8rem;
-        color: $primary-black;
+        color: $primary-white;
         font-family: $base-font;
     }
 
@@ -83,11 +84,10 @@
 #homepage-main {
     font-family: $title-font;
     text-align: center;
-    padding: 4rem;
+    padding: 8rem;
     transition: all 0.5s ease-in-out;
     height: 100%;
     background: rgb(235, 224, 224);
-    background: linear-gradient(180deg, rgba(235, 224, 224, 1) 1%, rgba(69, 215, 255, 0.6348740179665616) 47%, rgba(235, 224, 224, 1) 91%, rgba(226, 114, 97, 0.6544818611038166) 98%);
     &:hover {
         transform: scale(1.02);
     }

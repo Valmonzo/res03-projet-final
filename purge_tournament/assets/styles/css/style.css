@@ -326,11 +326,12 @@ table {
 }
 
 #homepage-header {
-  background: rgb(238, 35, 7);
-  background: linear-gradient(180deg, rgba(238, 35, 7, 0.7021009087) 1%, rgba(238, 99, 99, 0.8365546902) 16%, rgba(235, 224, 224, 0.766526679) 60%);
+  background: no-repeat url("https://thumbs.gfycat.com/BetterEnchantingCrane-size_restricted.gif");
+  background-position: center center;
+  background-size: cover;
   padding: 1rem;
   text-align: center;
-  color: #0e1111;
+  color: #fbb304;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -363,7 +364,7 @@ table {
   letter-spacing: 0.1em;
   animation: moveInTop 1s ease-out;
   padding-bottom: 1rem;
-  text-shadow: 1px 1px 2px #eeebe8;
+  text-shadow: 2px 2px 2px #d01f18;
 }
 #homepage-header h4 {
   margin: 0;
@@ -373,7 +374,7 @@ table {
   letter-spacing: 0.1em;
   animation: moveInTop 1s ease-out;
   padding-bottom: 1rem;
-  text-shadow: 1px 1px 2px #eeebe8;
+  text-shadow: 2px 2px 2px #d01f18;
 }
 #homepage-header q {
   margin: 0;
@@ -382,7 +383,7 @@ table {
   letter-spacing: 0.05em;
   animation: moveInBottom 1s ease-out;
   padding-bottom: 8rem;
-  color: #0e1111;
+  color: #eeebe8;
   font-family: "Montserrat", sans-serif;
 }
 #homepage-header p {
@@ -398,11 +399,10 @@ table {
 #homepage-main {
   font-family: "Braah One", sans-serif;
   text-align: center;
-  padding: 4rem;
+  padding: 8rem;
   transition: all 0.5s ease-in-out;
   height: 100%;
   background: rgb(235, 224, 224);
-  background: linear-gradient(180deg, rgb(235, 224, 224) 1%, rgba(69, 215, 255, 0.634874018) 47%, rgb(235, 224, 224) 91%, rgba(226, 114, 97, 0.6544818611) 98%);
 }
 #homepage-main:hover {
   transform: scale(1.02);
@@ -1241,7 +1241,7 @@ table {
   background-color: #eeebe8;
   padding: 3rem;
   text-align: center;
-  min-height: 80vh;
+  min-height: 100vh;
 }
 .tournament-display > section {
   padding-bottom: 5vh;
