@@ -414,11 +414,11 @@ table {
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #eeebe8;
+  color: #fbb304;
   letter-spacing: 0.1em;
   animation: moveInTop 1s ease-out;
   padding-bottom: 3vh;
-  text-shadow: 2px 2px 3px #0e1111;
+  text-shadow: 2px 2px 3px #d01f18;
 }
 #homepage-main p {
   font-size: 1.4rem;
