@@ -1752,6 +1752,12 @@ table {
   }
 }
 
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1775,8 +1781,10 @@ a {
 
 body {
   font-family: "Montserrat", sans-serif;
-  max-width: 100vw;
+  width: 100vw;
+  overflow-y: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .error {
