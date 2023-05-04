@@ -399,7 +399,7 @@ table {
 #homepage-main {
   font-family: "Braah One", sans-serif;
   text-align: center;
-  padding: 8rem;
+  padding: 6rem;
   transition: all 0.5s ease-in-out;
   height: 100%;
   background: rgb(235, 224, 224);
@@ -480,7 +480,7 @@ table {
   }
   #homepage-main button {
     font-size: 1.5rem;
-    padding: 1.2rem 4rem;
+    padding: 1.5rem 4rem;
   }
 }
 .messagerie-section {
