@@ -18,6 +18,13 @@
 @import "error-page";
 @import "partials/footer";
 
+html {
+    // Obligatoire pour pas avoir de scroll blanc sur Chrome Mobile
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -41,8 +48,10 @@ a {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    max-width: 100vw;
+    width: 100vw;
+    overflow-y: scroll;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .error {
